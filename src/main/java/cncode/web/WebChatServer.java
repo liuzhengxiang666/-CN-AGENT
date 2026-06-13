@@ -22,11 +22,13 @@ import cncode.session.SessionInfo;
 import cncode.session.SessionRestoreResult;
 import cncode.session.SessionStore;
 import cncode.skill.ActiveSkillState;
+import cncode.skill.InstallSkillTool;
 import cncode.skill.SkillCatalog;
 import cncode.skill.SkillDefinition;
 import cncode.skill.SkillExecutionMode;
 import cncode.skill.SkillExecutor;
 import cncode.skill.SkillToolPolicy;
+import cncode.tool.ToolExecutionContext;
 import cncode.tool.ToolRegistry;
 import cncode.toolresult.ContentReplacementState;
 import com.sun.net.httpserver.HttpExchange;
@@ -374,12 +376,26 @@ public class WebChatServer {
             }
             return;
         }
+        if (safeArgs.toLowerCase().startsWith("install ")) {
+            String url = safeArgs.substring("install ".length()).strip();
+            var result = new InstallSkillTool(skillCatalog, registry).execute(
+                    new ToolExecutionContext(Path.of("").toAbsolutePath(), currentLoopConfig().toolTimeout(), currentLoopConfig().maxOutputChars()),
+                    java.util.Map.of("url", url)
+            );
+            if (result.success()) {
+                registerSkillCommands();
+                writeSse(output, "system", WebJson.textData("message", result.output() + "\n\n" + skillCatalog.listText()));
+            } else {
+                writeSse(output, "error", WebJson.textData("message", result.error()));
+            }
+            return;
+        }
         String lower = safeArgs.toLowerCase();
         if (lower.startsWith("info ")) {
             writeSse(output, "system", WebJson.textData("message", skillCatalog.detailText(safeArgs.substring(5).strip())));
             return;
         }
-        writeSse(output, "system", WebJson.textData("message", "Usage: /skills [list|info <name>|reload]"));
+        writeSse(output, "system", WebJson.textData("message", "Usage: /skills [list|info <name>|reload|install <url>]"));
     }
 
     private void executeSkillCommand(OutputStream output, String name, String args) throws IOException {

@@ -73,7 +73,7 @@ public final class SkillCatalog {
         if (skills.isEmpty()) {
             return "";
         }
-        StringBuilder builder = new StringBuilder("Available skills. Use load_skill or slash commands to load full SOP when needed:\n");
+        StringBuilder builder = new StringBuilder("Available skills. Use load_skill to load full SOP, install_skill to install a skill from URL, or slash commands to invoke skills:\n");
         for (SkillDefinition skill : skills.values()) {
             builder.append("- /")
                     .append(skill.meta().name())

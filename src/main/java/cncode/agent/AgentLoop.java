@@ -29,6 +29,7 @@ import cncode.toolresult.ReplacementRecordsIO;
 import cncode.toolresult.ToolResultBudget;
 import cncode.session.SessionStore;
 import cncode.skill.ActiveSkillState;
+import cncode.skill.InstallSkillTool;
 import cncode.skill.LoadSkillTool;
 import cncode.skill.SkillCatalog;
 
@@ -53,6 +54,7 @@ public class AgentLoop {
     private final SkillCatalog skillCatalog;
     private final ActiveSkillState activeSkillState;
     private final LoadSkillTool loadSkillTool;
+    private final InstallSkillTool installSkillTool;
     private final ContentReplacementState replacementState;
     private final CompactTrackingState compactTrackingState;
     private volatile AgentRunState state = AgentRunState.IDLE;
@@ -95,9 +97,12 @@ public class AgentLoop {
         this.compactTrackingState = compactTrackingState == null ? new CompactTrackingState() : compactTrackingState;
         if (skillCatalog != null && activeSkillState != null) {
             this.loadSkillTool = new LoadSkillTool(skillCatalog, activeSkillState, registry);
+            this.installSkillTool = new InstallSkillTool(skillCatalog, registry);
             registry.register(loadSkillTool);
+            registry.register(installSkillTool);
         } else {
             this.loadSkillTool = null;
+            this.installSkillTool = null;
         }
         this.streamCollector = new StreamCollector(provider);
         this.stablePrompt = PromptAssembler.buildStablePrompt(new PromptOptions(

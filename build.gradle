@@ -65,6 +65,7 @@ tasks.register('smokeTest') {
             'cncode.skill.SkillExecutorTest',
             'cncode.skill.BuiltinSkillsTest',
             'cncode.skill.LoadSkillToolTest',
+            'cncode.skill.InstallSkillToolTest',
             'cncode.repl.ChatReplTest',
             'cncode.tui.TuiStateTest',
             'cncode.web.WebAssetsTest',

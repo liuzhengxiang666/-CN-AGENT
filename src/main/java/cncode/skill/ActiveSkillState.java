@@ -58,6 +58,7 @@ public final class ActiveSkillState {
             }
         }
         allowed.add(SkillToolPolicy.LOAD_SKILL_TOOL);
+        allowed.add(SkillToolPolicy.INSTALL_SKILL_TOOL);
         if (!hasWhitelist) {
             return ignored -> true;
         }
