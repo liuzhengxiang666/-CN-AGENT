@@ -1,0 +1,9 @@
+.gradle/
+.idea/
+build/
+.cncode/session/
+.cncode/sessions/
+.cncode/worktrees/
+
+*.class
+*.log

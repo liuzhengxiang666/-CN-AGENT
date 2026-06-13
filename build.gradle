@@ -1,0 +1,90 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+group = 'cncode'
+version = '0.1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'cncode.app.Main'
+    applicationName = 'cncode'
+}
+
+dependencies {
+    implementation 'com.googlecode.lanterna:lanterna:3.1.2'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(JavaExec).configureEach {
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.register('smokeTest') {
+    group = 'verification'
+    description = 'Run CN Code MVP smoke tests.'
+    dependsOn testClasses
+
+    doLast {
+        def java21 = javaToolchains.launcherFor {
+            languageVersion = JavaLanguageVersion.of(21)
+        }.get().executablePath.asFile.absolutePath
+        [
+            'cncode.config.ConfigLoaderTest',
+            'cncode.mcp.McpJsonTest',
+            'cncode.mcp.McpStdioClientTest',
+            'cncode.mcp.McpHttpClientTest',
+            'cncode.mcp.McpManagerTest',
+            'cncode.permission.PermissionSecurityTest',
+            'cncode.chat.ChatSessionTest',
+            'cncode.provider.ProviderFactoryTest',
+            'cncode.prompt.PromptAssemblerTest',
+            'cncode.prompt.SystemReminderTest',
+            'cncode.instruction.InstructionLoaderTest',
+            'cncode.session.SessionStoreTest',
+            'cncode.memory.MemoryManagerTest',
+            'cncode.memory.MemoryExtractorTest',
+            'cncode.toolresult.ToolResultBudgetTest',
+            'cncode.compact.ContextCompactorTest',
+            'cncode.command.CommandRegistryTest',
+            'cncode.skill.SkillParserTest',
+            'cncode.skill.SkillCatalogTest',
+            'cncode.skill.SkillToolPolicyTest',
+            'cncode.skill.ActiveSkillStateTest',
+            'cncode.skill.SkillExecutorTest',
+            'cncode.skill.BuiltinSkillsTest',
+            'cncode.skill.LoadSkillToolTest',
+            'cncode.repl.ChatReplTest',
+            'cncode.tui.TuiStateTest',
+            'cncode.web.WebAssetsTest',
+            'cncode.web.WebJsonTest',
+            'cncode.web.WebFileOpenerTest',
+            'cncode.web.PortFinderTest',
+            'cncode.tool.ToolRegistryTest',
+            'cncode.tool.BuiltinToolsTest',
+            'cncode.agent.SingleToolAgentTest',
+            'cncode.agent.StreamCollectorTest',
+            'cncode.agent.StreamingToolExecutorTest',
+            'cncode.agent.AgentLoopTest'
+        ].each { className ->
+            javaexec {
+                executable = java21
+                classpath = sourceSets.main.runtimeClasspath + sourceSets.test.runtimeClasspath
+                mainClass = className
+            }
+        }
+    }
+}
+
+check.dependsOn smokeTest
