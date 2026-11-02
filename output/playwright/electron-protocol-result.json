@@ -1,0 +1,10 @@
+{
+  "mode": "real-electron-real-cncode-loop-local-model-fixture",
+  "checks": [
+    "message",
+    "approval",
+    "question",
+    "stop"
+  ],
+  "modelAcceptance": false
+}

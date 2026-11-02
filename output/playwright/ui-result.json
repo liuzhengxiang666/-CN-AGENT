@@ -1,0 +1,25 @@
+{
+  "mode": "protocol-fixture-not-real-model",
+  "web": [
+    "create",
+    "approval",
+    "question",
+    "stop",
+    "reopen",
+    "theme-persistence",
+    "switch-engine-new-session",
+    "reject"
+  ],
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "terminal": [
+    "message",
+    "approval",
+    "question",
+    "stop-while-running",
+    "quit"
+  ],
+  "consoleErrors": []
+}

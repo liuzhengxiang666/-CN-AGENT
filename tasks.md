@@ -119,3 +119,13 @@
 参考：checklist；真实模型与容器验收
 
 验收：对应 checklist 项及 docs/validation.md 有可追踪结果。
+
+
+## 接续定位（2026-11-02）
+
+- T2–T6：`Records.finish/summarize`、`Service.submit/interact/artifacts`、`modelRequest`、`executeTool/command`、`Dsh.run/observe` 和 `runtime/dsh-observer.mjs:apply`；协议检查见 `src/tests/harness.test.ts` 与 `scripts/dsh-protocol.ts`。
+- T7：`src/eval/fixtures.ts:prepare/hashTree`、`src/eval/cli.ts`、`src/eval/worker.ts`、`eval/verify-phone.mjs`、`eval/verify-kv.py`、`scripts/verifier-check.ts`。可信验收正反例已过；真实模型调用四次均401，成功基线未通过。
+- T8：`Memory.client/scope/recall/capture/commit`；SDK 契约测试已过，现成 DSH 插件的共享用户记忆与降级路径需真实隔离验证，尚未启用；依赖 T7 有效基线。
+- T9–T10：`server`、`src/ui/main.tsx`、`src/ui/primitives.tsx`、`src/ui/style.css`、`terminal.ts`、`desktop/main.cjs`；Figma 对应关系在 `docs/ui-design.md`。客户端协议验证见 `scripts/ui-check.ts`、`scripts/desktop-check.ts`。
+- T11 接入主流程：根脚本转发既有 workspace；`README.md` 提供配置、D: 环境、客户端和评测命令；未另搭服务或新内核。
+- T12 端到端验证：单测、Java 回归、客户端协议与可信验收控制实验有记录，真实模型和记忆端到端仍未通过；不得把阶段草稿 PR 当作全部计划已完成。
