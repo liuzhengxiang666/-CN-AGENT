@@ -57,6 +57,12 @@
       "I6:264;4185:3781"
     ]
   },
+  "defaultEngine": {
+    "engine": "dsh",
+    "frame": "6:194",
+    "mutatedNodeIds": ["6:254"],
+    "note": "Existing new-session field updated; memory remains unchecked."
+  },
   "memoryStates": {
     "completed": "14:80",
     "processing": "14:134",

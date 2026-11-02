@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { loadConfig } from "../src/config.js";
 import { Service } from "../src/service.js";
-const engine = process.argv[2] === "dsh" ? "dsh" : "cncode";
+const engine = process.argv[2] === "cncode" ? "cncode" : "dsh";
 const root = resolve("../.cncode/vnext/smoke-" + engine);
 await mkdir(join(root, "workspace"), { recursive: true });
 const config = loadConfig();

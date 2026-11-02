@@ -18,3 +18,6 @@ Web/终端与 Electron 的协议自动检查结果分别在同目录的 `ui-resu
 沿用同一 Figma 文件与已有黑白 token、按钮和布局，新视图：`14:80`（Memory completed）、`14:134`（Memory processing）。先通过 MCP 更新并检查设计，再修改既有 React 记忆区域。提交后切到独立运行，实时状态与收益验收分开；恢复会话按 startedAt 选择最新运行，避免UUID目录顺序影响。
 
 实际运行截图：`output/playwright/memory-web-processing.png`、`memory-web-dark.png`、`memory-web-light.png`、`memory-electron-dark.png`、`memory-electron-light.png`。这些使用真实本地 OpenViking 和 DeepSeek 提取记录，运行状态仍保留“尚未验收”，不把完成提取等同收益通过。界面实际检查另有 `memory-ui-result.json`；PR嵌入当前提交图片。
+# 2026-11-02 日常默认内核
+
+复用现有新会话设计 `6:194`，通过 Figma MCP 将字段 `6:254` 的选中值改为 DSH；不新增布局或组件。Web/Electron 共用默认选择，终端同步，记忆保持默认关闭。实际运行截图为 `output/playwright/default-dsh-dark.png`、`default-dsh-light.png`，使用本地协议夹具，不代表新增真实模型成绩。

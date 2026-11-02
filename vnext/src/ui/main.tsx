@@ -55,7 +55,7 @@ function App() {
     [text, setText] = useState(""),
     [error, setError] = useState("");
   const [creating, setCreating] = useState(false),
-    [engine, setEngine] = useState<EngineId>("cncode"),
+    [engine, setEngine] = useState<EngineId>("dsh"),
     [cwd, setCwd] = useState(""),
     [memory, setMemory] = useState(false),
     [busy, setBusy] = useState(false),

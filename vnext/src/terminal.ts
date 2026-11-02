@@ -181,7 +181,7 @@ async function line(text: string) {
 }
 try {
   if (sessionId) await open(sessionId);
-  else await create(process.argv[2] ?? "cncode");
+  else await create(process.argv[2] ?? "dsh");
   console.log("CN Code · /quit /stop /sessions /session ID /engine cncode|dsh");
   const timer = setInterval(() => void poll(), 200);
   rl.on("line", (text) => void line(text));

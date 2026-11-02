@@ -44,6 +44,22 @@ try {
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto(env.CNCODE_SERVER + "/#token=ui-validation");
   await page.getByRole("button", { name: "＋ 新建会话" }).click();
+  assert.equal(
+    await page.getByRole("combobox", { name: "执行内核", exact: true }).inputValue(),
+    "dsh",
+  );
+  assert.equal(
+    await page.getByRole("checkbox", { name: "启用 OpenViking 项目记忆" }).isChecked(),
+    false,
+  );
+  await page.screenshot({ path: resolve(output, "default-dsh-dark.png") });
+  await page.getByRole("button", { name: "取消", exact: true }).click();
+  await page.getByRole("button", { name: "浅色", exact: true }).click();
+  await page.getByRole("button", { name: "＋ 新建会话" }).click();
+  await page.screenshot({ path: resolve(output, "default-dsh-light.png") });
+  await page.getByRole("button", { name: "取消", exact: true }).click();
+  await page.getByRole("button", { name: "深色", exact: true }).click();
+  await page.getByRole("button", { name: "＋ 新建会话" }).click();
   await page.getByRole("button", { name: "创建会话", exact: true }).click();
   const input = page.getByRole("textbox", { name: "任务输入" });
   await input.fill("验证审批和追问（本地协议夹具）");
@@ -77,12 +93,12 @@ try {
   await page.getByRole("definition").filter({ hasText: "已停止" }).waitFor();
   await page
     .getByRole("combobox", { name: "内核", exact: true })
-    .selectOption("dsh");
+    .selectOption("cncode");
   await page.getByRole("button", { name: "创建会话", exact: true }).click();
   await page
     .getByRole("navigation", { name: "会话列表" })
     .getByRole("button")
-    .filter({ hasText: "DSH" })
+    .filter({ hasText: "CN Code" })
     .waitFor();
   assert.equal(
     await page
@@ -119,6 +135,7 @@ try {
     }
   }
   await waitFor(/CN Code ·/);
+  assert.match(text, /会话 [^\r\n]+ · dsh/);
   terminal.stdin.write("终端协议验证\n");
   await waitFor(/批准工具/);
   terminal.stdin.write("y\n");
@@ -148,6 +165,7 @@ try {
         mode: "protocol-fixture-not-real-model",
         web: [
           "create",
+          "default-dsh-memory-off",
           "approval",
           "question",
           "stop",
@@ -158,6 +176,7 @@ try {
         ],
         themes: ["dark", "light"],
         terminal: [
+          "default-dsh",
           "message",
           "approval",
           "question",

@@ -36,6 +36,8 @@ pnpm terminal
 
 Electron 39.0.0 使用项目独立数据目录，renderer 开启 sandbox/contextIsolation 并关闭 nodeIntegration。DSH SDK 与运行时均固定 0.2.2-alpha.2，使用独立 home/profile；不会复用用户的 `~/.dsh`。
 
+日常新会话默认 DSH，项目记忆默认关闭。自研内核保留用于研究，可在界面明确选择，或运行 `pnpm terminal cncode`；已有会话保持原内核。`scripts/smoke.ts` 无参数时也选择 DSH，但它会真实调用模型。为控制开销，当前不再自动追加真实模型/记忆评测；下列真实评测命令仅供主动运行，不是启动步骤。
+
 ## 界面设计
 
 UI 先在 [CN Code UI · Black & White](https://www.figma.com/design/UUg6JVRobzrbugKYd0gqMx) 中通过 Figma MCP 设计，再实现为 React。参考 Codex 的黑白工作台风格，深浅两主题具有相同布局；主题变量、设计节点与实际截图记录在 [设计说明](docs/ui-design.md)。后续 UI 修改继续先更新 Figma，并在 PR 描述嵌入修改后实际运行截图。
