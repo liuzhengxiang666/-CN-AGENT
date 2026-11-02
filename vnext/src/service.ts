@@ -21,7 +21,10 @@ export class Service {
   readonly sessions = new Map<string, Session>();
   readonly memory: Memory;
   readonly pending = new Map<string, Interaction>();
-  private waiters = new Map<string, (v: Json) => void>();
+  private waiters = new Map<
+    string,
+    (v: Json, actor?: "human" | "automation") => void
+  >();
   private active = new Map<
     string,
     { engine: EngineAdapter; controller: AbortController; done: Promise<void> }
@@ -210,22 +213,23 @@ export class Service {
         reject(new Error("交互已取消"));
       };
       signal.addEventListener("abort", abort, { once: true });
-      this.waiters.set(i.id, (v) => {
+      this.waiters.set(i.id, (v, actor = "human") => {
         signal.removeEventListener("abort", abort);
         this.pending.delete(i.id);
         this.waiters.delete(i.id);
         this.records.emit(i.runId, "interaction.answered", {
           id: i.id,
           answer: v,
+          actor,
         });
         resolvePromise(v);
       });
     });
   }
-  answer(id: string, answer: Json) {
+  answer(id: string, answer: Json, actor: "human" | "automation" = "human") {
     const waiter = this.waiters.get(id);
     if (!waiter) throw new Error("交互不存在或已回答");
-    waiter(answer);
+    waiter(answer, actor);
   }
   async stop(id: string) {
     this.get(id);

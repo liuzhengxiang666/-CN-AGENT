@@ -32,12 +32,22 @@ if (action === "prepare") {
   );
   console.log(r.stdout + r.stderr);
 } else if (action === "run") {
+  const taskFilter = process.argv[3] ?? "all",
+    engineFilter = process.argv[4] ?? "all";
+  if (taskFilter !== "all" && !tasks.some((t) => t.id === taskFilter))
+    throw new Error("Unknown task filter");
+  if (!["all", "cncode", "dsh"].includes(engineFilter))
+    throw new Error("Unknown engine filter");
   const config = loadConfig();
   if (!config.apiKey) throw new Error("Missing model credentials");
   await mkdir(root, { recursive: true });
   let failed = false;
-  for (const task of tasks)
-    for (const engine of ["cncode", "dsh"] as const) {
+  for (const task of tasks.filter(
+    (t) => taskFilter === "all" || t.id === taskFilter,
+  ))
+    for (const engine of (["cncode", "dsh"] as const).filter(
+      (e) => engineFilter === "all" || e === engineFilter,
+    )) {
       const id = task.id + "-" + engine + "-" + randomUUID(),
         dir = join(root, id),
         work = join(dir, "workspace"),
@@ -271,5 +281,5 @@ if (action === "prepare") {
   if (failed) process.exitCode = 1;
 } else
   console.log(
-    "Usage: pnpm eval prepare | build | run (four serial runs; memory and learning off)",
+    "Usage: pnpm eval prepare | build | run [all|phone-number|kv-store-grpc] [all|cncode|dsh] (serial; memory and learning off)",
   );

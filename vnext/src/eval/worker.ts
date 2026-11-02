@@ -20,6 +20,7 @@ const poll = setInterval(() => {
         : {
             text: "Follow the task specification. Do not ask a human; report any unresolved ambiguity.",
           },
+      "automation",
     );
 }, 50);
 const deadline = setTimeout(

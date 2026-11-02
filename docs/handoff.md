@@ -81,3 +81,12 @@
 - 仍需：有效无记忆模型基线 → OpenViking真实部署与隔离/纠正/跨内核 → 记忆收益及成本对照。Jev/Dreaming/RSI不实施。草稿PR不合并main。
 
 阶段草稿PR：https://github.com/liuzhengxiang666/-CN-AGENT/pull/1；四张实际UI截图已嵌入且链接返回200。接续时先解决401与OpenViking真实服务/隔离，不要把草稿交付当作完整vNext验收。
+
+
+## 新凭据后更新：先读本节（2026-11-02）
+
+401已解除，新key按用户要求仅保存在现有本机配置，测试后保留。模型路由未改变。四个任务-内核组合真实Linux无记忆基线均通过外部可信验收，结果/交付物见docs/evidence/baseline-results.json与baseline-artifacts/。部分初次成功运行与补充smoke重叠，受影响项已无并发模型调用串行重跑；保留所有历史记录，不选择性删除失败。
+
+新增评测器task/engine过滤，复用现有runner定向重跑。发现自动审批等待被记作人工等待，原始报告保留并提供normalizedWaitMetrics；后续事件记录actor，单元/协议测试现在15项。当前基线每组合仅一个样本，没有稳定成功率或速度优势结论。
+
+下一阶段仍是OpenViking服务与embedding配置、严格项目隔离、纠正旧值、跨内核与额外开销验证。自部署不需购买云托管；云模型调用可能收费。当前本机可用内存约2GiB，没有自行启动额外本地模型或开通云付费服务。

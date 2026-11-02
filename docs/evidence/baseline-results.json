@@ -1,0 +1,235 @@
+{
+  "kind": "real-model-baseline",
+  "sampleCountPerTaskEngine": 1,
+  "note": "Four independently accepted runs. No general success-rate, latency superiority or memory-benefit conclusion. Original failed/auth and overlapped attempts retained separately.",
+  "runs": [
+    {
+      "id": "phone-number-cncode-8f0ee164-7106-4d3a-ab20-b5c30fd5a26e",
+      "task": "phone-number",
+      "engine": "cncode",
+      "fixtureCommit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "completed",
+      "outcome": "pass",
+      "startedAt": "2026-11-02T07:07:41.278Z",
+      "image": "sha256:2c6e5bc5c44ef8a3df646b0b0dc79f7cb778e35489a1de8d706ede1bcfc1cc93",
+      "environment": {
+        "toolPolicy": "coding-only-v1",
+        "node": "24.16.0",
+        "python": "Debian 3.11 venv",
+        "grpcio": "1.73.0",
+        "cpus": 1,
+        "memory": "2g",
+        "maxTokens": 8192,
+        "deadlineSeconds": 300
+      },
+      "runId": "61e1aa42-0d79-49f8-9b65-764a703e2fe2",
+      "metrics": {
+        "requests": 5,
+        "inputTokens": 18023,
+        "outputTokens": 2445,
+        "cacheReadTokens": 14720,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 5,
+            "inputTokens": 18023,
+            "outputTokens": 2445,
+            "cacheReadTokens": 14720,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 24,
+        "phaseTotalsMs": {
+          "preparation.end": 14.387839999999983,
+          "model.end": 15582.908358,
+          "tool.end": 113.16160900000114
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 15952,
+        "nonHumanWallMs": 15928
+      },
+      "wallMs": 21110.550900000002,
+      "endedAt": "2026-11-02T07:08:02.389Z",
+      "normalizedWaitMetrics": {
+        "humanWaitMs": 0,
+        "automatedWaitMs": 24,
+        "nonHumanWallMs": 15952,
+        "provenance": "Known unattended worker answers all approvals automatically. Legacy raw metrics retained unchanged."
+      }
+    },
+    {
+      "id": "phone-number-dsh-f393d087-e9ae-402c-bbae-5e0bafa66310",
+      "task": "phone-number",
+      "engine": "dsh",
+      "fixtureCommit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "completed",
+      "outcome": "pass",
+      "startedAt": "2026-11-02T07:12:34.312Z",
+      "image": "sha256:2c6e5bc5c44ef8a3df646b0b0dc79f7cb778e35489a1de8d706ede1bcfc1cc93",
+      "environment": {
+        "toolPolicy": "coding-only-v1",
+        "node": "24.16.0",
+        "python": "Debian 3.11 venv",
+        "grpcio": "1.73.0",
+        "cpus": 1,
+        "memory": "2g",
+        "maxTokens": 8192,
+        "deadlineSeconds": 300
+      },
+      "runId": "fff60e54-6239-4a92-ac7c-217dbf191498",
+      "metrics": {
+        "requests": 5,
+        "inputTokens": 28468,
+        "outputTokens": 2117,
+        "cacheReadTokens": 27392,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 5,
+            "inputTokens": 28468,
+            "outputTokens": 2117,
+            "cacheReadTokens": 27392,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 2362.2132869999996,
+          "model.end": 14923.921393000002,
+          "tool.end": 171.62026399999786
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 17841,
+        "nonHumanWallMs": 17841
+      },
+      "wallMs": 21871.6469,
+      "endedAt": "2026-11-02T07:12:56.184Z",
+      "normalizedWaitMetrics": {
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "nonHumanWallMs": 17841,
+        "provenance": "Known unattended worker answers all approvals automatically. Legacy raw metrics retained unchanged."
+      }
+    },
+    {
+      "id": "kv-store-grpc-cncode-7ee23720-fe5e-4a7f-b440-0a6b42f9ca2d",
+      "task": "kv-store-grpc",
+      "engine": "cncode",
+      "fixtureCommit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "completed",
+      "outcome": "pass",
+      "startedAt": "2026-11-02T07:12:57.267Z",
+      "image": "sha256:2c6e5bc5c44ef8a3df646b0b0dc79f7cb778e35489a1de8d706ede1bcfc1cc93",
+      "environment": {
+        "toolPolicy": "coding-only-v1",
+        "node": "24.16.0",
+        "python": "Debian 3.11 venv",
+        "grpcio": "1.73.0",
+        "cpus": 1,
+        "memory": "2g",
+        "maxTokens": 8192,
+        "deadlineSeconds": 900
+      },
+      "runId": "7d84bf8f-6705-4e2f-be64-da03d517afa2",
+      "metrics": {
+        "requests": 28,
+        "inputTokens": 209786,
+        "outputTokens": 10403,
+        "cacheReadTokens": 203264,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 28,
+            "inputTokens": 209786,
+            "outputTokens": 10403,
+            "cacheReadTokens": 203264,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 363,
+        "phaseTotalsMs": {
+          "preparation.end": 14.494992000000025,
+          "model.end": 75935.957114,
+          "tool.end": 96409.99484099996
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 173915,
+        "nonHumanWallMs": 173552
+      },
+      "wallMs": 177313.0461,
+      "endedAt": "2026-11-02T07:15:54.580Z",
+      "normalizedWaitMetrics": {
+        "humanWaitMs": 0,
+        "automatedWaitMs": 363,
+        "nonHumanWallMs": 173915,
+        "provenance": "Known unattended worker answers all approvals automatically. Legacy raw metrics retained unchanged."
+      }
+    },
+    {
+      "id": "kv-store-grpc-dsh-ec2de88c-0954-49eb-b956-b9821377fa25",
+      "task": "kv-store-grpc",
+      "engine": "dsh",
+      "fixtureCommit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "completed",
+      "outcome": "pass",
+      "startedAt": "2026-11-02T07:10:29.997Z",
+      "image": "sha256:2c6e5bc5c44ef8a3df646b0b0dc79f7cb778e35489a1de8d706ede1bcfc1cc93",
+      "environment": {
+        "toolPolicy": "coding-only-v1",
+        "node": "24.16.0",
+        "python": "Debian 3.11 venv",
+        "grpcio": "1.73.0",
+        "cpus": 1,
+        "memory": "2g",
+        "maxTokens": 8192,
+        "deadlineSeconds": 900
+      },
+      "runId": "ebf27e90-627f-4eac-96ac-d371452c3d50",
+      "metrics": {
+        "requests": 15,
+        "inputTokens": 104666,
+        "outputTokens": 5913,
+        "cacheReadTokens": 100224,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 15,
+            "inputTokens": 104666,
+            "outputTokens": 5913,
+            "cacheReadTokens": 100224,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 3224.99193,
+          "model.end": 39056.359181999986,
+          "tool.end": 9359.436427000006
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 52330,
+        "nonHumanWallMs": 52330
+      },
+      "wallMs": 55883.19890000002,
+      "endedAt": "2026-11-02T07:11:25.880Z",
+      "normalizedWaitMetrics": {
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "nonHumanWallMs": 52330,
+        "provenance": "Known unattended worker answers all approvals automatically. Legacy raw metrics retained unchanged."
+      }
+    }
+  ]
+}

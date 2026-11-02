@@ -19,7 +19,7 @@ try {
   );
   const poll = setInterval(() => {
     for (const i of service.pending.values())
-      service.answer(i.id, { allow: true });
+      service.answer(i.id, { allow: true }, "automation");
   }, 100);
   try {
     await service.wait(session.id);

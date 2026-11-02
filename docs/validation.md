@@ -1,22 +1,19 @@
 # 本轮验证记录
 
-状态以真实命令结果为准。实现、模拟协议测试、真实模型测试、真实外部服务测试分别记录。
+当前状态以本文最后一节及 `evidence/baseline-results.json` 为准。下方历史章节保留早期401与协议验证事实，不用新结果覆盖原始失败。
 
-| 检查 | 状态 | 证据 |
+| 检查 | 当前状态 | 证据 |
 |---|---|---|
-| 独立 D: worktree | 通过 | `codex/cn-code-vnext`，起点 `03ffabf7` |
-| 本机推送权限 | 通过 | GitHub CLI 返回目标仓库 push=true |
-| TypeScript 类型检查 | 通过 | 2026-11-02 在 vnext 执行 typescript/bin/tsc --noEmit，退出 0 |
-| TypeScript 构建、单测 | 未完成 | WIP；React UI 与本轮测试尚未实现 |
-| Java smokeTest | 待执行 | — |
-| 自研内核真实模型 | 待执行 | — |
-| DSH 真实交互 | 待执行 | — |
-| Docker Linux 基线四次运行 | 待执行 | Docker daemon 初次探测未运行 |
-| OpenViking 真实服务与跨会话 | 待执行 | — |
-| Web 与桌面截图 | 待执行 | — |
-| 终端验收 | 待执行 | — |
-| 推送与草稿 PR | 待执行 | — |
-
+| 独立 D: worktree | 通过 | codex/cn-code-vnext |
+| 类型检查、构建 | 通过 | pnpm typecheck/build |
+| 单元与协议测试 | 15/15通过，零跳过 | pnpm test；含自动/人工等待分类 |
+| Java smokeTest | 38入口通过 | 本轮历史回归 |
+| 自研与DSH真实模型 | 文件写入/读取成功 | 原路由 deepseek-v4-flash；凭据仅保存在本机配置 |
+| 两任务×两内核 Linux 无记忆基线 | 四个任务-内核组合通过可信验收，各一个样本 | evidence/baseline-results.json 与 baseline-artifacts/ |
+| 可信验收正反例 | 通过 | evidence/verifier-controls.json |
+| OpenViking真实服务与记忆收益 | 未验证 | 尚缺可用embedding/服务配置，不强制注册云账号 |
+| Web、Electron、终端 | 实际客户端协议验证通过 | output/playwright/*.json 与截图 |
+| 草稿PR与图片 | 已交付，后续增量继续更新 | PR #1；未合并main |
 
 ## 2026-11-02 接续实施：运行记录与基线尝试
 
@@ -62,3 +59,27 @@
 - 已推送阶段提交 `a865c77`、`711f2a8` 至原分支；草稿 PR：[ #1](https://github.com/liuzhengxiang666/-CN-AGENT/pull/1)，保持 OPEN / DRAFT，未合并 main。
 - PR 描述嵌入四张此次实际运行 PNG，均为提交 `711f2a8` 的稳定 raw 链接；四条链接 HTTP HEAD 均返回 200 / image/png。图片对应当前 UI 代码，后续仅更新验证文档。
 - 最终 `pnpm typecheck/test/build` 与客户端协议检查通过；评测镜像再次构建通过。成功编码基线与真实记忆验收仍保持未通过。
+
+
+## 2026-11-02 新凭据后的有效无记忆基线
+
+用户提供的新凭据已保存到现有本机模型配置，测试后按用户要求保留，不回显、不写入仓库。模型路由仍为 deepseek-v4-flash。早期401卡点已解除。
+
+自研真实smoke：4.237秒，输入3710、输出333 token；文件内容实际核对为 `CN Code smoke`。DSH真实smoke也完成写入与读取；两者smoke的执行结束本身不替代任务验收。
+
+| 任务 | 内核 | run wall time | 实际输入token | 实际输出token | 外部验收 |
+|---|---|---:|---:|---:|---|
+| phone-number | CN Code | 15.952 s | 18023 | 2445 | 18/18通过，零跳过 |
+| phone-number | DSH | 17.841 s | 28468 | 2117 | 18/18通过，零跳过 |
+| kv-store-grpc | CN Code | 173.915 s | 209786 | 10403 | 生成文件、真实5328监听、Get/Set/更新通过 |
+| kv-store-grpc | DSH | 52.330 s | 104666 | 5913 | 同一可信验证通过 |
+
+所有运行关闭记忆和学习，使用同一模型路由、固定任务提交与同一Linux镜像。时间为run开始至清理结束，容器准备/验收等额外wall time另见报告。工具时间来自实际执行层；cache缺失仍为null。每组合仅一个纳入样本，不能推导稳定成功率或内核性能优势，尚无记忆收益实验。
+
+第一批成功运行的部分区间与额外DSH smoke重叠，已保留于 `evidence/baseline-first-valid-attempts.json` 并标注。受影响的phone-number/DSH与KV/CN Code随后在无额外模型调用时串行重跑；最终纳入结果、精确run ID、环境镜像和原始metrics见 `evidence/baseline-results.json`。Agent生成的交付物、SHA-256与可信验收输出见 `evidence/baseline-artifacts/`。
+
+计量纠正：这批无人评测中的旧humanWaitMs字段实际来自脚本自动回答的审批等待，并非人工。原始报告不改写，结果索引增加normalizedWaitMetrics，明确人工等待为0、自动交互等待另计。后续Service.answer记录actor，summarize分别计算humanWaitMs、automatedWaitMs和全部交互等待区间并集；新增单元与Service链路测试通过。用于此次基线的镜像先于这项分类修复，报告明确保留版本边界。
+
+OpenViking费用与账户说明：自部署不要求开通火山云OpenViking账号；模型API调用仍按提供方计费，也可选择本地embedding。云托管需要火山账号，费用/额度以控制台为准。本机当前可用内存约2GiB，尚未直接启用额外本地模型；仍需确定embedding与服务配置，再进行记忆真实隔离和收益验证。
+
+官方依据：[快速入门](https://github.com/volcengine/OpenViking/blob/main/docs/en/getting-started/02-quickstart.md)、[模型配置](https://github.com/volcengine/OpenViking/blob/main/docs/en/guides/01-configuration.md)。仅核对自部署路径，没有开通云付费服务。

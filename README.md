@@ -2,7 +2,7 @@
 
 个人自用的编码 Agent 与 Harness 研究项目。保留 Java 21 历史实现，TypeScript 主线提供自研内核和固定版 DSH 内核，共用运行记录、HTTP 服务、React Web、Electron 桌面与交互终端。切换内核会创建新会话。
 
-当前为研究用未完成版本。已通过自动化与协议检查；真实提供方调用因 HTTP 401 受阻，OpenViking 真实隔离与记忆收益未验收。完整状态见 [验证记录](docs/validation.md)、[验收清单](checklist.md) 和 [演化路线](docs/evolution.md)。没有可报告的编码成功率或记忆性能收益。
+当前为研究用未完成版本。两项任务×两内核的真实Linux无记忆基线均已通过外部可信验收（每组合一个样本）；OpenViking 真实隔离与记忆收益未验收。完整状态见 [验证记录](docs/validation.md)、[验收清单](checklist.md) 和 [演化路线](docs/evolution.md)。单次样本不支持稳定成功率或内核速度优势结论，尚无记忆性能收益数据。
 
 ## 启动
 
@@ -66,6 +66,7 @@ pnpm eval prepare
 pnpm eval build
 pnpm --dir vnext exec tsx scripts/verifier-check.ts
 pnpm eval run
+# 可定向重跑同一评测器：pnpm eval run phone-number dsh
 ```
 
 Docker Linux 评测串行运行两个任务×两个内核。固定提交、限时、只编码工具、模型路由、无记忆/无学习、镜像 ID、运行轨迹、交付物清单和外部验收分别保存于 `.cncode/vnext/eval`。验收代码与参考答案不挂载进 Agent 容器。phone-number 启用原始全部 xtest 并检查零跳过；KV 由独立容器验证真实 5328 监听、生成绑定及 Get/Set/更新。任何非通过结果会让评测命令退出非零。
@@ -74,6 +75,6 @@ Docker Linux 评测串行运行两个任务×两个内核。固定提交、限�
 
 ## 运行记录与后续
 
-每次运行保存 `run.json`、`events.jsonl` 与支持的文本交付物快照。token 缺失为 null；会话执行状态与交付 verdict 分开，按请求用途分账，人工等待取并发区间并集。工具计时来自实际调用层（DSH 为 tools/execute），包含工具内部发生的等待，不是 CPU 时间；人工等待另有记录。并行工具总和不能当作 wall time。
+每次运行保存 `run.json`、`events.jsonl` 与支持的文本交付物快照。token 缺失为 null；会话执行状态与交付 verdict 分开，按请求用途分账，人工与自动回答等待分别记录，取并发区间并集；早期基线字段分类更正见验证记录。工具计时来自实际调用层（DSH 为 tools/execute），包含工具内部发生的等待，不是 CPU 时间；人工等待另有记录。并行工具总和不能当作 wall time。
 
 OpenViking SDK 尚处于协议验证阶段。现成 DSH 插件已做契约复核，但严格项目隔离、跨内核召回、纠正与提取完成状态仍待真实服务测试。先取得有效无记忆基线，再开放完整记忆并比较收益与额外成本。Jev、Dreaming 式整理和 RSI 只在路线中保留。

@@ -471,3 +471,42 @@ test("prototype-like input ID remains idempotent across persistence", async (t) 
   assert.equal(restored.submit(session.id, "__proto__", "hello"), first);
   assert.equal(calls, 1);
 });
+
+test("automated approval waits are recorded separately from human waits", () => {
+  const m = summarize([
+    event("interaction", { id: "auto" }, 0),
+    event("interaction", { id: "human" }, 5),
+    event("interaction.answered", { id: "auto", actor: "automation" }, 10),
+    event("interaction.answered", { id: "human", actor: "human" }, 20),
+  ]);
+  assert.equal(m.automatedWaitMs, 10);
+  assert.equal(m.humanWaitMs, 15);
+  assert.equal(m.interactionWaitMs, 20);
+});
+
+test("service propagates automated answer origin into final metrics", async (t) => {
+  const dir = await fixture(t);
+  const s = new Service(config(dir), () => ({
+    capabilities: {},
+    async run(_input, c) {
+      await c.interact("approval", { tool: "fixture" });
+    },
+    async close() {},
+  }));
+  const session = await s.create("cncode", dir);
+  const runId = s.submit(session.id, "auto-answer", "go");
+  while (!s.pending.size) await new Promise((r) => setTimeout(r, 1));
+  await new Promise((r) => setTimeout(r, 15));
+  s.answer([...s.pending.keys()][0]!, { allow: true }, "automation");
+  await s.wait(session.id);
+  assert.equal(s.records.get(runId).metrics.humanWaitMs, 0);
+  assert(s.records.get(runId).metrics.automatedWaitMs >= 15);
+  assert(
+    s.records
+      .read(runId)
+      .some(
+        (e) =>
+          e.type === "interaction.answered" && e.data.actor === "automation",
+      ),
+  );
+});

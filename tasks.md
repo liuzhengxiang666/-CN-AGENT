@@ -129,3 +129,5 @@
 - T9–T10：`server`、`src/ui/main.tsx`、`src/ui/primitives.tsx`、`src/ui/style.css`、`terminal.ts`、`desktop/main.cjs`；Figma 对应关系在 `docs/ui-design.md`。客户端协议验证见 `scripts/ui-check.ts`、`scripts/desktop-check.ts`。
 - T11 接入主流程：根脚本转发既有 workspace；`README.md` 提供配置、D: 环境、客户端和评测命令；未另搭服务或新内核。
 - T12 端到端验证：单测、Java 回归、客户端协议与可信验收控制实验有记录，真实模型和记忆端到端仍未通过；不得把阶段草稿 PR 当作全部计划已完成。
+
+T7最新进展：新凭据后的四个组合均通过真实Linux可信验收，见evidence/baseline-results.json；定向重跑复用cli.ts的task/engine过滤。T8仍需embedding和服务配置，不要求购买云托管。

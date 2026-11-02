@@ -147,6 +147,7 @@ export function summarize(events: RunEvent[]) {
   const phases: Json = {};
   const waits = new Map<string, number>();
   const intervals: [number, number][] = [];
+  const automatedIntervals: [number, number][] = [];
   for (const e of events) {
     if (e.type === "model.start" && !requests.has(e.data.requestId))
       requests.set(e.data.requestId, {
@@ -173,7 +174,10 @@ export function summarize(events: RunEvent[]) {
     ) {
       const start = waits.get(e.data.id);
       if (start !== undefined) {
-        intervals.push([start, Date.parse(e.at)]);
+        (e.data.actor === "automation" ? automatedIntervals : intervals).push([
+          start,
+          Date.parse(e.at),
+        ]);
         waits.delete(e.data.id);
       }
     }
@@ -184,13 +188,18 @@ export function summarize(events: RunEvent[]) {
       start,
       Date.parse(events.at(-1)?.at ?? new Date().toISOString()),
     ]);
-  intervals.sort((a, b) => a[0] - b[0]);
-  let humanWaitMs = 0,
-    end = 0;
-  for (const [a, b] of intervals) {
-    humanWaitMs += Math.max(0, b - Math.max(a, end));
-    end = Math.max(end, b);
-  }
+  const union = (ranges: [number, number][]) => {
+    let total = 0,
+      end = 0;
+    for (const [a, b] of [...ranges].sort((a, b) => a[0] - b[0])) {
+      total += Math.max(0, b - Math.max(a, end));
+      end = Math.max(end, b);
+    }
+    return total;
+  };
+  const humanWaitMs = union(intervals),
+    automatedWaitMs = union(automatedIntervals),
+    interactionWaitMs = union([...intervals, ...automatedIntervals]);
   const totals = (entries: { usage: Usage }[]) => {
     const sum = (key: "input" | "output" | "cacheRead" | "cacheWrite") => {
       const vals = entries.map((x) => x.usage[key]);
@@ -215,6 +224,8 @@ export function summarize(events: RunEvent[]) {
     ...totals(values),
     byPurpose,
     humanWaitMs,
+    automatedWaitMs,
+    interactionWaitMs,
     phaseTotalsMs: phases,
     toolTimeIsWallTime: false,
   };
