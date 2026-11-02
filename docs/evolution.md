@@ -1,0 +1,48 @@
+# CN Code 演化路线
+
+## 起点：研究 Harness，用 DeepSeek 写代码
+
+用户确认最初使用 ChatGPT Codex 辅助开发，目的是理解 Harness 底层逻辑；CN Code 运行时接入 DeepSeek，主要用于写代码。开发助手与运行模型是两个概念。最早使用的具体模型版本尚未确认。
+
+公开仓库两次提交都在 2026-06-13，只能证明上传时间，不能据此推断实际开发起点或使用了哪个 GPT 版本。起始基线为 `03ffabf7ca1edceea85301d2df0815f76baa3c2d`。
+
+Java 已有：AgentLoop、文件与 shell 工具、权限、Web/TUI/REPL、JSONL 会话、指令 include、压缩、文件记忆、Skill 和 MCP。原规格已归档到 `docs/specs/legacy-session-memory/`。
+
+## 本轮路线
+
+```mermaid
+flowchart LR
+ A[Java 自研 Harness] --> B[TS 自研与 DSH 双内核]
+ B --> C[运行记录与两项任务基线]
+ C --> D[OpenViking 跨会话记忆]
+ D --> E[桌面 Web 终端]
+ E --> F[Jev 路由实验]
+ F --> G[记忆整理]
+ G --> H[受控 RSI]
+```
+
+| 阶段 | 动机 | 借鉴或复用 | 验证证据 | 当前状态 |
+|---|---|---|---|---|
+| Java 起点 | 理解 Agent 如何持续执行编码任务 | 自研循环、工具、会话 | 历史 Java 源码及 smokeTest | 源码已有；本轮重新验证另记 |
+| TS 主线 | 接入 DSH，保持自己的内核可演进 | 原 Java 边界、DSH SDK | 类型检查、内核行为测试、真实运行记录 | 实施中 |
+| 运行与评测 | 从手动看效果转为可复现比较 | DSH 稳定工具 ID、usage；公开编码任务 | 每次运行的报告和受保护验收 | 待验证 |
+| 跨会话记忆 | 减少重复解释和重复探索 | OpenViking 插件与 SDK；Claude Code 按需记忆思路 | 新会话召回、项目隔离、更新纠正 | 待验证 |
+| 多客户端 | 日常自用，完整处理审批和追问 | 共用服务协议与 UI | 实际桌面、Web、终端验收及截图 | 待验证 |
+| Jev | 判断轻量路由是否值得 | TypeSafe Jev | 带回退的路由对照实验 | 后续计划 |
+| 记忆整理 | 合并重复、更新旧结论 | Dreams 的独立输出与审核思路 | 差异、版本、回滚与独立成本 | 后续计划 |
+| RSI | 在证据支持下优化单个 Skill | 版本快照、固定基线与保留集 | 候选与基线对比，失败回滚 | 后续计划 |
+
+## 参考边界
+
+- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)：SDK、会话事件、插件扩展。Super-agent prototype 的配置快照可借鉴；不把任务准入 Eval 当编码质量评测。
+- [OpenViking DSH 集成](https://github.com/volcengine/OpenViking/blob/main/docs/en/agent-integrations/17-dsh.md)：现成召回与捕获插件。DSH alpha.2 需本项目验证，不能因 peer 范围允许就说兼容已验证。
+- [Claude Code Memory](https://code.claude.com/docs/en/memory)：短索引和按需读取；不把全部对话都当长期记忆。
+- [Dreams](https://platform.claude.com/docs/en/managed-agents/dreams)：Managed Agents 研究预览，输入不改、整理结果另存；本项目尚未接入这一托管 API。
+
+## 面试口述：按证据更新
+
+已经可以说：“一开始我就是为了研究 Harness 底层逻辑，自己搭了 CN Code，接 DeepSeek 写代码。当时更多是给几个具体任务让它跑，看交付效果，也会留意耗时和工具执行。”
+
+后续完成相应验收后再说：“后来发现凭印象比较不太可靠，就把耗时、token、工具调用和交付结果统一记录下来，固定几个任务做回归。再往后加跨会话记忆，也用相同任务验证有没有减少重复探索，同时记录它额外的开销。”
+
+没有运行结果时只能介绍设计与实现，不编造成功率、性能提升或公司项目经历。验收清单与 `docs/validation.md` 是本轮状态依据。
