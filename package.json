@@ -1,0 +1,5 @@
+{
+  "name": "cn-code-workspace", "private": true,
+  "packageManager": "pnpm@10.20.0",
+  "scripts": {"dev":"pnpm --dir vnext dev", "build":"pnpm --dir vnext build", "test":"pnpm --dir vnext test", "typecheck":"pnpm --dir vnext typecheck", "desktop":"pnpm --dir vnext desktop", "terminal":"pnpm --dir vnext terminal", "eval":"pnpm --dir vnext eval"}
+}

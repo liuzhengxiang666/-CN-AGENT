@@ -1,0 +1,6 @@
+import { Client } from '@modelcontextprotocol/sdk/client/index.js';
+import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
+import type { Json } from './types.js';
+import type { Tool } from './tools.js';
+export async function connectMcp(configs:Json[],tools:Map<string,Tool>){const clients:Client[]=[];try{for(const cfg of configs){const client=new Client({name:'cncode',version:'0.2.0'});const transport=cfg.url?new StreamableHTTPClientTransport(new URL(cfg.url),{requestInit:{headers:cfg.headers??{}}}):new StdioClientTransport({command:cfg.command,args:cfg.args??[],env:{...Object.fromEntries(Object.entries(process.env).filter((x):x is [string,string]=>typeof x[1]==='string')),...cfg.env},stderr:'pipe'});await client.connect(transport);clients.push(client);const list=await client.listTools();for(const tool of list.tools){const name='mcp__'+cfg.name+'__'+tool.name;tools.set(name,{readonly:false,schema:{type:'function',function:{name,description:tool.description,parameters:tool.inputSchema}},run:async(args)=>client.callTool({name:tool.name,arguments:args})});}}return async()=>{await Promise.allSettled(clients.map(x=>x.close()));};}catch(e){await Promise.allSettled(clients.map(x=>x.close()));throw e;}}

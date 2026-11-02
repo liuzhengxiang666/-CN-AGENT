@@ -6,7 +6,8 @@
 |---|---|---|
 | 独立 D: worktree | 通过 | `codex/cn-code-vnext`，起点 `03ffabf7` |
 | 本机推送权限 | 通过 | GitHub CLI 返回目标仓库 push=true |
-| TypeScript 类型、构建、单测 | 待执行 | — |
+| TypeScript 类型检查 | 通过 | 2026-11-02 在 vnext 执行 typescript/bin/tsc --noEmit，退出 0 |
+| TypeScript 构建、单测 | 未完成 | WIP；React UI 与本轮测试尚未实现 |
 | Java smokeTest | 待执行 | — |
 | 自研内核真实模型 | 待执行 | — |
 | DSH 真实交互 | 待执行 | — |

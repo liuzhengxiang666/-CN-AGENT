@@ -1,0 +1,28 @@
+import { mkdirSync, writeFileSync, renameSync, appendFileSync, readFileSync, readdirSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
+import { randomUUID } from 'node:crypto';
+import { EventEmitter } from 'node:events';
+import type { Session, Run, RunEvent, Json, Usage } from './types.js';
+export function atomic(path:string,value:unknown){const tmp=path+'.'+randomUUID()+'.tmp';writeFileSync(tmp,JSON.stringify(value,null,2));renameSync(tmp,path);}
+export class Records {
+  events=new EventEmitter();
+  constructor(readonly root:string,readonly secrets:string[]=[]){mkdirSync(join(root,'sessions'),{recursive:true});mkdirSync(join(root,'runs'),{recursive:true});}
+  scrub<T>(value:T):T {let s=JSON.stringify(value);for(const secret of this.secrets.filter(Boolean))s=s.split(secret).join('[REDACTED]');return JSON.parse(s.replace(/(Bearer\s+)[A-Za-z0-9_.\-]+/g,'$1[REDACTED]'));}
+  session(s:Session){atomic(join(this.root,'sessions',s.id+'.json'),this.scrub(s));}
+  sessions():Session[]{return readdirSync(join(this.root,'sessions')).filter(x=>x.endsWith('.json')).map(x=>JSON.parse(readFileSync(join(this.root,'sessions',x),'utf8')));}
+  runDir(id:string){if(!/^[a-zA-Z0-9-]+$/.test(id))throw new Error('非法运行 ID');return join(this.root,'runs',id);}
+  runs():Run[]{return readdirSync(join(this.root,'runs')).filter(x=>existsSync(join(this.runDir(x),'run.json'))).map(x=>this.get(x));}
+  get(id:string):Run{return JSON.parse(readFileSync(join(this.runDir(id),'run.json'),'utf8'));}
+  begin(s:Session,model:string,versions:Json):Run {const r:Run={id:randomUUID(),sessionId:s.id,engine:s.engine,model,startedAt:new Date().toISOString(),state:'running',outcome:'unverified',versions,metrics:{}};mkdirSync(join(this.runDir(r.id),'artifacts'),{recursive:true});this.save(r);return r;}
+  save(r:Run){atomic(join(this.runDir(r.id),'run.json'),this.scrub(r));}
+  read(id:string,after=0):RunEvent[]{const p=join(this.runDir(id),'events.jsonl');if(!existsSync(p))return [];return readFileSync(p,'utf8').split('\n').filter(Boolean).map((s,i,a)=>{try{return JSON.parse(s);}catch(e){if(i===a.length-1)return null;throw e;}}).filter((x):x is RunEvent=>x!==null&&x.seq>after);}
+  emit(id:string,type:string,data:Json={}){const e:RunEvent={seq:(this.sequence.get(id)??this.read(id).at(-1)?.seq??0)+1,at:new Date().toISOString(),runId:id,type,data:this.scrub(data)};this.sequence.set(id,e.seq);appendFileSync(join(this.runDir(id),'events.jsonl'),JSON.stringify(e)+'\n');this.events.emit(id,e);}
+  private sequence=new Map<string,number>();
+  finish(r:Run,state:Run['state'],error?:string){r.state=state;r.endedAt=new Date().toISOString();if(error)r.error=error;r.metrics=summarize(this.read(r.id));r.metrics.wallMs=Date.parse(r.endedAt)-Date.parse(r.startedAt);this.save(r);this.emit(r.id,'run.end',{state,outcome:r.outcome,metrics:r.metrics,error});}
+}
+export function summarize(events:RunEvent[]){
+  const requests=new Map<string,Usage>();const phases:Json={};
+  for(const e of events){if(e.type==='usage')requests.set(e.data.requestId,e.data.usage);if(e.type.endsWith('.end')&&typeof e.data.durationMs==='number')phases[e.type]=(phases[e.type]??0)+e.data.durationMs;}
+  const sum=(key:keyof Usage)=>{const vals=[...requests.values()].map(x=>x[key]);return vals.length&&vals.every(x=>typeof x==='number')?(vals as number[]).reduce((a,b)=>a+b,0):null;};
+  return {requests:requests.size,inputTokens:sum('input'),outputTokens:sum('output'),cacheReadTokens:sum('cacheRead'),cacheWriteTokens:sum('cacheWrite'),phaseTotalsMs:phases};
+}
