@@ -79,3 +79,5 @@
 - Web/终端交互自动检查已过；Electron实际启动、两主题、恢复历史、沙箱、子服务退出检查已过，桌面消息/审批/追问/停止用真实自研循环和本地模型端点通过。截图在output/playwright，提交并嵌入本阶段草稿PR。
 - 最新启动、验证命令见README.md。所有开发缓存/临时目录放D:；不要将CLI产生的.playwright-cli或私有运行原件提交。
 - 仍需：有效无记忆模型基线 → OpenViking真实部署与隔离/纠正/跨内核 → 记忆收益及成本对照。Jev/Dreaming/RSI不实施。草稿PR不合并main。
+
+阶段草稿PR：https://github.com/liuzhengxiang666/-CN-AGENT/pull/1；四张实际UI截图已嵌入且链接返回200。接续时先解决401与OpenViking真实服务/隔离，不要把草稿交付当作完整vNext验收。

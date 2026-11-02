@@ -55,3 +55,10 @@
 评测器正反例检查还修复了 Jest config 的转义错误。Windows checkout 的参考 shell 脚本只在控制实验副本中归一化 CRLF，可信 fixture 原件及 SHA-256 清单不修改。基线新增 coding-only-v1 工具范围（不提供 subagent/workflow/goal/web），并记录镜像 ID 与环境配置；四次早期 401 报告先于该范围收紧，没有编码结果，不据此做内核对比。
 
 仍阻塞：真实 DeepSeek 凭据返回 401；未配置可用的 OpenViking 服务。成功编码基线、跨会话/跨内核记忆、纠正旧值、真实项目隔离、提取完成状态与记忆额外 token 均未通过。工具执行层计时包括其内部阻塞，尤其追问和工具内部申请扩权；人工等待另计，不把两者相加当作 wall time。
+
+
+## 阶段交付
+
+- 已推送阶段提交 `a865c77`、`711f2a8` 至原分支；草稿 PR：[ #1](https://github.com/liuzhengxiang666/-CN-AGENT/pull/1)，保持 OPEN / DRAFT，未合并 main。
+- PR 描述嵌入四张此次实际运行 PNG，均为提交 `711f2a8` 的稳定 raw 链接；四条链接 HTTP HEAD 均返回 200 / image/png。图片对应当前 UI 代码，后续仅更新验证文档。
+- 最终 `pnpm typecheck/test/build` 与客户端协议检查通过；评测镜像再次构建通过。成功编码基线与真实记忆验收仍保持未通过。
