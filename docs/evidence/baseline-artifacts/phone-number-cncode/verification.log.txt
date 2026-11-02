@@ -1,0 +1,31 @@
+
+{"expected":18,"passed":18,"skipped":0,"outcome":"pass"}
+PASS ../tmp/check/phone-number.spec.js
+  Phone Number
+    Cleanup user-entered phone numbers
+      ✓ cleans the number (2 ms)
+      ✓ cleans numbers with dots (1 ms)
+      ✓ cleans numbers with multiple spaces (1 ms)
+      ✓ invalid when 9 digits (4 ms)
+      ✓ invalid when 11 digits does not start with a 1 (1 ms)
+      ✓ valid when 11 digits and starting with 1
+      ✓ valid when 11 digits and starting with 1 even with punctuation
+      ✓ invalid when more than 11 digits (1 ms)
+      ✓ invalid with letters
+      ✓ invalid with punctuations (1 ms)
+      ✓ invalid if area code starts with 0
+      ✓ invalid if area code starts with 1
+      ✓ invalid if exchange code starts with 0 (1 ms)
+      ✓ invalid if exchange code starts with 1 (1 ms)
+      ✓ invalid if area code starts with 0 on valid 11-digit number
+      ✓ invalid if area code starts with 1 on valid 11-digit number
+      ✓ invalid if exchange code starts with 0 on valid 11-digit number (1 ms)
+      ✓ invalid if exchange code starts with 1 on valid 11-digit number (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       18 passed, 18 total
+Snapshots:   0 total
+Time:        0.802 s
+Ran all test suites.
+Test results written to: ../tmp/jest.json
+

@@ -1,0 +1,214 @@
+{
+  "kind": "first-valid-provider-attempts",
+  "note": "Four task verifications passed. Two runs overlap auxiliary smoke; uncontended reruns are recorded separately. Not a statistical success rate.",
+  "runs": [
+    {
+      "id": "phone-number-cncode-8f0ee164-7106-4d3a-ab20-b5c30fd5a26e",
+      "task": "phone-number",
+      "engine": "cncode",
+      "fixtureCommit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "completed",
+      "outcome": "pass",
+      "startedAt": "2026-11-02T07:07:41.278Z",
+      "image": "sha256:2c6e5bc5c44ef8a3df646b0b0dc79f7cb778e35489a1de8d706ede1bcfc1cc93",
+      "environment": {
+        "toolPolicy": "coding-only-v1",
+        "node": "24.16.0",
+        "python": "Debian 3.11 venv",
+        "grpcio": "1.73.0",
+        "cpus": 1,
+        "memory": "2g",
+        "maxTokens": 8192,
+        "deadlineSeconds": 300
+      },
+      "runId": "61e1aa42-0d79-49f8-9b65-764a703e2fe2",
+      "metrics": {
+        "requests": 5,
+        "inputTokens": 18023,
+        "outputTokens": 2445,
+        "cacheReadTokens": 14720,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 5,
+            "inputTokens": 18023,
+            "outputTokens": 2445,
+            "cacheReadTokens": 14720,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 24,
+        "phaseTotalsMs": {
+          "preparation.end": 14.387839999999983,
+          "model.end": 15582.908358,
+          "tool.end": 113.16160900000114
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 15952,
+        "nonHumanWallMs": 15928
+      },
+      "wallMs": 21110.550900000002,
+      "endedAt": "2026-11-02T07:08:02.389Z",
+      "timingCaveat": null
+    },
+    {
+      "id": "phone-number-dsh-fc4bb122-83c5-4e1c-99a9-6f4c3cf8757e",
+      "task": "phone-number",
+      "engine": "dsh",
+      "fixtureCommit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "completed",
+      "outcome": "pass",
+      "startedAt": "2026-11-02T07:08:02.392Z",
+      "image": "sha256:2c6e5bc5c44ef8a3df646b0b0dc79f7cb778e35489a1de8d706ede1bcfc1cc93",
+      "environment": {
+        "toolPolicy": "coding-only-v1",
+        "node": "24.16.0",
+        "python": "Debian 3.11 venv",
+        "grpcio": "1.73.0",
+        "cpus": 1,
+        "memory": "2g",
+        "maxTokens": 8192,
+        "deadlineSeconds": 300
+      },
+      "runId": "55f2116c-7aa8-4ab2-9498-a86d40ed208b",
+      "metrics": {
+        "requests": 5,
+        "inputTokens": 28680,
+        "outputTokens": 3368,
+        "cacheReadTokens": null,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 5,
+            "inputTokens": 28680,
+            "outputTokens": 3368,
+            "cacheReadTokens": null,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 2854.3819519999997,
+          "model.end": 19646.786265000002,
+          "tool.end": 188.23274599999877
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 23116,
+        "nonHumanWallMs": 23116
+      },
+      "wallMs": 27139.363800000003,
+      "endedAt": "2026-11-02T07:08:29.531Z",
+      "timingCaveat": "Overlaps auxiliary DSH smoke; rerun for uncontended baseline"
+    },
+    {
+      "id": "kv-store-grpc-cncode-2ddb7816-3889-4abf-9643-47db7a04e268",
+      "task": "kv-store-grpc",
+      "engine": "cncode",
+      "fixtureCommit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "completed",
+      "outcome": "pass",
+      "startedAt": "2026-11-02T07:08:29.535Z",
+      "image": "sha256:2c6e5bc5c44ef8a3df646b0b0dc79f7cb778e35489a1de8d706ede1bcfc1cc93",
+      "environment": {
+        "toolPolicy": "coding-only-v1",
+        "node": "24.16.0",
+        "python": "Debian 3.11 venv",
+        "grpcio": "1.73.0",
+        "cpus": 1,
+        "memory": "2g",
+        "maxTokens": 8192,
+        "deadlineSeconds": 900
+      },
+      "runId": "6e44d582-f4d1-4d8b-ab2c-a4b0db9b25ff",
+      "metrics": {
+        "requests": 19,
+        "inputTokens": 61047,
+        "outputTokens": 3772,
+        "cacheReadTokens": 56704,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 19,
+            "inputTokens": 61047,
+            "outputTokens": 3772,
+            "cacheReadTokens": 56704,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 187,
+        "phaseTotalsMs": {
+          "preparation.end": 12.710257000000013,
+          "model.end": 32994.86654799996,
+          "tool.end": 83109.83650300001
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 117072,
+        "nonHumanWallMs": 116885
+      },
+      "wallMs": 120458.9852,
+      "endedAt": "2026-11-02T07:10:29.995Z",
+      "timingCaveat": "Overlaps auxiliary DSH smoke; rerun for uncontended baseline"
+    },
+    {
+      "id": "kv-store-grpc-dsh-ec2de88c-0954-49eb-b956-b9821377fa25",
+      "task": "kv-store-grpc",
+      "engine": "dsh",
+      "fixtureCommit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "completed",
+      "outcome": "pass",
+      "startedAt": "2026-11-02T07:10:29.997Z",
+      "image": "sha256:2c6e5bc5c44ef8a3df646b0b0dc79f7cb778e35489a1de8d706ede1bcfc1cc93",
+      "environment": {
+        "toolPolicy": "coding-only-v1",
+        "node": "24.16.0",
+        "python": "Debian 3.11 venv",
+        "grpcio": "1.73.0",
+        "cpus": 1,
+        "memory": "2g",
+        "maxTokens": 8192,
+        "deadlineSeconds": 900
+      },
+      "runId": "ebf27e90-627f-4eac-96ac-d371452c3d50",
+      "metrics": {
+        "requests": 15,
+        "inputTokens": 104666,
+        "outputTokens": 5913,
+        "cacheReadTokens": 100224,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 15,
+            "inputTokens": 104666,
+            "outputTokens": 5913,
+            "cacheReadTokens": 100224,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 3224.99193,
+          "model.end": 39056.359181999986,
+          "tool.end": 9359.436427000006
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 52330,
+        "nonHumanWallMs": 52330
+      },
+      "wallMs": 55883.19890000002,
+      "endedAt": "2026-11-02T07:11:25.880Z",
+      "timingCaveat": null
+    }
+  ]
+}

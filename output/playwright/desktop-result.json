@@ -1,0 +1,12 @@
+{
+  "mode": "real-electron-restored-provider-auth-failure",
+  "render": true,
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "sandbox": true,
+  "contextIsolation": true,
+  "nodeIntegration": false,
+  "childServerStopped": true
+}

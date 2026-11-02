@@ -1,0 +1,1362 @@
+{
+  "note": "Failed protocol assumptions, fixture issues, contamination and selected attempts retained. No selective deletion of failed evidence.",
+  "attempts": [
+    {
+      "directory": "772c8c4e-d9a5-4f24-89e4-36c5060308c4",
+      "file": "report.json",
+      "status": "fail",
+      "error": "OpenVikingError: Directory not found: viking://user/cncode/peers/cncode-38dcdce8c8b20748310f12e8/memories",
+      "runs": [
+        {
+          "id": "027e2055-776e-4552-9c58-80f842859f12",
+          "label": "extract-initial-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7304,
+            "outputTokens": 966,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7304,
+                "outputTokens": 966,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 305.3473620002478,
+              "model.end": 6467.848192999554,
+              "memory.extraction.end": 19567.7422
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 20370,
+            "nonHumanWallMs": 20370
+          }
+        },
+        {
+          "id": "89bd085a-aa40-40a4-a823-bf7159e9df27",
+          "label": "extract-initial-b",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7300,
+            "outputTokens": 480,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7300,
+                "outputTokens": 480,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 176.7681999999695,
+              "model.end": 3376.108595000005,
+              "memory.extraction.end": 15962.512199999997
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 16576,
+            "nonHumanWallMs": 16576
+          }
+        }
+      ]
+    },
+    {
+      "directory": "ca632b66-9b1b-4f4d-8f6d-6a9c855941b8",
+      "file": "failed-before-resume-1793606023428.json",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: MCP error -32000: Connection closed\n+ actual - expected\n\n+ 'failed'\n- 'completed'\n",
+      "runs": [
+        {
+          "id": "f393ffa2-77fd-4948-bb68-d774e93da17c",
+          "label": "extract-initial-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7278,
+            "outputTokens": 1579,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7278,
+                "outputTokens": 1579,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 1019.8780760001682,
+              "model.end": 9622.40771100005,
+              "memory.extraction.end": 22702.6057
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 23532,
+            "nonHumanWallMs": 23532
+          }
+        },
+        {
+          "id": "9db8c97c-f018-48b8-8d92-cc36181e4b22",
+          "label": "extract-initial-b",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7261,
+            "outputTokens": 1646,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7261,
+                "outputTokens": 1646,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 465.5711280001924,
+              "model.end": 10289.345500000309,
+              "memory.extraction.end": 22103.9306
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 22770,
+            "nonHumanWallMs": 22770
+          }
+        },
+        {
+          "id": "c29add3f-c752-4882-b347-57d0ea2ff6e3",
+          "label": "withheld-conventions-cncode-no-memory",
+          "state": "failed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 0,
+            "inputTokens": null,
+            "outputTokens": null,
+            "cacheReadTokens": null,
+            "cacheWriteTokens": null,
+            "byPurpose": {},
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {},
+            "toolTimeIsWallTime": false,
+            "wallMs": 6297,
+            "nonHumanWallMs": 6297
+          }
+        }
+      ]
+    },
+    {
+      "directory": "ca632b66-9b1b-4f4d-8f6d-6a9c855941b8",
+      "file": "failed-before-resume.json",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Missing expected rejection.",
+      "runs": [
+        {
+          "id": "f393ffa2-77fd-4948-bb68-d774e93da17c",
+          "label": "extract-initial-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7278,
+            "outputTokens": 1579,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7278,
+                "outputTokens": 1579,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 1019.8780760001682,
+              "model.end": 9622.40771100005,
+              "memory.extraction.end": 22702.6057
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 23532,
+            "nonHumanWallMs": 23532
+          }
+        },
+        {
+          "id": "9db8c97c-f018-48b8-8d92-cc36181e4b22",
+          "label": "extract-initial-b",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7261,
+            "outputTokens": 1646,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7261,
+                "outputTokens": 1646,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 465.5711280001924,
+              "model.end": 10289.345500000309,
+              "memory.extraction.end": 22103.9306
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 22770,
+            "nonHumanWallMs": 22770
+          }
+        }
+      ]
+    },
+    {
+      "directory": "ca632b66-9b1b-4f4d-8f6d-6a9c855941b8",
+      "file": "report.json",
+      "status": "pass",
+      "error": null,
+      "runs": [
+        {
+          "id": "f393ffa2-77fd-4948-bb68-d774e93da17c",
+          "label": "extract-initial-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7278,
+            "outputTokens": 1579,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7278,
+                "outputTokens": 1579,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 1019.8780760001682,
+              "model.end": 9622.40771100005,
+              "memory.extraction.end": 22702.6057
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 23532,
+            "nonHumanWallMs": 23532
+          }
+        },
+        {
+          "id": "9db8c97c-f018-48b8-8d92-cc36181e4b22",
+          "label": "extract-initial-b",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7261,
+            "outputTokens": 1646,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7261,
+                "outputTokens": 1646,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 465.5711280001924,
+              "model.end": 10289.345500000309,
+              "memory.extraction.end": 22103.9306
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 22770,
+            "nonHumanWallMs": 22770
+          }
+        },
+        {
+          "id": "0c0d46eb-7fec-47e2-b951-5554604b4c25",
+          "label": "withheld-conventions-cncode-no-memory",
+          "state": "completed",
+          "outcome": "fail",
+          "metrics": {
+            "requests": 3,
+            "inputTokens": 3218,
+            "outputTokens": 804,
+            "cacheReadTokens": 2048,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 3,
+                "inputTokens": 3218,
+                "outputTokens": 804,
+                "cacheReadTokens": 2048,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "preparation.end": 4.641300000000001,
+              "model.end": 6860.088599999999,
+              "tool.end": 58.52160000000026
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 6943,
+            "nonHumanWallMs": 6943
+          }
+        },
+        {
+          "id": "98d45bff-fcc4-43d3-b4e7-fbed6da47bc2",
+          "label": "withheld-conventions-cncode-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 5,
+            "inputTokens": 11644,
+            "outputTokens": 2296,
+            "cacheReadTokens": 9600,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 5,
+                "inputTokens": 11644,
+                "outputTokens": 2296,
+                "cacheReadTokens": 9600,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 25,
+            "interactionWaitMs": 25,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 151.43125200029317,
+              "memory.recall.end": 177.84640000000036,
+              "preparation.end": 182.21430000000055,
+              "model.end": 16813.078,
+              "tool.end": 60.12489999999707
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 18032,
+            "nonHumanWallMs": 18032
+          }
+        },
+        {
+          "id": "11d0e053-1a99-4077-b74a-624b64fc50be",
+          "label": "explicit-control-cncode-no-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 6,
+            "inputTokens": 7746,
+            "outputTokens": 784,
+            "cacheReadTokens": 6144,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 6,
+                "inputTokens": 7746,
+                "outputTokens": 784,
+                "cacheReadTokens": 6144,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 63,
+            "interactionWaitMs": 63,
+            "phaseTotalsMs": {
+              "preparation.end": 3.546200000000681,
+              "model.end": 7742.187600000001,
+              "tool.end": 717.1964999999982
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 8564,
+            "nonHumanWallMs": 8564
+          }
+        },
+        {
+          "id": "54f4a913-f866-4bce-88a0-ecee509e650c",
+          "label": "explicit-control-cncode-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 4,
+            "inputTokens": 5441,
+            "outputTokens": 366,
+            "cacheReadTokens": 3712,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 4,
+                "inputTokens": 5441,
+                "outputTokens": 366,
+                "cacheReadTokens": 3712,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 12,
+            "interactionWaitMs": 12,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 133.70296499942924,
+              "memory.recall.end": 155.4441999999981,
+              "preparation.end": 159.09790000000066,
+              "model.end": 3981.9398,
+              "tool.end": 4.112199999995937
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 5104,
+            "nonHumanWallMs": 5104
+          }
+        },
+        {
+          "id": "743689ec-58d4-441c-80e3-7be9f28b6ee4",
+          "label": "withheld-conventions-dsh-no-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 11,
+            "inputTokens": 326940,
+            "outputTokens": 11386,
+            "cacheReadTokens": 266112,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 11,
+                "inputTokens": 326940,
+                "outputTokens": 11386,
+                "cacheReadTokens": 266112,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "startup.end": 2617.091800000002,
+              "model.end": 75651.2199,
+              "tool.end": 1245.1058000000094
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 80397,
+            "nonHumanWallMs": 80397
+          }
+        },
+        {
+          "id": "93595f5c-855f-4bf0-bba1-d44c40ac5218",
+          "label": "withheld-conventions-dsh-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 9,
+            "inputTokens": 207713,
+            "outputTokens": 1896,
+            "cacheReadTokens": 184576,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 9,
+                "inputTokens": 207713,
+                "outputTokens": 1896,
+                "cacheReadTokens": 184576,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "startup.end": 2445.2765999999974,
+              "memory.embedding.end": 137.6885609997771,
+              "model.end": 15898.901300000003,
+              "tool.end": 404.8057000000017
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 21083,
+            "nonHumanWallMs": 21083
+          }
+        },
+        {
+          "id": "61bda8a7-7151-43a0-b516-56ec7a04df91",
+          "label": "explicit-control-dsh-no-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 4,
+            "inputTokens": 52304,
+            "outputTokens": 349,
+            "cacheReadTokens": 46720,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 4,
+                "inputTokens": 52304,
+                "outputTokens": 349,
+                "cacheReadTokens": 46720,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "startup.end": 2431.84090000001,
+              "model.end": 5643.7047,
+              "tool.end": 164.26940000000013
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 8650,
+            "nonHumanWallMs": 8650
+          }
+        },
+        {
+          "id": "19ee5249-9554-4cf8-8b08-0c50b6018ea5",
+          "label": "explicit-control-dsh-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 4,
+            "inputTokens": 89296,
+            "outputTokens": 955,
+            "cacheReadTokens": 82816,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 4,
+                "inputTokens": 89296,
+                "outputTokens": 955,
+                "cacheReadTokens": 82816,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "startup.end": 2285.952900000004,
+              "memory.embedding.end": 130.04655400072807,
+              "model.end": 8794.889099999999,
+              "tool.end": 209.3185999999978
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 13134,
+            "nonHumanWallMs": 13134
+          }
+        },
+        {
+          "id": "fcb4baae-25f2-426f-b26d-49bcdf9a5216",
+          "label": "extract-correction-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7773,
+            "outputTokens": 569,
+            "cacheReadTokens": 6656,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7773,
+                "outputTokens": 569,
+                "cacheReadTokens": 6656,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 798.6213309995946,
+              "model.end": 3389.4161589996656,
+              "memory.extraction.end": 16984.9118
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 17552,
+            "nonHumanWallMs": 17552
+          }
+        },
+        {
+          "id": "9155ffa8-96f4-4ddf-971a-05fce65ac5a0",
+          "label": "corrected-new-session",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 5,
+            "inputTokens": 10430,
+            "outputTokens": 1958,
+            "cacheReadTokens": 8448,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 5,
+                "inputTokens": 10430,
+                "outputTokens": 1958,
+                "cacheReadTokens": 8448,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 24,
+            "interactionWaitMs": 24,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 169.85303000001295,
+              "memory.recall.end": 197.7850000000035,
+              "preparation.end": 204.50830000001588,
+              "model.end": 15092.199200000032,
+              "tool.end": 106.5850999999384
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 16398,
+            "nonHumanWallMs": 16398
+          }
+        }
+      ]
+    },
+    {
+      "directory": "e0e959c5-e496-4ced-8fc4-2f98355b312c",
+      "file": "failed-before-resume-1793607218213.json",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Missing expected rejection.",
+      "runs": [
+        {
+          "id": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "label": "extract-initial-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7272,
+            "outputTokens": 863,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7272,
+                "outputTokens": 863,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 728.1488460002947,
+              "model.end": 5388.559815000008,
+              "memory.extraction.end": 18509.5179
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 19391,
+            "nonHumanWallMs": 19391
+          }
+        },
+        {
+          "id": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "label": "extract-initial-b",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7313,
+            "outputTokens": 1004,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7313,
+                "outputTokens": 1004,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 518.3439609991183,
+              "model.end": 10047.814706000281,
+              "memory.extraction.end": 22640.157100000004
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 23486,
+            "nonHumanWallMs": 23486
+          }
+        }
+      ]
+    },
+    {
+      "directory": "e0e959c5-e496-4ced-8fc4-2f98355b312c",
+      "file": "failed-before-resume-1793607246426.json",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert([400, 403, 404].includes(spoof.status))\n",
+      "runs": [
+        {
+          "id": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "label": "extract-initial-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7272,
+            "outputTokens": 863,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7272,
+                "outputTokens": 863,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 728.1488460002947,
+              "model.end": 5388.559815000008,
+              "memory.extraction.end": 18509.5179
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 19391,
+            "nonHumanWallMs": 19391
+          }
+        },
+        {
+          "id": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "label": "extract-initial-b",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7313,
+            "outputTokens": 1004,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7313,
+                "outputTokens": 1004,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 518.3439609991183,
+              "model.end": 10047.814706000281,
+              "memory.extraction.end": 22640.157100000004
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 23486,
+            "nonHumanWallMs": 23486
+          }
+        }
+      ]
+    },
+    {
+      "directory": "e0e959c5-e496-4ced-8fc4-2f98355b312c",
+      "file": "failed-before-resume-1793607415194.json",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: withheld-conventions-cncode-memory artifact acceptance failed",
+      "runs": [
+        {
+          "id": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "label": "extract-initial-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7272,
+            "outputTokens": 863,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7272,
+                "outputTokens": 863,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 728.1488460002947,
+              "model.end": 5388.559815000008,
+              "memory.extraction.end": 18509.5179
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 19391,
+            "nonHumanWallMs": 19391
+          }
+        },
+        {
+          "id": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "label": "extract-initial-b",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7313,
+            "outputTokens": 1004,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7313,
+                "outputTokens": 1004,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 518.3439609991183,
+              "model.end": 10047.814706000281,
+              "memory.extraction.end": 22640.157100000004
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 23486,
+            "nonHumanWallMs": 23486
+          }
+        },
+        {
+          "id": "9c03f878-5479-4e82-a11e-dcce01a23d7a",
+          "label": "withheld-conventions-cncode-no-memory",
+          "state": "completed",
+          "outcome": "fail",
+          "metrics": {
+            "requests": 4,
+            "inputTokens": 5282,
+            "outputTokens": 1167,
+            "cacheReadTokens": 3584,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 4,
+                "inputTokens": 5282,
+                "outputTokens": 1167,
+                "cacheReadTokens": 3584,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "preparation.end": 4.684600000000046,
+              "model.end": 8101.011099999999,
+              "tool.end": 20.160300000000007
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 8141,
+            "nonHumanWallMs": 8141
+          }
+        },
+        {
+          "id": "125de559-05bd-4cee-b63a-dc3db6da3395",
+          "label": "withheld-conventions-cncode-memory",
+          "state": "completed",
+          "outcome": "fail",
+          "metrics": {
+            "requests": 4,
+            "inputTokens": 6471,
+            "outputTokens": 1534,
+            "cacheReadTokens": 4608,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 4,
+                "inputTokens": 6471,
+                "outputTokens": 1534,
+                "cacheReadTokens": 4608,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 154.94587600005616,
+              "memory.recall.end": 181.6807000000008,
+              "preparation.end": 186.89549999999872,
+              "model.end": 10971.7388,
+              "tool.end": 30.849300000001676
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 12513,
+            "nonHumanWallMs": 12513
+          }
+        }
+      ]
+    },
+    {
+      "directory": "e0e959c5-e496-4ced-8fc4-2f98355b312c",
+      "file": "report.json",
+      "status": "pass",
+      "error": null,
+      "runs": [
+        {
+          "id": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "label": "extract-initial-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7272,
+            "outputTokens": 863,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7272,
+                "outputTokens": 863,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 728.1488460002947,
+              "model.end": 5388.559815000008,
+              "memory.extraction.end": 18509.5179
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 19391,
+            "nonHumanWallMs": 19391
+          }
+        },
+        {
+          "id": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "label": "extract-initial-b",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 7313,
+            "outputTokens": 1004,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 7313,
+                "outputTokens": 1004,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 518.3439609991183,
+              "model.end": 10047.814706000281,
+              "memory.extraction.end": 22640.157100000004
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 23486,
+            "nonHumanWallMs": 23486
+          }
+        },
+        {
+          "id": "d2720535-a250-40be-8903-93b83dad1cec",
+          "label": "withheld-conventions-cncode-no-memory",
+          "state": "completed",
+          "outcome": "fail",
+          "metrics": {
+            "requests": 4,
+            "inputTokens": 6817,
+            "outputTokens": 1516,
+            "cacheReadTokens": 5376,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 4,
+                "inputTokens": 6817,
+                "outputTokens": 1516,
+                "cacheReadTokens": 5376,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "preparation.end": 4.427799999999934,
+              "model.end": 10144.7019,
+              "tool.end": 46.259999999998854
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 10188,
+            "nonHumanWallMs": 10188
+          }
+        },
+        {
+          "id": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "label": "withheld-conventions-cncode-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 5,
+            "inputTokens": 9081,
+            "outputTokens": 1352,
+            "cacheReadTokens": 7168,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 5,
+                "inputTokens": 9081,
+                "outputTokens": 1352,
+                "cacheReadTokens": 7168,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 12,
+            "interactionWaitMs": 12,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 157.61448400007794,
+              "memory.recall.end": 185.46470000000045,
+              "preparation.end": 191.64879999999903,
+              "model.end": 9814.9072,
+              "tool.end": 16.846999999996115
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 11043,
+            "nonHumanWallMs": 11043
+          }
+        },
+        {
+          "id": "05f85d19-cd54-41cc-9e4f-0710fd2fe963",
+          "label": "explicit-control-cncode-no-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 3,
+            "inputTokens": 2251,
+            "outputTokens": 311,
+            "cacheReadTokens": 1536,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 3,
+                "inputTokens": 2251,
+                "outputTokens": 311,
+                "cacheReadTokens": 1536,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 11,
+            "interactionWaitMs": 11,
+            "phaseTotalsMs": {
+              "preparation.end": 5.176799999997456,
+              "model.end": 2829.507900000004,
+              "tool.end": 3.7785000000003492
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 2869,
+            "nonHumanWallMs": 2869
+          }
+        },
+        {
+          "id": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "label": "explicit-control-cncode-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 3,
+            "inputTokens": 3079,
+            "outputTokens": 373,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 3,
+                "inputTokens": 3079,
+                "outputTokens": 373,
+                "cacheReadTokens": 1792,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 17,
+            "interactionWaitMs": 17,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 134.04625600014697,
+              "memory.recall.end": 156.00830000000133,
+              "preparation.end": 161.13000000000102,
+              "model.end": 3361.938699999999,
+              "tool.end": 3.511000000002241
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 4609,
+            "nonHumanWallMs": 4609
+          }
+        },
+        {
+          "id": "00f62a41-0614-48da-8da2-6150db3ffd40",
+          "label": "withheld-conventions-dsh-no-memory",
+          "state": "completed",
+          "outcome": "fail",
+          "metrics": {
+            "requests": 3,
+            "inputTokens": 13318,
+            "outputTokens": 3197,
+            "cacheReadTokens": 9728,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 3,
+                "inputTokens": 13318,
+                "outputTokens": 3197,
+                "cacheReadTokens": 9728,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 9,
+            "interactionWaitMs": 9,
+            "phaseTotalsMs": {
+              "startup.end": 2390.7818000000007,
+              "model.end": 20382.0256,
+              "tool.end": 46.21700000000055
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 23017,
+            "nonHumanWallMs": 23017
+          }
+        },
+        {
+          "id": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "label": "withheld-conventions-dsh-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 4,
+            "inputTokens": 18731,
+            "outputTokens": 1446,
+            "cacheReadTokens": 14720,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 4,
+                "inputTokens": 18731,
+                "outputTokens": 1446,
+                "cacheReadTokens": 14720,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "startup.end": 2380.150099999999,
+              "memory.embedding.end": 152.2079839996877,
+              "model.end": 9180.356200000002,
+              "tool.end": 29.369400000001406
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 13401,
+            "nonHumanWallMs": 13401
+          }
+        },
+        {
+          "id": "11d4830f-1128-43d4-b0ee-217604e73b1c",
+          "label": "explicit-control-dsh-no-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 3,
+            "inputTokens": 10738,
+            "outputTokens": 335,
+            "cacheReadTokens": 8832,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 3,
+                "inputTokens": 10738,
+                "outputTokens": 335,
+                "cacheReadTokens": 8832,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "startup.end": 2316.8438000000024,
+              "model.end": 3772.378700000001,
+              "tool.end": 26.139299999999366
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 6352,
+            "nonHumanWallMs": 6352
+          }
+        },
+        {
+          "id": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "label": "explicit-control-dsh-memory",
+          "state": "completed",
+          "outcome": "pass",
+          "metrics": {
+            "requests": 3,
+            "inputTokens": 12155,
+            "outputTokens": 539,
+            "cacheReadTokens": 9856,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 3,
+                "inputTokens": 12155,
+                "outputTokens": 539,
+                "cacheReadTokens": 9856,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "startup.end": 2522.6098000000056,
+              "memory.embedding.end": 112.83837600058177,
+              "model.end": 4557.179900000001,
+              "tool.end": 24.93419999999969
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 8794,
+            "nonHumanWallMs": 8794
+          }
+        },
+        {
+          "id": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "label": "extract-correction-a",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 1,
+            "inputTokens": 8399,
+            "outputTokens": 3122,
+            "cacheReadTokens": 6656,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "memory_extraction": {
+                "requests": 1,
+                "inputTokens": 8399,
+                "outputTokens": 3122,
+                "cacheReadTokens": 6656,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 0,
+            "interactionWaitMs": 0,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 1847.709568000937,
+              "model.end": 17263.459578000038,
+              "memory.extraction.end": 32019.788799999995
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 32651,
+            "nonHumanWallMs": 32651
+          }
+        },
+        {
+          "id": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "label": "corrected-new-session",
+          "state": "completed",
+          "outcome": "unverified",
+          "metrics": {
+            "requests": 6,
+            "inputTokens": 20928,
+            "outputTokens": 1998,
+            "cacheReadTokens": 17408,
+            "cacheWriteTokens": null,
+            "byPurpose": {
+              "conversation": {
+                "requests": 6,
+                "inputTokens": 20928,
+                "outputTokens": 1998,
+                "cacheReadTokens": 17408,
+                "cacheWriteTokens": null
+              }
+            },
+            "humanWaitMs": 0,
+            "automatedWaitMs": 20,
+            "interactionWaitMs": 20,
+            "phaseTotalsMs": {
+              "memory.embedding.end": 142.04632399923867,
+              "memory.recall.end": 161.83890000000247,
+              "preparation.end": 166.0055999999895,
+              "model.end": 14127.733299999978,
+              "tool.end": 35.261199999979
+            },
+            "toolTimeIsWallTime": false,
+            "wallMs": 15380,
+            "nonHumanWallMs": 15380
+          }
+        }
+      ]
+    }
+  ]
+}

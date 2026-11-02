@@ -1,0 +1,586 @@
+{
+  "kind": "real-pinned-runtime-with-local-model-fixture",
+  "not_real_model": true,
+  "checks": [
+    "write",
+    "native-question",
+    "native-approval-denial",
+    "resume",
+    "active-model-cancellation"
+  ],
+  "events": [
+    {
+      "seq": 2,
+      "at": "2026-11-02T06:45:27.973Z",
+      "runId": "256af749-20f3-47ce-b017-2b32a52bbfc0",
+      "type": "observer.ready",
+      "data": {
+        "version": "0.2.2-alpha.2",
+        "executedAt": "2026-11-02T06:45:27.952Z"
+      }
+    },
+    {
+      "seq": 11,
+      "at": "2026-11-02T06:45:28.300Z",
+      "runId": "256af749-20f3-47ce-b017-2b32a52bbfc0",
+      "type": "model.start",
+      "data": {
+        "requestId": "454bc62b-410d-401e-af64-0885d40e5435",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:45:28.286Z"
+      }
+    },
+    {
+      "seq": 12,
+      "at": "2026-11-02T06:45:28.479Z",
+      "runId": "256af749-20f3-47ce-b017-2b32a52bbfc0",
+      "type": "usage",
+      "data": {
+        "requestId": "454bc62b-410d-401e-af64-0885d40e5435",
+        "purpose": "conversation",
+        "usage": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": null,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 0
+          }
+        }
+      }
+    },
+    {
+      "seq": 13,
+      "at": "2026-11-02T06:45:28.480Z",
+      "runId": "256af749-20f3-47ce-b017-2b32a52bbfc0",
+      "type": "model.end",
+      "data": {
+        "requestId": "454bc62b-410d-401e-af64-0885d40e5435",
+        "purpose": "conversation",
+        "durationMs": 120.07919999999967,
+        "executedAt": "2026-11-02T06:45:28.406Z"
+      }
+    },
+    {
+      "seq": 14,
+      "at": "2026-11-02T06:45:28.484Z",
+      "runId": "256af749-20f3-47ce-b017-2b32a52bbfc0",
+      "type": "run.end",
+      "data": {
+        "state": "cancelled",
+        "outcome": "unverified",
+        "metrics": {
+          "requests": 1,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "cacheReadTokens": null,
+          "cacheWriteTokens": null,
+          "byPurpose": {
+            "conversation": {
+              "requests": 1,
+              "inputTokens": 0,
+              "outputTokens": 0,
+              "cacheReadTokens": null,
+              "cacheWriteTokens": null
+            }
+          },
+          "humanWaitMs": 0,
+          "phaseTotalsMs": {
+            "startup.end": 2191.2225,
+            "model.end": 120.07919999999967
+          },
+          "toolTimeIsWallTime": false,
+          "wallMs": 2582,
+          "nonHumanWallMs": 2582
+        },
+        "error": "dsh profile \"sdk\": DeepSeek Harness runtime exited\nexit code: 0"
+      }
+    },
+    {
+      "seq": 2,
+      "at": "2026-11-02T06:45:25.222Z",
+      "runId": "73c74f63-acb4-4bae-9f3b-7e0ef457d313",
+      "type": "observer.ready",
+      "data": {
+        "version": "0.2.2-alpha.2",
+        "executedAt": "2026-11-02T06:45:25.129Z"
+      }
+    },
+    {
+      "seq": 11,
+      "at": "2026-11-02T06:45:25.764Z",
+      "runId": "73c74f63-acb4-4bae-9f3b-7e0ef457d313",
+      "type": "model.start",
+      "data": {
+        "requestId": "11cf8114-5528-44b9-b67d-846f810aa3a0",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:45:25.683Z"
+      }
+    },
+    {
+      "seq": 17,
+      "at": "2026-11-02T06:45:25.816Z",
+      "runId": "73c74f63-acb4-4bae-9f3b-7e0ef457d313",
+      "type": "usage",
+      "data": {
+        "requestId": "11cf8114-5528-44b9-b67d-846f810aa3a0",
+        "purpose": "conversation",
+        "usage": {
+          "input": 100,
+          "output": 10,
+          "cacheRead": 20,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 80,
+            "outputTokens": 10,
+            "totalTokens": 110,
+            "cacheReadTokens": 20,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 80
+          }
+        }
+      }
+    },
+    {
+      "seq": 18,
+      "at": "2026-11-02T06:45:25.817Z",
+      "runId": "73c74f63-acb4-4bae-9f3b-7e0ef457d313",
+      "type": "model.end",
+      "data": {
+        "requestId": "11cf8114-5528-44b9-b67d-846f810aa3a0",
+        "purpose": "conversation",
+        "durationMs": 127.71969999999965,
+        "executedAt": "2026-11-02T06:45:25.811Z"
+      }
+    },
+    {
+      "seq": 19,
+      "at": "2026-11-02T06:45:25.899Z",
+      "runId": "73c74f63-acb4-4bae-9f3b-7e0ef457d313",
+      "type": "run.end",
+      "data": {
+        "state": "completed",
+        "outcome": "unverified",
+        "metrics": {
+          "requests": 1,
+          "inputTokens": 100,
+          "outputTokens": 10,
+          "cacheReadTokens": 20,
+          "cacheWriteTokens": null,
+          "byPurpose": {
+            "conversation": {
+              "requests": 1,
+              "inputTokens": 100,
+              "outputTokens": 10,
+              "cacheReadTokens": 20,
+              "cacheWriteTokens": null
+            }
+          },
+          "humanWaitMs": 0,
+          "phaseTotalsMs": {
+            "startup.end": 2898.2906000000003,
+            "model.end": 127.71969999999965
+          },
+          "toolTimeIsWallTime": false,
+          "wallMs": 3389,
+          "nonHumanWallMs": 3389
+        }
+      }
+    },
+    {
+      "seq": 2,
+      "at": "2026-11-02T06:45:21.851Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "observer.ready",
+      "data": {
+        "version": "0.2.2-alpha.2",
+        "executedAt": "2026-11-02T06:45:21.790Z"
+      }
+    },
+    {
+      "seq": 18,
+      "at": "2026-11-02T06:45:22.177Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "model.start",
+      "data": {
+        "requestId": "fbe1a3e2-2433-4c15-ab98-ba766df7b1dc",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:45:22.133Z"
+      }
+    },
+    {
+      "seq": 24,
+      "at": "2026-11-02T06:45:22.282Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "usage",
+      "data": {
+        "requestId": "fbe1a3e2-2433-4c15-ab98-ba766df7b1dc",
+        "purpose": "conversation",
+        "usage": {
+          "input": 100,
+          "output": 10,
+          "cacheRead": 20,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 80,
+            "outputTokens": 10,
+            "totalTokens": 110,
+            "cacheReadTokens": 20,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 80
+          }
+        }
+      }
+    },
+    {
+      "seq": 25,
+      "at": "2026-11-02T06:45:22.283Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "model.end",
+      "data": {
+        "requestId": "fbe1a3e2-2433-4c15-ab98-ba766df7b1dc",
+        "purpose": "conversation",
+        "durationMs": 123.13709999999992,
+        "executedAt": "2026-11-02T06:45:22.256Z"
+      }
+    },
+    {
+      "seq": 26,
+      "at": "2026-11-02T06:45:22.283Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "tool.start",
+      "data": {
+        "callId": "native-write",
+        "name": "write",
+        "source": "dsh-tools/execute",
+        "executedAt": "2026-11-02T06:45:22.259Z"
+      }
+    },
+    {
+      "seq": 27,
+      "at": "2026-11-02T06:45:22.284Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "tool.end",
+      "data": {
+        "callId": "native-write",
+        "name": "write",
+        "source": "dsh-tools/execute",
+        "executed": true,
+        "success": true,
+        "durationMs": 19.335199999999986,
+        "executedAt": "2026-11-02T06:45:22.278Z"
+      }
+    },
+    {
+      "seq": 33,
+      "at": "2026-11-02T06:45:22.316Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "interaction",
+      "data": {
+        "id": "0b4e5150-ab60-4f10-bbb2-4c0d712bb7e8",
+        "kind": "question",
+        "payload": {
+          "native": {
+            "requestId": "f23cf7b6-014a-4d63-882b-ebfe3cb681dd",
+            "sessionId": "7323b042-9888-44ab-86ce-a23e531eeb2f",
+            "questions": [
+              {
+                "id": "verify",
+                "question": "Continue protocol check?",
+                "options": [
+                  {
+                    "label": "Continue"
+                  }
+                ]
+              }
+            ]
+          },
+          "question": "{\"id\":\"verify\",\"question\":\"Continue protocol check?\",\"options\":[{\"label\":\"Continue\"}]}"
+        },
+        "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f"
+      }
+    },
+    {
+      "seq": 34,
+      "at": "2026-11-02T06:45:22.349Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "interaction.answered",
+      "data": {
+        "id": "0b4e5150-ab60-4f10-bbb2-4c0d712bb7e8",
+        "answer": {
+          "answers": [
+            {
+              "id": "verify",
+              "selected": [
+                "Continue"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 43,
+      "at": "2026-11-02T06:45:22.382Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "model.start",
+      "data": {
+        "requestId": "5520351f-da51-4f7a-b330-8688853cb26b",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:45:22.300Z"
+      }
+    },
+    {
+      "seq": 44,
+      "at": "2026-11-02T06:45:22.383Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "usage",
+      "data": {
+        "requestId": "5520351f-da51-4f7a-b330-8688853cb26b",
+        "purpose": "conversation",
+        "usage": {
+          "input": 100,
+          "output": 10,
+          "cacheRead": 20,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 80,
+            "outputTokens": 10,
+            "totalTokens": 110,
+            "cacheReadTokens": 20,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 80
+          }
+        }
+      }
+    },
+    {
+      "seq": 45,
+      "at": "2026-11-02T06:45:22.383Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "model.end",
+      "data": {
+        "requestId": "5520351f-da51-4f7a-b330-8688853cb26b",
+        "purpose": "conversation",
+        "durationMs": 9.574099999999817,
+        "executedAt": "2026-11-02T06:45:22.309Z"
+      }
+    },
+    {
+      "seq": 46,
+      "at": "2026-11-02T06:45:22.384Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "tool.start",
+      "data": {
+        "callId": "native-2",
+        "name": "ask_user_question",
+        "source": "dsh-tools/execute",
+        "executedAt": "2026-11-02T06:45:22.311Z"
+      }
+    },
+    {
+      "seq": 47,
+      "at": "2026-11-02T06:45:22.384Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "tool.end",
+      "data": {
+        "callId": "native-2",
+        "name": "ask_user_question",
+        "source": "dsh-tools/execute",
+        "executed": true,
+        "success": true,
+        "durationMs": 40.878299999999854,
+        "executedAt": "2026-11-02T06:45:22.351Z"
+      }
+    },
+    {
+      "seq": 48,
+      "at": "2026-11-02T06:45:22.385Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "model.start",
+      "data": {
+        "requestId": "bbb0d697-1cec-4774-ba0c-161dd6482ef7",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:45:22.366Z"
+      }
+    },
+    {
+      "seq": 49,
+      "at": "2026-11-02T06:45:22.385Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "usage",
+      "data": {
+        "requestId": "bbb0d697-1cec-4774-ba0c-161dd6482ef7",
+        "purpose": "conversation",
+        "usage": {
+          "input": 100,
+          "output": 10,
+          "cacheRead": 20,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 80,
+            "outputTokens": 10,
+            "totalTokens": 110,
+            "cacheReadTokens": 20,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 80
+          }
+        }
+      }
+    },
+    {
+      "seq": 50,
+      "at": "2026-11-02T06:45:22.386Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "model.end",
+      "data": {
+        "requestId": "bbb0d697-1cec-4774-ba0c-161dd6482ef7",
+        "purpose": "conversation",
+        "durationMs": 9.090300000000298,
+        "executedAt": "2026-11-02T06:45:22.375Z"
+      }
+    },
+    {
+      "seq": 51,
+      "at": "2026-11-02T06:45:22.387Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "tool.start",
+      "data": {
+        "callId": "native-3",
+        "name": "write",
+        "source": "dsh-tools/execute",
+        "executedAt": "2026-11-02T06:45:22.376Z"
+      }
+    },
+    {
+      "seq": 52,
+      "at": "2026-11-02T06:45:22.387Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "interaction",
+      "data": {
+        "id": "f6fc6f49-7c20-4531-8431-6d9c0cc3cfdf",
+        "kind": "approval",
+        "payload": {
+          "sessionId": "7323b042-9888-44ab-86ce-a23e531eeb2f",
+          "toolName": "write",
+          "callId": "native-3",
+          "reason": "escalate sandbox to danger-full-access: Protocol denial test"
+        },
+        "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f"
+      }
+    },
+    {
+      "seq": 53,
+      "at": "2026-11-02T06:45:22.411Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "interaction.answered",
+      "data": {
+        "id": "f6fc6f49-7c20-4531-8431-6d9c0cc3cfdf",
+        "answer": {
+          "allow": false
+        }
+      }
+    },
+    {
+      "seq": 64,
+      "at": "2026-11-02T06:45:22.440Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "tool.end",
+      "data": {
+        "callId": "native-3",
+        "name": "write",
+        "source": "dsh-tools/execute",
+        "executed": true,
+        "success": false,
+        "durationMs": 36.91020000000026,
+        "executedAt": "2026-11-02T06:45:22.413Z"
+      }
+    },
+    {
+      "seq": 65,
+      "at": "2026-11-02T06:45:22.440Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "model.start",
+      "data": {
+        "requestId": "84fd228a-51de-47e9-ba9f-7fe306b0ca51",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:45:22.427Z"
+      }
+    },
+    {
+      "seq": 66,
+      "at": "2026-11-02T06:45:22.441Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "usage",
+      "data": {
+        "requestId": "84fd228a-51de-47e9-ba9f-7fe306b0ca51",
+        "purpose": "conversation",
+        "usage": {
+          "input": 100,
+          "output": 10,
+          "cacheRead": 20,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 80,
+            "outputTokens": 10,
+            "totalTokens": 110,
+            "cacheReadTokens": 20,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 80
+          }
+        }
+      }
+    },
+    {
+      "seq": 67,
+      "at": "2026-11-02T06:45:22.441Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "model.end",
+      "data": {
+        "requestId": "84fd228a-51de-47e9-ba9f-7fe306b0ca51",
+        "purpose": "conversation",
+        "durationMs": 8.4070999999999,
+        "executedAt": "2026-11-02T06:45:22.436Z"
+      }
+    },
+    {
+      "seq": 68,
+      "at": "2026-11-02T06:45:22.505Z",
+      "runId": "7bd49f29-3b36-49fd-a7e0-97e7fde6c46f",
+      "type": "run.end",
+      "data": {
+        "state": "completed",
+        "outcome": "unverified",
+        "metrics": {
+          "requests": 4,
+          "inputTokens": 400,
+          "outputTokens": 40,
+          "cacheReadTokens": 80,
+          "cacheWriteTokens": null,
+          "byPurpose": {
+            "conversation": {
+              "requests": 4,
+              "inputTokens": 400,
+              "outputTokens": 40,
+              "cacheReadTokens": 80,
+              "cacheWriteTokens": null
+            }
+          },
+          "humanWaitMs": 57,
+          "phaseTotalsMs": {
+            "startup.end": 2265.2304,
+            "model.end": 150.20859999999993,
+            "tool.end": 97.1237000000001
+          },
+          "toolTimeIsWallTime": false,
+          "wallMs": 2846,
+          "nonHumanWallMs": 2789
+        }
+      }
+    }
+  ]
+}

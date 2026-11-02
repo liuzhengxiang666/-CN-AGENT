@@ -1,0 +1,8 @@
+**/node_modules
+.git
+.cncode
+.gradle
+build
+vnext/web-dist
+vnext/dist
+vnext/evidence

@@ -1,0 +1,91 @@
+{
+  "kind": "real-provider-attempts",
+  "date": "2026-11-02",
+  "note": "401; no successful model or delivery acceptance; tokens unknown",
+  "runs": [
+    {
+      "id": "5315993a-3e84-4cfb-8c50-2be1c74ad071",
+      "sessionId": "8ced041a-f810-444d-b667-8e5f2d9cdb42",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T06:03:30.211Z",
+      "state": "failed",
+      "outcome": "unverified",
+      "versions": {
+        "code": "ca3546f2d437e99f522da140f9a3d7c0367f13b5",
+        "engine": "0.2.0",
+        "memory": "off",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1"
+      },
+      "metrics": {
+        "requests": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "cacheReadTokens": null,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 1,
+            "inputTokens": null,
+            "outputTokens": null,
+            "cacheReadTokens": null,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "preparation.end": 7.156800000000089,
+          "model.end": 404.1485000000001
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 422,
+        "nonHumanWallMs": 422
+      },
+      "endedAt": "2026-11-02T06:03:30.633Z",
+      "error": "模型 HTTP 401: {\"error\":{\"message\":\"Authentication Fails, Your api key: ****82c9 is invalid (request_id: 4da740a1-0238-46e9-bc16-0864e6115aee)\",\"type\":\"authentication_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+    },
+    {
+      "id": "faf9e0e8-9406-4b4d-8a6f-bf010928e0a0",
+      "sessionId": "6b0e7493-65ea-45c0-bf2f-87484d5d7605",
+      "engine": "dsh",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T06:06:32.274Z",
+      "state": "failed",
+      "outcome": "unverified",
+      "versions": {
+        "code": "ca3546f2d437e99f522da140f9a3d7c0367f13b5",
+        "engine": "0.2.2-alpha.2",
+        "memory": "off",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1"
+      },
+      "metrics": {
+        "requests": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "cacheReadTokens": null,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 1,
+            "inputTokens": null,
+            "outputTokens": null,
+            "cacheReadTokens": null,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 2592.0184,
+          "model.end": 300.45960000000014
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 3237,
+        "nonHumanWallMs": 3237
+      },
+      "endedAt": "2026-11-02T06:06:35.511Z",
+      "error": "401: {\"message\":\"Authentication Fails, Your api key: ****82c9 is invalid (request_id: 3dd73e77-67d7-4da6-a9cc-6a5af4739223)\",\"type\":\"authentication_error\",\"param\":null,\"code\":\"invalid_request_error\"}"
+    }
+  ]
+}

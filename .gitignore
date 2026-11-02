@@ -7,3 +7,13 @@ build/
 
 *.class
 *.log
+node_modules/
+dist/
+web-dist/
+.cncode/vnext/
+vnext/evidence/private/
+.env
+*.tsbuildinfo
+
+.playwright-cli/
+output/playwright/*.log

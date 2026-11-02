@@ -1,0 +1,27 @@
+{
+  "mode": "protocol-fixture-not-real-model",
+  "web": [
+    "create",
+    "default-dsh-memory-off",
+    "approval",
+    "question",
+    "stop",
+    "reopen",
+    "theme-persistence",
+    "switch-engine-new-session",
+    "reject"
+  ],
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "terminal": [
+    "default-dsh",
+    "message",
+    "approval",
+    "question",
+    "stop-while-running",
+    "quit"
+  ],
+  "consoleErrors": []
+}

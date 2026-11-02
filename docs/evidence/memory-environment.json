@@ -1,0 +1,25 @@
+{
+  "openviking": "0.5.3",
+  "upstreamCommit": "178a8cdfb41b51e7d24c4bf79a13cc54981e0ee8",
+  "python": "3.12.16",
+  "llamaCppPython": "0.3.36",
+  "openaiPython": "2.54.0",
+  "dshSdkAndRuntime": "0.2.2-alpha.2",
+  "dshMemoryPlugin": "0.5.32",
+  "embedding": {
+    "model": "bge-small-zh-v1.5-f16",
+    "dimension": 512,
+    "sha256": "ab9b81d9cd329c712eee379cf0068eabe6a5e2a01d0def61535eba9384085e2c",
+    "provider": "local",
+    "providerTokens": null
+  },
+  "image": "sha256:13412e069d28098ff552a3709ff9ca2e8b70b6d6a1ad3bb9af4e5c90d8fdf859",
+  "cpus": 2,
+  "memory": "2g",
+  "listener": "127.0.0.1:1933",
+  "mount": {
+    "host": "D:/Codex-Workspaces/cn-code-vnext/.cncode/vnext/openviking",
+    "container": "/state"
+  },
+  "observationBoundary": "Successful memory comparisons ran serially. Source was 8bfeeb3 plus codeDirty worktree; the observer captured response-level actual usage. Model-start/error observation was added before the selected comparison. No cloud OpenViking subscription or account was created."
+}

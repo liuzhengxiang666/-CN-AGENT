@@ -1,0 +1,72 @@
+{
+  "mode": "actual-local-openviking-and-real-deepseek",
+  "screenshots": [
+    "memory-web-dark.png",
+    "memory-web-light.png",
+    "memory-electron-dark.png",
+    "memory-electron-light.png"
+  ],
+  "uiExtractionRun": {
+    "id": "10650ef6-a814-43d6-9428-6c16a8d5821d",
+    "sessionId": "b968385a-dc29-4ae4-a1d2-293c62bad855",
+    "engine": "cncode",
+    "model": "deepseek-v4-flash",
+    "startedAt": "2026-11-02T08:33:29.797Z",
+    "state": "completed",
+    "outcome": "unverified",
+    "versions": {
+      "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+      "codeDirty": true,
+      "engine": "0.2.0",
+      "memory": "openviking",
+      "skillScope": "project-only",
+      "prompt": "cncode-vnext-v1",
+      "purpose": "memory_extraction"
+    },
+    "metrics": {
+      "requests": 1,
+      "inputTokens": 7644,
+      "outputTokens": 211,
+      "cacheReadTokens": 6656,
+      "cacheWriteTokens": null,
+      "byPurpose": {
+        "memory_extraction": {
+          "requests": 1,
+          "inputTokens": 7644,
+          "outputTokens": 211,
+          "cacheReadTokens": 6656,
+          "cacheWriteTokens": null
+        }
+      },
+      "humanWaitMs": 0,
+      "automatedWaitMs": 0,
+      "interactionWaitMs": 0,
+      "phaseTotalsMs": {
+        "memory.embedding.end": 142.2408530015673,
+        "model.end": 2062.366571999519,
+        "memory.extraction.end": 3610.7461999999996
+      },
+      "toolTimeIsWallTime": false,
+      "wallMs": 4323,
+      "nonHumanWallMs": 4323
+    },
+    "endedAt": "2026-11-02T08:33:34.120Z"
+  },
+  "web": {
+    "processing": true,
+    "completed": true,
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "dshMemoryEnabled": true
+  },
+  "electron": {
+    "restoredRealExtraction": true,
+    "themes": [
+      "dark",
+      "light"
+    ]
+  },
+  "consoleErrors": []
+}

@@ -1,0 +1,38 @@
+{
+  "run": {
+    "id": "d0cb8fed-bf13-4ffe-9e03-3731c4bf73f6",
+    "sessionId": "32067794-511c-459e-801a-41d17fb3e1da",
+    "engine": "cncode",
+    "model": "deepseek-v4-flash",
+    "startedAt": "2026-11-02T08:23:26.108Z",
+    "state": "completed",
+    "outcome": "unverified",
+    "versions": {
+      "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+      "codeDirty": true,
+      "engine": "0.2.0",
+      "memory": "openviking",
+      "skillScope": "project-only",
+      "prompt": "cncode-vnext-v1",
+      "purpose": "memory_extraction"
+    },
+    "metrics": {
+      "requests": 0,
+      "inputTokens": null,
+      "outputTokens": null,
+      "cacheReadTokens": null,
+      "cacheWriteTokens": null,
+      "byPurpose": {},
+      "humanWaitMs": 0,
+      "automatedWaitMs": 0,
+      "interactionWaitMs": 0,
+      "phaseTotalsMs": {},
+      "toolTimeIsWallTime": false,
+      "wallMs": 603,
+      "nonHumanWallMs": 603
+    },
+    "endedAt": "2026-11-02T08:23:26.711Z"
+  },
+  "skipped": true,
+  "taskCreated": false
+}

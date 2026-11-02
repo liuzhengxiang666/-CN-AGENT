@@ -1,0 +1,10 @@
+{
+  "runId": "7d84bf8f-6705-4e2f-be64-da03d517afa2",
+  "artifactHashes": {
+    "kv-store.proto": "1feccd5b4861ed80e83d0259a8aa3fb1fd3369dd4547fc5745d4314043e09f4b",
+    "kv_store_pb2.py": "bab499f0bb60546721e5b86a7102fc84f59bf106ce73e4d71266d978177ac80b",
+    "kv_store_pb2_grpc.py": "e9e1f547a4f96c966853a199d6cc8c84b234acfdaac1b6e0b6acfc6c6c29ed9a",
+    "server.py": "f5b55c483abcf5d892500a6d83ae61243b10346d01a293e20b0e604fb01d7b65"
+  },
+  "note": "Agent-generated artifacts, not reference-solution controls"
+}

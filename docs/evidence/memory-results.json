@@ -1,0 +1,5113 @@
+{
+  "kind": "real-local-memory-acceptance",
+  "model": "deepseek-v4-flash",
+  "openviking": "0.5.3",
+  "embedding": "bge-small-zh-v1.5-f16",
+  "memoryPolicy": "one account and explicit peer per canonical project directory",
+  "startedAt": "2026-11-02T08:16:55.192Z",
+  "root": "D:\\Codex-Workspaces\\cn-code-vnext\\.cncode\\vnext\\memory-check\\e0e959c5-e496-4ced-8fc4-2f98355b312c",
+  "runs": [
+    {
+      "label": "extract-initial-a",
+      "id": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+      "sessionId": "b968385a-dc29-4ae4-a1d2-293c62bad855",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:11:40.741Z",
+      "state": "completed",
+      "outcome": "unverified",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.0",
+        "memory": "openviking",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "memory_extraction"
+      },
+      "metrics": {
+        "requests": 1,
+        "inputTokens": 7272,
+        "outputTokens": 863,
+        "cacheReadTokens": 1792,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "memory_extraction": {
+            "requests": 1,
+            "inputTokens": 7272,
+            "outputTokens": 863,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "interactionWaitMs": 0,
+        "phaseTotalsMs": {
+          "memory.embedding.end": 728.1488460002947,
+          "model.end": 5388.559815000008,
+          "memory.extraction.end": 18509.5179
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 19391,
+        "nonHumanWallMs": 19391
+      },
+      "endedAt": "2026-11-02T08:12:00.132Z",
+      "memoryEvents": [
+        {
+          "seq": 2,
+          "at": "2026-11-02T08:11:41.615Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/sessions/cncode-b968385a-dc29-4ae4-a1d2-293c62bad855/commit",
+            "durationMs": 868.558,
+            "status": 200,
+            "telemetry": {
+              "id": "tm_650eb201dff346b88923d655a8b0f0e5",
+              "summary": {
+                "operation": "session.commit",
+                "status": "ok",
+                "duration_ms": 863.462
+              }
+            }
+          }
+        },
+        {
+          "seq": 3,
+          "at": "2026-11-02T08:11:41.618Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.commit.submitted",
+          "data": {
+            "result": {
+              "session_id": "cncode-b968385a-dc29-4ae4-a1d2-293c62bad855",
+              "status": "accepted",
+              "task_id": "a6417d6f-9f56-4107-8868-736b9ac5221c",
+              "archive_uri": "viking://user/cncode/sessions/cncode-b968385a-dc29-4ae4-a1d2-293c62bad855/history/archive_001",
+              "archived": true,
+              "effective_enable_working_memory": false,
+              "trace_id": "",
+              "estimated_active_tokens": 0,
+              "budget_exceeded": false
+            },
+            "extractionComplete": false
+          }
+        },
+        {
+          "seq": 4,
+          "at": "2026-11-02T08:11:41.626Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 5.695099999999911,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 5,
+          "at": "2026-11-02T08:11:42.138Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 4.3895000000002256,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:11:42.656Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 5.078799999999319,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 7,
+          "at": "2026-11-02T08:11:43.188Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 23.995600000000195,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 8,
+          "at": "2026-11-02T08:11:43.190Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:11:43.107440+00:00",
+            "taskId": "a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "account": "cncode-63ec840de34f36f887ae443f",
+            "telemetryId": "tm_e48146fd551642b783254fc2fc4cee1e",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": true,
+            "durationMs": 294.7964470004081,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 9,
+          "at": "2026-11-02T08:11:43.698Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 4.1148999999995794,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 11,
+          "at": "2026-11-02T08:11:44.212Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 4.015699999999924,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 12,
+          "at": "2026-11-02T08:11:44.724Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 4.228399999999965,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 13,
+          "at": "2026-11-02T08:11:45.232Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 4.063199999998687,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 14,
+          "at": "2026-11-02T08:11:45.746Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 4.773499999999331,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 15,
+          "at": "2026-11-02T08:11:46.261Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.7368999999998778,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 16,
+          "at": "2026-11-02T08:11:46.780Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.853399999999965,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 17,
+          "at": "2026-11-02T08:11:47.296Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.735099999999875,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 18,
+          "at": "2026-11-02T08:11:47.810Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.548800000000483,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 19,
+          "at": "2026-11-02T08:11:48.324Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.6026999999994587,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 20,
+          "at": "2026-11-02T08:11:48.834Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.5393999999996595,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 21,
+          "at": "2026-11-02T08:11:48.835Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "usage",
+          "data": {
+            "requestId": "d08809e4-f20a-4a4f-a90d-e9a66f058aaf",
+            "purpose": "memory_extraction",
+            "usage": {
+              "input": 7272,
+              "output": 863,
+              "cacheRead": 1792,
+              "cacheWrite": null,
+              "raw": {
+                "completion_tokens": 863,
+                "prompt_tokens": 7272,
+                "total_tokens": 8135,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": null,
+                  "audio_tokens": null,
+                  "reasoning_tokens": 675,
+                  "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cache_write_tokens": null,
+                  "cached_tokens": 1792
+                },
+                "prompt_cache_hit_tokens": 1792,
+                "prompt_cache_miss_tokens": 5480
+              }
+            },
+            "source": "openviking-provider-response",
+            "taskId": "a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "executedAt": "2026-11-02T08:11:48.594335+00:00"
+          }
+        },
+        {
+          "seq": 23,
+          "at": "2026-11-02T08:11:49.351Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.462999999999738,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 24,
+          "at": "2026-11-02T08:11:49.866Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.620600000000195,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 25,
+          "at": "2026-11-02T08:11:50.379Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.0989000000008673,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 26,
+          "at": "2026-11-02T08:11:50.891Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.239799999999377,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 27,
+          "at": "2026-11-02T08:11:51.403Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.264100000000326,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 28,
+          "at": "2026-11-02T08:11:51.916Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.363900000000285,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 29,
+          "at": "2026-11-02T08:11:52.426Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.446300000001429,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 30,
+          "at": "2026-11-02T08:11:52.939Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.3862000000008265,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 31,
+          "at": "2026-11-02T08:11:53.454Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.6480000000010477,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 32,
+          "at": "2026-11-02T08:11:53.966Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.542600000000675,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 33,
+          "at": "2026-11-02T08:11:54.481Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.8447999999989406,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 34,
+          "at": "2026-11-02T08:11:54.994Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.7644000000000233,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 35,
+          "at": "2026-11-02T08:11:55.505Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 4.043700000001991,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 36,
+          "at": "2026-11-02T08:11:56.016Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.1365999999979977,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 37,
+          "at": "2026-11-02T08:11:56.529Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.8663000000015018,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 38,
+          "at": "2026-11-02T08:11:57.043Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.30279999999766,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 39,
+          "at": "2026-11-02T08:11:57.555Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.4914999999964493,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 40,
+          "at": "2026-11-02T08:11:58.071Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.4566999999988184,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 41,
+          "at": "2026-11-02T08:11:58.582Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.7004000000015367,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 42,
+          "at": "2026-11-02T08:11:59.098Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 4.376499999998487,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 43,
+          "at": "2026-11-02T08:11:59.612Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.635600000001432,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 44,
+          "at": "2026-11-02T08:11:59.614Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:11:59.294514+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_e48146fd551642b783254fc2fc4cee1e",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": false,
+            "durationMs": 251.44299600015074,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 45,
+          "at": "2026-11-02T08:11:59.614Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:11:59.494571+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_e48146fd551642b783254fc2fc4cee1e",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": false,
+            "durationMs": 181.9094029997359,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 46,
+          "at": "2026-11-02T08:12:00.127Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/a6417d6f-9f56-4107-8868-736b9ac5221c",
+            "durationMs": 3.800699999999779,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 47,
+          "at": "2026-11-02T08:12:00.129Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.extraction.completed",
+          "data": {
+            "task": {
+              "task_id": "a6417d6f-9f56-4107-8868-736b9ac5221c",
+              "task_type": "session_commit",
+              "status": "completed",
+              "created_at": 1793607101.5440075,
+              "updated_at": 1793607119.9011564,
+              "processing_seconds": 17.507317304611206,
+              "resource_id": "cncode-b968385a-dc29-4ae4-a1d2-293c62bad855",
+              "meta": {},
+              "stage": "completed",
+              "result": {
+                "session_id": "cncode-b968385a-dc29-4ae4-a1d2-293c62bad855",
+                "archive_uri": "viking://user/cncode/sessions/cncode-b968385a-dc29-4ae4-a1d2-293c62bad855/history/archive_001",
+                "memories_extracted": {
+                  "memory_write": 1
+                },
+                "session_skills_extracted": 0,
+                "session_skill_uris": [],
+                "memory_extraction": {
+                  "skipped": 0,
+                  "skipped_operations": []
+                },
+                "usage_events_extracted": 0,
+                "effective_memory_types": [
+                  "entities",
+                  "events",
+                  "identity",
+                  "preferences",
+                  "profile",
+                  "soul"
+                ],
+                "agent_evolution_enabled": false,
+                "agent_memory_skip_reason": "agent_evolution_disabled",
+                "token_usage": {
+                  "llm": {
+                    "prompt_tokens": 7272,
+                    "completion_tokens": 863,
+                    "total_tokens": 8135,
+                    "cached_tokens": 1792,
+                    "reasoning_tokens": 675
+                  },
+                  "embedding": {
+                    "total_tokens": 0
+                  },
+                  "total": {
+                    "total_tokens": 8135,
+                    "cached_tokens": 1792,
+                    "reasoning_tokens": 675
+                  }
+                },
+                "memory_diff_uri": "viking://user/cncode/sessions/cncode-b968385a-dc29-4ae4-a1d2-293c62bad855/history/archive_001/memory_diff.json"
+              },
+              "error": null,
+              "created_at_iso": "2026-11-02T08:11:41.544008+00:00",
+              "updated_at_iso": "2026-11-02T08:11:59.901156+00:00"
+            },
+            "extractionComplete": true,
+            "usageSource": "provider observations; task token_usage is cumulative server metadata"
+          }
+        },
+        {
+          "seq": 48,
+          "at": "2026-11-02T08:12:00.129Z",
+          "runId": "bc370fa3-0f5c-4824-8873-92f6fad21c12",
+          "type": "memory.extraction.end",
+          "data": {
+            "durationMs": 18509.5179
+          }
+        }
+      ]
+    },
+    {
+      "label": "extract-initial-b",
+      "id": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+      "sessionId": "26517d32-f503-4c63-9bbc-c0d03a54e821",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:12:01.097Z",
+      "state": "completed",
+      "outcome": "unverified",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.0",
+        "memory": "openviking",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "memory_extraction"
+      },
+      "metrics": {
+        "requests": 1,
+        "inputTokens": 7313,
+        "outputTokens": 1004,
+        "cacheReadTokens": 1792,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "memory_extraction": {
+            "requests": 1,
+            "inputTokens": 7313,
+            "outputTokens": 1004,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "interactionWaitMs": 0,
+        "phaseTotalsMs": {
+          "memory.embedding.end": 518.3439609991183,
+          "model.end": 10047.814706000281,
+          "memory.extraction.end": 22640.157100000004
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 23486,
+        "nonHumanWallMs": 23486
+      },
+      "endedAt": "2026-11-02T08:12:24.583Z",
+      "memoryEvents": [
+        {
+          "seq": 2,
+          "at": "2026-11-02T08:12:01.937Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/sessions/cncode-26517d32-f503-4c63-9bbc-c0d03a54e821/commit",
+            "durationMs": 826.4159999999974,
+            "status": 200,
+            "telemetry": {
+              "id": "tm_adacee81bd1d42ceb303cb7144573de5",
+              "summary": {
+                "operation": "session.commit",
+                "status": "ok",
+                "duration_ms": 820.896
+              }
+            }
+          }
+        },
+        {
+          "seq": 3,
+          "at": "2026-11-02T08:12:01.940Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.commit.submitted",
+          "data": {
+            "result": {
+              "session_id": "cncode-26517d32-f503-4c63-9bbc-c0d03a54e821",
+              "status": "accepted",
+              "task_id": "bdb2d4b0-b03f-4073-b468-06f166a998c1",
+              "archive_uri": "viking://user/cncode/sessions/cncode-26517d32-f503-4c63-9bbc-c0d03a54e821/history/archive_001",
+              "archived": true,
+              "effective_enable_working_memory": false,
+              "trace_id": "",
+              "estimated_active_tokens": 0,
+              "budget_exceeded": false
+            },
+            "extractionComplete": false
+          }
+        },
+        {
+          "seq": 4,
+          "at": "2026-11-02T08:12:01.946Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 4.284700000000157,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 5,
+          "at": "2026-11-02T08:12:02.464Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.038200000002689,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:12:02.978Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.6425000000017462,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 7,
+          "at": "2026-11-02T08:12:02.979Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:12:02.914621+00:00",
+            "taskId": "bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "account": "cncode-300d6a1e41320d24e30a46a9",
+            "telemetryId": "tm_daa4181c249344b0a11aaac420562add",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": true,
+            "durationMs": 153.64008199958334,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 9,
+          "at": "2026-11-02T08:12:03.489Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 2.8822000000000116,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 10,
+          "at": "2026-11-02T08:12:04.003Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.8561999999983527,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 11,
+          "at": "2026-11-02T08:12:04.516Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.4266999999999825,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 12,
+          "at": "2026-11-02T08:12:05.026Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.400500000003376,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 13,
+          "at": "2026-11-02T08:12:05.539Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.844600000000355,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 14,
+          "at": "2026-11-02T08:12:06.052Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.0864999999976135,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 15,
+          "at": "2026-11-02T08:12:06.568Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.1054000000003725,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 16,
+          "at": "2026-11-02T08:12:07.087Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.0908999999992375,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 17,
+          "at": "2026-11-02T08:12:07.597Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 2.90849999999773,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 18,
+          "at": "2026-11-02T08:12:08.113Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.5718999999990046,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 19,
+          "at": "2026-11-02T08:12:08.629Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.3809000000001106,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 20,
+          "at": "2026-11-02T08:12:09.143Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.1876000000011118,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 21,
+          "at": "2026-11-02T08:12:09.656Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.3971999999994296,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 22,
+          "at": "2026-11-02T08:12:10.171Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.273400000005495,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 23,
+          "at": "2026-11-02T08:12:10.686Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.5311000000001513,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 24,
+          "at": "2026-11-02T08:12:11.202Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.7542000000030384,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 25,
+          "at": "2026-11-02T08:12:11.715Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.5486999999993714,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 26,
+          "at": "2026-11-02T08:12:12.225Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.4622999999992317,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 27,
+          "at": "2026-11-02T08:12:12.740Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.3294000000023516,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 28,
+          "at": "2026-11-02T08:12:13.254Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.805000000000291,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 29,
+          "at": "2026-11-02T08:12:13.255Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "usage",
+          "data": {
+            "requestId": "ab1006e9-7dd7-4d48-ae68-746dd70a6746",
+            "purpose": "memory_extraction",
+            "usage": {
+              "input": 7313,
+              "output": 1004,
+              "cacheRead": 1792,
+              "cacheWrite": null,
+              "raw": {
+                "completion_tokens": 1004,
+                "prompt_tokens": 7313,
+                "total_tokens": 8317,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": null,
+                  "audio_tokens": null,
+                  "reasoning_tokens": 861,
+                  "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cache_write_tokens": null,
+                  "cached_tokens": 1792
+                },
+                "prompt_cache_hit_tokens": 1792,
+                "prompt_cache_miss_tokens": 5521
+              }
+            },
+            "source": "openviking-provider-response",
+            "taskId": "bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "executedAt": "2026-11-02T08:12:13.010903+00:00"
+          }
+        },
+        {
+          "seq": 31,
+          "at": "2026-11-02T08:12:13.774Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 4.084899999994377,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 32,
+          "at": "2026-11-02T08:12:14.291Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 4.194700000000012,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 33,
+          "at": "2026-11-02T08:12:14.805Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.731100000004517,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 34,
+          "at": "2026-11-02T08:12:15.314Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.252100000005157,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 35,
+          "at": "2026-11-02T08:12:15.829Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.306799999998475,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 36,
+          "at": "2026-11-02T08:12:16.344Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 4.1120000000009895,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 37,
+          "at": "2026-11-02T08:12:16.859Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.5714000000007218,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 38,
+          "at": "2026-11-02T08:12:17.373Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.760600000001432,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 39,
+          "at": "2026-11-02T08:12:17.889Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.2405999999973574,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 40,
+          "at": "2026-11-02T08:12:18.405Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.097799999995914,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 41,
+          "at": "2026-11-02T08:12:18.925Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.5979000000006636,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 42,
+          "at": "2026-11-02T08:12:19.440Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.6369999999951688,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 43,
+          "at": "2026-11-02T08:12:19.952Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.06430000000546,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 44,
+          "at": "2026-11-02T08:12:20.467Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.263699999995879,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 45,
+          "at": "2026-11-02T08:12:20.983Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.3985000000029686,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 46,
+          "at": "2026-11-02T08:12:21.499Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.2369000000035157,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 47,
+          "at": "2026-11-02T08:12:22.011Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.5904000000009546,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 48,
+          "at": "2026-11-02T08:12:22.525Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.8091999999960535,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 49,
+          "at": "2026-11-02T08:12:23.036Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.3104000000021188,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 50,
+          "at": "2026-11-02T08:12:23.550Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.6691999999966356,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 51,
+          "at": "2026-11-02T08:12:24.063Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.573099999994156,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 52,
+          "at": "2026-11-02T08:12:24.064Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:12:23.634954+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_daa4181c249344b0a11aaac420562add",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": false,
+            "durationMs": 130.41976899967267,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 53,
+          "at": "2026-11-02T08:12:24.065Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:12:23.887976+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_daa4181c249344b0a11aaac420562add",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": false,
+            "durationMs": 234.28410999986227,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 54,
+          "at": "2026-11-02T08:12:24.579Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/bdb2d4b0-b03f-4073-b468-06f166a998c1",
+            "durationMs": 3.860899999999674,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 55,
+          "at": "2026-11-02T08:12:24.581Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.extraction.completed",
+          "data": {
+            "task": {
+              "task_id": "bdb2d4b0-b03f-4073-b468-06f166a998c1",
+              "task_type": "session_commit",
+              "status": "completed",
+              "created_at": 1793607121.8671615,
+              "updated_at": 1793607144.3501832,
+              "processing_seconds": 21.909064769744873,
+              "resource_id": "cncode-26517d32-f503-4c63-9bbc-c0d03a54e821",
+              "meta": {},
+              "stage": "completed",
+              "result": {
+                "session_id": "cncode-26517d32-f503-4c63-9bbc-c0d03a54e821",
+                "archive_uri": "viking://user/cncode/sessions/cncode-26517d32-f503-4c63-9bbc-c0d03a54e821/history/archive_001",
+                "memories_extracted": {
+                  "memory_write": 1
+                },
+                "session_skills_extracted": 0,
+                "session_skill_uris": [],
+                "memory_extraction": {
+                  "skipped": 0,
+                  "skipped_operations": []
+                },
+                "usage_events_extracted": 0,
+                "effective_memory_types": [
+                  "entities",
+                  "events",
+                  "identity",
+                  "preferences",
+                  "profile",
+                  "soul"
+                ],
+                "agent_evolution_enabled": false,
+                "agent_memory_skip_reason": "agent_evolution_disabled",
+                "token_usage": {
+                  "llm": {
+                    "prompt_tokens": 7313,
+                    "completion_tokens": 1004,
+                    "total_tokens": 8317,
+                    "cached_tokens": 1792,
+                    "reasoning_tokens": 861
+                  },
+                  "embedding": {
+                    "total_tokens": 0
+                  },
+                  "total": {
+                    "total_tokens": 8317,
+                    "cached_tokens": 1792,
+                    "reasoning_tokens": 861
+                  }
+                },
+                "memory_diff_uri": "viking://user/cncode/sessions/cncode-26517d32-f503-4c63-9bbc-c0d03a54e821/history/archive_001/memory_diff.json"
+              },
+              "error": null,
+              "created_at_iso": "2026-11-02T08:12:01.867162+00:00",
+              "updated_at_iso": "2026-11-02T08:12:24.350183+00:00"
+            },
+            "extractionComplete": true,
+            "usageSource": "provider observations; task token_usage is cumulative server metadata"
+          }
+        },
+        {
+          "seq": 56,
+          "at": "2026-11-02T08:12:24.581Z",
+          "runId": "46c02f41-74d6-48b1-900d-a60c53cc4470",
+          "type": "memory.extraction.end",
+          "data": {
+            "durationMs": 22640.157100000004
+          }
+        }
+      ]
+    },
+    {
+      "label": "withheld-conventions-cncode-no-memory",
+      "id": "d2720535-a250-40be-8903-93b83dad1cec",
+      "sessionId": "91240dfa-0e4c-4e36-884e-f2c97f2a767b",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:16:55.524Z",
+      "state": "completed",
+      "outcome": "fail",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.0",
+        "memory": "off",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 4,
+        "inputTokens": 6817,
+        "outputTokens": 1516,
+        "cacheReadTokens": 5376,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 4,
+            "inputTokens": 6817,
+            "outputTokens": 1516,
+            "cacheReadTokens": 5376,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "interactionWaitMs": 0,
+        "phaseTotalsMs": {
+          "preparation.end": 4.427799999999934,
+          "model.end": 10144.7019,
+          "tool.end": 46.259999999998854
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 10188,
+        "nonHumanWallMs": 10188
+      },
+      "endedAt": "2026-11-02T08:17:05.712Z",
+      "memoryEvents": [
+        {
+          "seq": 17,
+          "at": "2026-11-02T08:16:57.864Z",
+          "runId": "d2720535-a250-40be-8903-93b83dad1cec",
+          "type": "usage",
+          "data": {
+            "requestId": "634038de-21e5-4701-839c-6d9df9610c21",
+            "purpose": "conversation",
+            "usage": {
+              "input": 652,
+              "output": 336,
+              "cacheRead": 512,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 652,
+                "completion_tokens": 336,
+                "total_tokens": 988,
+                "prompt_tokens_details": {
+                  "cached_tokens": 512
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 198
+                },
+                "prompt_cache_hit_tokens": 512,
+                "prompt_cache_miss_tokens": 140
+              }
+            }
+          }
+        },
+        {
+          "seq": 43,
+          "at": "2026-11-02T08:16:59.361Z",
+          "runId": "d2720535-a250-40be-8903-93b83dad1cec",
+          "type": "usage",
+          "data": {
+            "requestId": "b079381f-5db2-49ee-a7b3-66d41c25bbd2",
+            "purpose": "conversation",
+            "usage": {
+              "input": 1298,
+              "output": 247,
+              "cacheRead": 896,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 1298,
+                "completion_tokens": 247,
+                "total_tokens": 1545,
+                "prompt_tokens_details": {
+                  "cached_tokens": 896
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 35
+                },
+                "prompt_cache_hit_tokens": 896,
+                "prompt_cache_miss_tokens": 402
+              }
+            }
+          }
+        },
+        {
+          "seq": 58,
+          "at": "2026-11-02T08:17:02.624Z",
+          "runId": "d2720535-a250-40be-8903-93b83dad1cec",
+          "type": "usage",
+          "data": {
+            "requestId": "3e0a5499-8185-4651-b003-4f7c8ed841a0",
+            "purpose": "conversation",
+            "usage": {
+              "input": 2020,
+              "output": 510,
+              "cacheRead": 1536,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 2020,
+                "completion_tokens": 510,
+                "total_tokens": 2530,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1536
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 376
+                },
+                "prompt_cache_hit_tokens": 1536,
+                "prompt_cache_miss_tokens": 484
+              }
+            }
+          }
+        },
+        {
+          "seq": 447,
+          "at": "2026-11-02T08:17:05.705Z",
+          "runId": "d2720535-a250-40be-8903-93b83dad1cec",
+          "type": "usage",
+          "data": {
+            "requestId": "b7a0686e-82b7-4845-9665-3409e9c9b35e",
+            "purpose": "conversation",
+            "usage": {
+              "input": 2847,
+              "output": 423,
+              "cacheRead": 2432,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 2847,
+                "completion_tokens": 423,
+                "total_tokens": 3270,
+                "prompt_tokens_details": {
+                  "cached_tokens": 2432
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 44
+                },
+                "prompt_cache_hit_tokens": 2432,
+                "prompt_cache_miss_tokens": 415
+              }
+            }
+          }
+        }
+      ],
+      "verification": {
+        "expected": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "actual": null,
+        "pass": false
+      }
+    },
+    {
+      "label": "withheld-conventions-cncode-memory",
+      "id": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+      "sessionId": "e2e78f89-34ec-4f24-8e83-d62245eea792",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:17:05.723Z",
+      "state": "completed",
+      "outcome": "pass",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.0",
+        "memory": "openviking",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 5,
+        "inputTokens": 9081,
+        "outputTokens": 1352,
+        "cacheReadTokens": 7168,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 5,
+            "inputTokens": 9081,
+            "outputTokens": 1352,
+            "cacheReadTokens": 7168,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 12,
+        "interactionWaitMs": 12,
+        "phaseTotalsMs": {
+          "memory.embedding.end": 157.61448400007794,
+          "memory.recall.end": 185.46470000000045,
+          "preparation.end": 191.64879999999903,
+          "model.end": 9814.9072,
+          "tool.end": 16.846999999996115
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 11043,
+        "nonHumanWallMs": 11043
+      },
+      "endedAt": "2026-11-02T08:17:16.766Z",
+      "memoryEvents": [
+        {
+          "seq": 3,
+          "at": "2026-11-02T08:17:05.915Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_recall",
+            "path": "/api/v1/search/search",
+            "durationMs": 181.58040000000074,
+            "status": 200,
+            "telemetry": {
+              "id": "tm_1b4e104cb4b2467fb5cb1a7530065c18",
+              "summary": {
+                "operation": "search.search",
+                "status": "ok",
+                "duration_ms": 175.878,
+                "vector": {
+                  "searches": 1,
+                  "scored": 1,
+                  "passed": 1,
+                  "returned": 1,
+                  "scanned": 1,
+                  "scan_reason": ""
+                },
+                "search": {
+                  "target_abstract": {
+                    "duration_ms": 12.573
+                  },
+                  "embed_query": {
+                    "duration_ms": 160.25
+                  },
+                  "vector_retrieval": {
+                    "duration_ms": 1.179
+                  },
+                  "typed_queries_count": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "seq": 4,
+          "at": "2026-11-02T08:17:05.916Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:17:05.910270+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_1b4e104cb4b2467fb5cb1a7530065c18",
+            "operation": "search.search",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": true,
+            "durationMs": 157.61448400007794,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 5,
+          "at": "2026-11-02T08:17:05.917Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.recall",
+          "data": {
+            "peer": "cncode-63ec840de34f36f887ae443f",
+            "query": "按本项目之前已经确定的长期配置约定，在当前目录生成 client-config.json，恰好包含 port（数字）、envPrefix（字符串）、configFile（字符串）三个字段。不要猜测约定值；不能确定时报告缺失。完成后检查文件。",
+            "result": "{\"memories\":[{\"context_type\":\"memory\",\"uri\":\"viking://user/cncode/peers/cncode-63ec840de34f36f887ae443f/memories/entities/开发项目/aurora.md\",\"level\":2,\"score\":0.8322311639785767,\"abstract\":\"# Aurora 项目\\nAurora 是用户长期开发的软件项目，采用一套固定的跨会话技术约定。\\n\\n## 配置约定\\n- HTTP 服务端口固定为 52577，后续编码必须沿用。\\n- 环境变量前缀固定为 AURORA_E0E959_。\\n- 配置文件名固定为 aurora-e0e959.json。\\n\\n## 约定性质\\n- 用户明确说明这些不是临时示例，而是跨会话长期有效的项目规范。\\n- 后续涉及该项目的编码工作需保持一致，不得擅自更换端口、前缀或配置文件名。\\n- 相关约定于 2026-11-02 再次确认。\",\"tags\":[\"memory_type=entities\"]}],\"resources\":[],\"skills\":[],\"total\":1}",
+            "budgetCharacters": 6000,
+            "usage": null
+          }
+        },
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:17:05.918Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.recall.end",
+          "data": {
+            "durationMs": 185.46470000000045
+          }
+        },
+        {
+          "seq": 10,
+          "at": "2026-11-02T08:17:09.200Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "usage",
+          "data": {
+            "requestId": "9c7aaa88-64ec-4f8b-bc74-efc67ce21fa8",
+            "purpose": "conversation",
+            "usage": {
+              "input": 891,
+              "output": 518,
+              "cacheRead": 0,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 891,
+                "completion_tokens": 518,
+                "total_tokens": 1409,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 452
+                },
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 891
+              }
+            }
+          }
+        },
+        {
+          "seq": 17,
+          "at": "2026-11-02T08:17:10.469Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "usage",
+          "data": {
+            "requestId": "b93fb199-40ba-48d8-95e4-53a7603f4874",
+            "purpose": "conversation",
+            "usage": {
+              "input": 1512,
+              "output": 165,
+              "cacheRead": 1280,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 1512,
+                "completion_tokens": 165,
+                "total_tokens": 1677,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1280
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 32
+                },
+                "prompt_cache_hit_tokens": 1280,
+                "prompt_cache_miss_tokens": 232
+              }
+            }
+          }
+        },
+        {
+          "seq": 28,
+          "at": "2026-11-02T08:17:12.169Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "usage",
+          "data": {
+            "requestId": "a1186e44-b107-4182-9408-643c1edcb920",
+            "purpose": "conversation",
+            "usage": {
+              "input": 1993,
+              "output": 286,
+              "cacheRead": 1664,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 1993,
+                "completion_tokens": 286,
+                "total_tokens": 2279,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1664
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 192
+                },
+                "prompt_cache_hit_tokens": 1664,
+                "prompt_cache_miss_tokens": 329
+              }
+            }
+          }
+        },
+        {
+          "seq": 35,
+          "at": "2026-11-02T08:17:13.131Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "usage",
+          "data": {
+            "requestId": "fac87b5c-b966-4016-a1b1-01e473b52cfd",
+            "purpose": "conversation",
+            "usage": {
+              "input": 2293,
+              "output": 40,
+              "cacheRead": 2048,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 2293,
+                "completion_tokens": 40,
+                "total_tokens": 2333,
+                "prompt_tokens_details": {
+                  "cached_tokens": 2048
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 2048,
+                "prompt_cache_miss_tokens": 245
+              }
+            }
+          }
+        },
+        {
+          "seq": 353,
+          "at": "2026-11-02T08:17:15.773Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "usage",
+          "data": {
+            "requestId": "f26804a5-2003-4b7c-bbc5-e66795b8e721",
+            "purpose": "conversation",
+            "usage": {
+              "input": 2392,
+              "output": 343,
+              "cacheRead": 2176,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 2392,
+                "completion_tokens": 343,
+                "total_tokens": 2735,
+                "prompt_tokens_details": {
+                  "cached_tokens": 2176
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 29
+                },
+                "prompt_cache_hit_tokens": 2176,
+                "prompt_cache_miss_tokens": 216
+              }
+            }
+          }
+        },
+        {
+          "seq": 356,
+          "at": "2026-11-02T08:17:15.786Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-e2e78f89-34ec-4f24-8e83-d62245eea792",
+            "durationMs": 7.9988999999986845,
+            "status": 404,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 357,
+          "at": "2026-11-02T08:17:16.140Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions",
+            "durationMs": 352.78190000000177,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 358,
+          "at": "2026-11-02T08:17:16.446Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-e2e78f89-34ec-4f24-8e83-d62245eea792/messages",
+            "durationMs": 304.6432999999997,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 359,
+          "at": "2026-11-02T08:17:16.757Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-e2e78f89-34ec-4f24-8e83-d62245eea792/messages",
+            "durationMs": 309.9792000000016,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 360,
+          "at": "2026-11-02T08:17:16.759Z",
+          "runId": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+          "type": "memory.captured",
+          "data": {
+            "sessionId": "cncode-e2e78f89-34ec-4f24-8e83-d62245eea792",
+            "committed": false
+          }
+        }
+      ],
+      "verification": {
+        "expected": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "actual": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "pass": true
+      }
+    },
+    {
+      "label": "explicit-control-cncode-no-memory",
+      "id": "05f85d19-cd54-41cc-9e4f-0710fd2fe963",
+      "sessionId": "e78613d4-f1d8-4e97-83a0-e37b372adabe",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:17:16.774Z",
+      "state": "completed",
+      "outcome": "pass",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.0",
+        "memory": "off",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 3,
+        "inputTokens": 2251,
+        "outputTokens": 311,
+        "cacheReadTokens": 1536,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 3,
+            "inputTokens": 2251,
+            "outputTokens": 311,
+            "cacheReadTokens": 1536,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 11,
+        "interactionWaitMs": 11,
+        "phaseTotalsMs": {
+          "preparation.end": 5.176799999997456,
+          "model.end": 2829.507900000004,
+          "tool.end": 3.7785000000003492
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 2869,
+        "nonHumanWallMs": 2869
+      },
+      "endedAt": "2026-11-02T08:17:19.643Z",
+      "memoryEvents": [
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:17:17.576Z",
+          "runId": "05f85d19-cd54-41cc-9e4f-0710fd2fe963",
+          "type": "usage",
+          "data": {
+            "requestId": "cbe696bb-04f7-4f0e-a757-4a3005421b3b",
+            "purpose": "conversation",
+            "usage": {
+              "input": 646,
+              "output": 99,
+              "cacheRead": 384,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 646,
+                "completion_tokens": 99,
+                "total_tokens": 745,
+                "prompt_tokens_details": {
+                  "cached_tokens": 384
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 15
+                },
+                "prompt_cache_hit_tokens": 384,
+                "prompt_cache_miss_tokens": 262
+              }
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "at": "2026-11-02T08:17:18.495Z",
+          "runId": "05f85d19-cd54-41cc-9e4f-0710fd2fe963",
+          "type": "usage",
+          "data": {
+            "requestId": "025971fb-8d4d-4758-8d2c-c4bc34140d77",
+            "purpose": "conversation",
+            "usage": {
+              "input": 759,
+              "output": 40,
+              "cacheRead": 512,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 759,
+                "completion_tokens": 40,
+                "total_tokens": 799,
+                "prompt_tokens_details": {
+                  "cached_tokens": 512
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 512,
+                "prompt_cache_miss_tokens": 247
+              }
+            }
+          }
+        },
+        {
+          "seq": 189,
+          "at": "2026-11-02T08:17:19.637Z",
+          "runId": "05f85d19-cd54-41cc-9e4f-0710fd2fe963",
+          "type": "usage",
+          "data": {
+            "requestId": "efbdd0f4-fb33-44bf-857b-f5eacf76bcc9",
+            "purpose": "conversation",
+            "usage": {
+              "input": 846,
+              "output": 172,
+              "cacheRead": 640,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 846,
+                "completion_tokens": 172,
+                "total_tokens": 1018,
+                "prompt_tokens_details": {
+                  "cached_tokens": 640
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 640,
+                "prompt_cache_miss_tokens": 206
+              }
+            }
+          }
+        }
+      ],
+      "verification": {
+        "expected": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "actual": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "pass": true
+      }
+    },
+    {
+      "label": "explicit-control-cncode-memory",
+      "id": "724916b0-c41d-4bc8-a2db-84db955a4280",
+      "sessionId": "0fa67112-63be-45f3-a213-5893d903a8d5",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:17:19.651Z",
+      "state": "completed",
+      "outcome": "pass",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.0",
+        "memory": "openviking",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 3,
+        "inputTokens": 3079,
+        "outputTokens": 373,
+        "cacheReadTokens": 1792,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 3,
+            "inputTokens": 3079,
+            "outputTokens": 373,
+            "cacheReadTokens": 1792,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 17,
+        "interactionWaitMs": 17,
+        "phaseTotalsMs": {
+          "memory.embedding.end": 134.04625600014697,
+          "memory.recall.end": 156.00830000000133,
+          "preparation.end": 161.13000000000102,
+          "model.end": 3361.938699999999,
+          "tool.end": 3.511000000002241
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 4609,
+        "nonHumanWallMs": 4609
+      },
+      "endedAt": "2026-11-02T08:17:24.260Z",
+      "memoryEvents": [
+        {
+          "seq": 3,
+          "at": "2026-11-02T08:17:19.811Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_recall",
+            "path": "/api/v1/search/search",
+            "durationMs": 152.33789999999863,
+            "status": 200,
+            "telemetry": {
+              "id": "tm_da4f959d4d8141ba869d0c89a45c61e0",
+              "summary": {
+                "operation": "search.search",
+                "status": "ok",
+                "duration_ms": 148.392,
+                "vector": {
+                  "searches": 1,
+                  "scored": 1,
+                  "passed": 1,
+                  "returned": 1,
+                  "scanned": 1,
+                  "scan_reason": ""
+                },
+                "search": {
+                  "target_abstract": {
+                    "duration_ms": 9.214
+                  },
+                  "embed_query": {
+                    "duration_ms": 136.329
+                  },
+                  "vector_retrieval": {
+                    "duration_ms": 1.097
+                  },
+                  "typed_queries_count": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "seq": 4,
+          "at": "2026-11-02T08:17:19.813Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:17:19.808197+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_da4f959d4d8141ba869d0c89a45c61e0",
+            "operation": "search.search",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": true,
+            "durationMs": 134.04625600014697,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 5,
+          "at": "2026-11-02T08:17:19.814Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.recall",
+          "data": {
+            "peer": "cncode-63ec840de34f36f887ae443f",
+            "query": "在当前目录生成 client-config.json，内容恰好是 {\"port\":52577,\"envPrefix\":\"AURORA_E0E959_\",\"configFile\":\"aurora-e0e959.json\"}，完成后读取检查。",
+            "result": "{\"memories\":[{\"context_type\":\"memory\",\"uri\":\"viking://user/cncode/peers/cncode-63ec840de34f36f887ae443f/memories/entities/开发项目/aurora.md\",\"level\":2,\"score\":0.837960958480835,\"abstract\":\"# Aurora 项目\\nAurora 是用户长期开发的软件项目，采用一套固定的跨会话技术约定。\\n\\n## 配置约定\\n- HTTP 服务端口固定为 52577，后续编码必须沿用。\\n- 环境变量前缀固定为 AURORA_E0E959_。\\n- 配置文件名固定为 aurora-e0e959.json。\\n\\n## 约定性质\\n- 用户明确说明这些不是临时示例，而是跨会话长期有效的项目规范。\\n- 后续涉及该项目的编码工作需保持一致，不得擅自更换端口、前缀或配置文件名。\\n- 相关约定于 2026-11-02 再次确认。\",\"tags\":[\"memory_type=entities\"]}],\"resources\":[],\"skills\":[],\"total\":1}",
+            "budgetCharacters": 6000,
+            "usage": null
+          }
+        },
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:17:19.815Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.recall.end",
+          "data": {
+            "durationMs": 156.00830000000133
+          }
+        },
+        {
+          "seq": 10,
+          "at": "2026-11-02T08:17:21.158Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "usage",
+          "data": {
+            "requestId": "49746c17-30ec-4cc9-a0fd-adf60bae20c8",
+            "purpose": "conversation",
+            "usage": {
+              "input": 884,
+              "output": 156,
+              "cacheRead": 0,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 884,
+                "completion_tokens": 156,
+                "total_tokens": 1040,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 72
+                },
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 884
+              }
+            }
+          }
+        },
+        {
+          "seq": 17,
+          "at": "2026-11-02T08:17:21.934Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "usage",
+          "data": {
+            "requestId": "8b59b1a1-ab98-4572-baab-ad20ca34a8c9",
+            "purpose": "conversation",
+            "usage": {
+              "input": 1054,
+              "output": 40,
+              "cacheRead": 896,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 1054,
+                "completion_tokens": 40,
+                "total_tokens": 1094,
+                "prompt_tokens_details": {
+                  "cached_tokens": 896
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 896,
+                "prompt_cache_miss_tokens": 158
+              }
+            }
+          }
+        },
+        {
+          "seq": 198,
+          "at": "2026-11-02T08:17:23.208Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "usage",
+          "data": {
+            "requestId": "9bbb1c70-5ae1-4025-a7a7-108aa1de81a8",
+            "purpose": "conversation",
+            "usage": {
+              "input": 1141,
+              "output": 177,
+              "cacheRead": 896,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 1141,
+                "completion_tokens": 177,
+                "total_tokens": 1318,
+                "prompt_tokens_details": {
+                  "cached_tokens": 896
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 896,
+                "prompt_cache_miss_tokens": 245
+              }
+            }
+          }
+        },
+        {
+          "seq": 201,
+          "at": "2026-11-02T08:17:23.221Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-0fa67112-63be-45f3-a213-5893d903a8d5",
+            "durationMs": 7.853800000000774,
+            "status": 404,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 202,
+          "at": "2026-11-02T08:17:23.590Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions",
+            "durationMs": 368.51230000000214,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 203,
+          "at": "2026-11-02T08:17:23.920Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-0fa67112-63be-45f3-a213-5893d903a8d5/messages",
+            "durationMs": 329.3036000000029,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 204,
+          "at": "2026-11-02T08:17:24.253Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-0fa67112-63be-45f3-a213-5893d903a8d5/messages",
+            "durationMs": 331.55739999999787,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 205,
+          "at": "2026-11-02T08:17:24.254Z",
+          "runId": "724916b0-c41d-4bc8-a2db-84db955a4280",
+          "type": "memory.captured",
+          "data": {
+            "sessionId": "cncode-0fa67112-63be-45f3-a213-5893d903a8d5",
+            "committed": false
+          }
+        }
+      ],
+      "verification": {
+        "expected": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "actual": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "pass": true
+      }
+    },
+    {
+      "label": "withheld-conventions-dsh-no-memory",
+      "id": "00f62a41-0614-48da-8da2-6150db3ffd40",
+      "sessionId": "00e9063f-0a82-4944-9b34-df71fae491fe",
+      "engine": "dsh",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:17:24.270Z",
+      "state": "completed",
+      "outcome": "fail",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.2-alpha.2",
+        "memory": "off",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 3,
+        "inputTokens": 13318,
+        "outputTokens": 3197,
+        "cacheReadTokens": 9728,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 3,
+            "inputTokens": 13318,
+            "outputTokens": 3197,
+            "cacheReadTokens": 9728,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 9,
+        "interactionWaitMs": 9,
+        "phaseTotalsMs": {
+          "startup.end": 2390.7818000000007,
+          "model.end": 20382.0256,
+          "tool.end": 46.21700000000055
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 23017,
+        "nonHumanWallMs": 23017
+      },
+      "endedAt": "2026-11-02T08:17:47.287Z",
+      "memoryEvents": [
+        {
+          "seq": 20,
+          "at": "2026-11-02T08:17:30.366Z",
+          "runId": "00f62a41-0614-48da-8da2-6150db3ffd40",
+          "type": "usage",
+          "data": {
+            "requestId": "6394ad3b-f55c-4a8a-8160-a0b79f78a4f1",
+            "purpose": "conversation",
+            "usage": {
+              "input": 3331,
+              "output": 606,
+              "cacheRead": 128,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 3203,
+                "outputTokens": 606,
+                "totalTokens": 3937,
+                "cacheReadTokens": 128,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 3203
+              }
+            }
+          }
+        },
+        {
+          "seq": 58,
+          "at": "2026-11-02T08:17:41.710Z",
+          "runId": "00f62a41-0614-48da-8da2-6150db3ffd40",
+          "type": "usage",
+          "data": {
+            "requestId": "42229cd2-db57-49b5-916b-888b98a3db21",
+            "purpose": "conversation",
+            "usage": {
+              "input": 4093,
+              "output": 1771,
+              "cacheRead": 3840,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 253,
+                "outputTokens": 1771,
+                "totalTokens": 5864,
+                "cacheReadTokens": 3840,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 253
+              }
+            }
+          }
+        },
+        {
+          "seq": 68,
+          "at": "2026-11-02T08:17:47.225Z",
+          "runId": "00f62a41-0614-48da-8da2-6150db3ffd40",
+          "type": "usage",
+          "data": {
+            "requestId": "3e5d6375-1233-4f27-a7cc-49fce4f075ac",
+            "purpose": "conversation",
+            "usage": {
+              "input": 5894,
+              "output": 820,
+              "cacheRead": 5760,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 134,
+                "outputTokens": 820,
+                "totalTokens": 6714,
+                "cacheReadTokens": 5760,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 134
+              }
+            }
+          }
+        }
+      ],
+      "verification": {
+        "expected": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "actual": null,
+        "pass": false
+      }
+    },
+    {
+      "label": "withheld-conventions-dsh-memory",
+      "id": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+      "sessionId": "373cb1c8-eb0f-481d-a3df-fd15a050c727",
+      "engine": "dsh",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:17:47.299Z",
+      "state": "completed",
+      "outcome": "pass",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.2-alpha.2",
+        "memory": "openviking",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 4,
+        "inputTokens": 18731,
+        "outputTokens": 1446,
+        "cacheReadTokens": 14720,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 4,
+            "inputTokens": 18731,
+            "outputTokens": 1446,
+            "cacheReadTokens": 14720,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "interactionWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 2380.150099999999,
+          "memory.embedding.end": 152.2079839996877,
+          "model.end": 9180.356200000002,
+          "tool.end": 29.369400000001406
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 13401,
+        "nonHumanWallMs": 13401
+      },
+      "endedAt": "2026-11-02T08:18:00.700Z",
+      "memoryEvents": [
+        {
+          "seq": 5,
+          "at": "2026-11-02T08:17:49.822Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/health",
+            "status": 200,
+            "durationMs": 17.651100000000042,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:49.713Z"
+          }
+        },
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:17:50.256Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/sessions",
+            "status": 200,
+            "durationMs": 468.90549999999985,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.183Z"
+          }
+        },
+        {
+          "seq": 7,
+          "at": "2026-11-02T08:17:50.257Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/system/status",
+            "status": 200,
+            "durationMs": 3.8837000000003172,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.189Z"
+          }
+        },
+        {
+          "seq": 8,
+          "at": "2026-11-02T08:17:50.258Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 200,
+            "durationMs": 12.866199999999935,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.203Z"
+          }
+        },
+        {
+          "seq": 9,
+          "at": "2026-11-02T08:17:50.258Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/content/read",
+            "status": 404,
+            "durationMs": 18.514000000000124,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.222Z"
+          }
+        },
+        {
+          "seq": 10,
+          "at": "2026-11-02T08:17:50.259Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 404,
+            "durationMs": 19.204400000000078,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.224Z"
+          }
+        },
+        {
+          "seq": 11,
+          "at": "2026-11-02T08:17:50.259Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 404,
+            "durationMs": 22.623299999999745,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.227Z"
+          }
+        },
+        {
+          "seq": 12,
+          "at": "2026-11-02T08:17:50.260Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/content/read",
+            "status": 404,
+            "durationMs": 23.40169999999989,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.228Z"
+          }
+        },
+        {
+          "seq": 13,
+          "at": "2026-11-02T08:17:50.260Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 404,
+            "durationMs": 24.315500000000156,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.229Z"
+          }
+        },
+        {
+          "seq": 19,
+          "at": "2026-11-02T08:17:50.365Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 200,
+            "durationMs": 61.83750000000009,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:17:50.267Z"
+          }
+        },
+        {
+          "seq": 31,
+          "at": "2026-11-02T08:17:50.694Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:17:50.504270+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_8b3fd1f12cd3483d97a749087a68b8d6",
+            "operation": "search.context",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": true,
+            "durationMs": 152.2079839996877,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 32,
+          "at": "2026-11-02T08:17:50.695Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/search/search",
+            "status": 200,
+            "durationMs": 321.8009000000002,
+            "telemetry": {
+              "id": "tm_8b3fd1f12cd3483d97a749087a68b8d6",
+              "summary": {
+                "operation": "search.context",
+                "status": "ok",
+                "duration_ms": 316.817,
+                "vector": {
+                  "searches": 12,
+                  "scored": 10,
+                  "passed": 4,
+                  "scanned": 10,
+                  "scan_reason": ""
+                },
+                "search": {
+                  "embed_query": {
+                    "duration_ms": 1905.422
+                  },
+                  "vector_retrieval": {
+                    "duration_ms": 71.248
+                  }
+                }
+              }
+            },
+            "executedAt": "2026-11-02T08:17:50.627Z"
+          }
+        },
+        {
+          "seq": 45,
+          "at": "2026-11-02T08:17:54.842Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "usage",
+          "data": {
+            "requestId": "5a60307a-7961-4eec-a602-dba43edad212",
+            "purpose": "conversation",
+            "usage": {
+              "input": 3782,
+              "output": 709,
+              "cacheRead": 384,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 3398,
+                "outputTokens": 709,
+                "totalTokens": 4491,
+                "cacheReadTokens": 384,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 3398
+              }
+            }
+          }
+        },
+        {
+          "seq": 59,
+          "at": "2026-11-02T08:17:57.133Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "usage",
+          "data": {
+            "requestId": "f32c2d87-00d0-4235-a554-51d6a0fe3ffe",
+            "purpose": "conversation",
+            "usage": {
+              "input": 4551,
+              "output": 471,
+              "cacheRead": 4352,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 199,
+                "outputTokens": 471,
+                "totalTokens": 5022,
+                "cacheReadTokens": 4352,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 199
+              }
+            }
+          }
+        },
+        {
+          "seq": 70,
+          "at": "2026-11-02T08:17:58.113Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "usage",
+          "data": {
+            "requestId": "f39ca709-ef4a-46a9-879d-2a806c988cce",
+            "purpose": "conversation",
+            "usage": {
+              "input": 5106,
+              "output": 46,
+              "cacheRead": 4864,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 242,
+                "outputTokens": 46,
+                "totalTokens": 5152,
+                "cacheReadTokens": 4864,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 242
+              }
+            }
+          }
+        },
+        {
+          "seq": 81,
+          "at": "2026-11-02T08:18:00.017Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/dsh-373cb1c8-eb0f-481d-a3df-fd15a050c727",
+            "durationMs": 32.38719999999739,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 82,
+          "at": "2026-11-02T08:18:00.075Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "usage",
+          "data": {
+            "requestId": "b17aa979-a8d9-4ff8-b1fd-5a073eff7fd2",
+            "purpose": "conversation",
+            "usage": {
+              "input": 5292,
+              "output": 220,
+              "cacheRead": 5120,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 172,
+                "outputTokens": 220,
+                "totalTokens": 5512,
+                "cacheReadTokens": 5120,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 172
+              }
+            }
+          }
+        },
+        {
+          "seq": 84,
+          "at": "2026-11-02T08:18:00.327Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/dsh-373cb1c8-eb0f-481d-a3df-fd15a050c727/messages",
+            "durationMs": 309.06669999999576,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 85,
+          "at": "2026-11-02T08:18:00.621Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/dsh-373cb1c8-eb0f-481d-a3df-fd15a050c727/messages",
+            "durationMs": 292.49499999999534,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 86,
+          "at": "2026-11-02T08:18:00.622Z",
+          "runId": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+          "type": "memory.captured",
+          "data": {
+            "sessionId": "dsh-373cb1c8-eb0f-481d-a3df-fd15a050c727",
+            "committed": false
+          }
+        }
+      ],
+      "verification": {
+        "expected": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "actual": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "pass": true
+      }
+    },
+    {
+      "label": "explicit-control-dsh-no-memory",
+      "id": "11d4830f-1128-43d4-b0ee-217604e73b1c",
+      "sessionId": "8c57be7a-f50a-4522-a485-19f9013e2704",
+      "engine": "dsh",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:18:00.711Z",
+      "state": "completed",
+      "outcome": "pass",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.2-alpha.2",
+        "memory": "off",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 3,
+        "inputTokens": 10738,
+        "outputTokens": 335,
+        "cacheReadTokens": 8832,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 3,
+            "inputTokens": 10738,
+            "outputTokens": 335,
+            "cacheReadTokens": 8832,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "interactionWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 2316.8438000000024,
+          "model.end": 3772.378700000001,
+          "tool.end": 26.139299999999366
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 6352,
+        "nonHumanWallMs": 6352
+      },
+      "endedAt": "2026-11-02T08:18:07.063Z",
+      "memoryEvents": [
+        {
+          "seq": 25,
+          "at": "2026-11-02T08:18:04.861Z",
+          "runId": "11d4830f-1128-43d4-b0ee-217604e73b1c",
+          "type": "usage",
+          "data": {
+            "requestId": "5de493e9-8bfd-4b99-af36-c62a059070fc",
+            "purpose": "conversation",
+            "usage": {
+              "input": 3325,
+              "output": 190,
+              "cacheRead": 1792,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 1533,
+                "outputTokens": 190,
+                "totalTokens": 3515,
+                "cacheReadTokens": 1792,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 1533
+              }
+            }
+          }
+        },
+        {
+          "seq": 37,
+          "at": "2026-11-02T08:18:05.949Z",
+          "runId": "11d4830f-1128-43d4-b0ee-217604e73b1c",
+          "type": "usage",
+          "data": {
+            "requestId": "40e97e0d-4f29-4a0f-8f09-40dfb855d3d0",
+            "purpose": "conversation",
+            "usage": {
+              "input": 3599,
+              "output": 92,
+              "cacheRead": 3456,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 143,
+                "outputTokens": 92,
+                "totalTokens": 3691,
+                "cacheReadTokens": 3456,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 143
+              }
+            }
+          }
+        },
+        {
+          "seq": 48,
+          "at": "2026-11-02T08:18:06.989Z",
+          "runId": "11d4830f-1128-43d4-b0ee-217604e73b1c",
+          "type": "usage",
+          "data": {
+            "requestId": "180b6ae4-52e6-4c18-8d5f-940d6ea591fc",
+            "purpose": "conversation",
+            "usage": {
+              "input": 3814,
+              "output": 53,
+              "cacheRead": 3584,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 230,
+                "outputTokens": 53,
+                "totalTokens": 3867,
+                "cacheReadTokens": 3584,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 230
+              }
+            }
+          }
+        }
+      ],
+      "verification": {
+        "expected": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "actual": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "pass": true
+      }
+    },
+    {
+      "label": "explicit-control-dsh-memory",
+      "id": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+      "sessionId": "54654b84-1f4c-4376-bcb6-0345f83a9b15",
+      "engine": "dsh",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:18:07.074Z",
+      "state": "completed",
+      "outcome": "pass",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.2-alpha.2",
+        "memory": "openviking",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 3,
+        "inputTokens": 12155,
+        "outputTokens": 539,
+        "cacheReadTokens": 9856,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 3,
+            "inputTokens": 12155,
+            "outputTokens": 539,
+            "cacheReadTokens": 9856,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "interactionWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 2522.6098000000056,
+          "memory.embedding.end": 112.83837600058177,
+          "model.end": 4557.179900000001,
+          "tool.end": 24.93419999999969
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 8794,
+        "nonHumanWallMs": 8794
+      },
+      "endedAt": "2026-11-02T08:18:15.868Z",
+      "memoryEvents": [
+        {
+          "seq": 5,
+          "at": "2026-11-02T08:18:09.691Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/health",
+            "status": 200,
+            "durationMs": 32.78780000000006,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:09.647Z"
+          }
+        },
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:18:10.113Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/sessions",
+            "status": 200,
+            "durationMs": 388.8516999999997,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.037Z"
+          }
+        },
+        {
+          "seq": 7,
+          "at": "2026-11-02T08:18:10.114Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/system/status",
+            "status": 200,
+            "durationMs": 3.411000000000058,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.042Z"
+          }
+        },
+        {
+          "seq": 8,
+          "at": "2026-11-02T08:18:10.115Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 200,
+            "durationMs": 9.86349999999993,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.054Z"
+          }
+        },
+        {
+          "seq": 9,
+          "at": "2026-11-02T08:18:10.115Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/content/read",
+            "status": 404,
+            "durationMs": 14.971199999999953,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.069Z"
+          }
+        },
+        {
+          "seq": 10,
+          "at": "2026-11-02T08:18:10.115Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 404,
+            "durationMs": 15.622400000000198,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.070Z"
+          }
+        },
+        {
+          "seq": 11,
+          "at": "2026-11-02T08:18:10.116Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 404,
+            "durationMs": 16.741899999999987,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.072Z"
+          }
+        },
+        {
+          "seq": 12,
+          "at": "2026-11-02T08:18:10.117Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/content/read",
+            "status": 404,
+            "durationMs": 17.753099999999904,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.073Z"
+          }
+        },
+        {
+          "seq": 13,
+          "at": "2026-11-02T08:18:10.117Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 404,
+            "durationMs": 18.315700000000106,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.074Z"
+          }
+        },
+        {
+          "seq": 14,
+          "at": "2026-11-02T08:18:10.117Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/fs/ls",
+            "status": 200,
+            "durationMs": 54.91870000000017,
+            "telemetry": null,
+            "executedAt": "2026-11-02T08:18:10.110Z"
+          }
+        },
+        {
+          "seq": 22,
+          "at": "2026-11-02T08:18:10.440Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:18:10.309116+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_f89270808bbf497fb086a3c2eee1be8f",
+            "operation": "search.context",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": true,
+            "durationMs": 112.83837600058177,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 23,
+          "at": "2026-11-02T08:18:10.440Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "path": "/api/v1/search/search",
+            "status": 200,
+            "durationMs": 279.03570000000036,
+            "telemetry": {
+              "id": "tm_f89270808bbf497fb086a3c2eee1be8f",
+              "summary": {
+                "operation": "search.context",
+                "status": "ok",
+                "duration_ms": 274.036,
+                "vector": {
+                  "searches": 12,
+                  "scored": 10,
+                  "passed": 4,
+                  "returned": 2,
+                  "scanned": 10,
+                  "scan_reason": ""
+                },
+                "search": {
+                  "embed_query": {
+                    "duration_ms": 1411.781
+                  },
+                  "vector_retrieval": {
+                    "duration_ms": 94.561
+                  }
+                }
+              }
+            },
+            "executedAt": "2026-11-02T08:18:10.432Z"
+          }
+        },
+        {
+          "seq": 40,
+          "at": "2026-11-02T08:18:12.396Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "usage",
+          "data": {
+            "requestId": "58120c99-370a-4aab-b018-cbfbc3116fcd",
+            "purpose": "conversation",
+            "usage": {
+              "input": 3776,
+              "output": 222,
+              "cacheRead": 1920,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 1856,
+                "outputTokens": 222,
+                "totalTokens": 3998,
+                "cacheReadTokens": 1920,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 1856
+              }
+            }
+          }
+        },
+        {
+          "seq": 53,
+          "at": "2026-11-02T08:18:13.269Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "usage",
+          "data": {
+            "requestId": "1fdd4610-c17d-4ee0-a276-d168a19ef43f",
+            "purpose": "conversation",
+            "usage": {
+              "input": 4082,
+              "output": 92,
+              "cacheRead": 3840,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 242,
+                "outputTokens": 92,
+                "totalTokens": 4174,
+                "cacheReadTokens": 3840,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 242
+              }
+            }
+          }
+        },
+        {
+          "seq": 59,
+          "at": "2026-11-02T08:18:15.114Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "usage",
+          "data": {
+            "requestId": "61ff9048-490e-4b5a-9fe2-f5a1d9cd1ba2",
+            "purpose": "conversation",
+            "usage": {
+              "input": 4297,
+              "output": 225,
+              "cacheRead": 4096,
+              "cacheWrite": null,
+              "raw": {
+                "inputTokens": 201,
+                "outputTokens": 225,
+                "totalTokens": 4522,
+                "cacheReadTokens": 4096,
+                "inputSemantics": "dsh-disjoint",
+                "uncachedInput": 201
+              }
+            }
+          }
+        },
+        {
+          "seq": 65,
+          "at": "2026-11-02T08:18:15.157Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/dsh-54654b84-1f4c-4376-bcb6-0345f83a9b15",
+            "durationMs": 38.2271999999939,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 66,
+          "at": "2026-11-02T08:18:15.464Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/dsh-54654b84-1f4c-4376-bcb6-0345f83a9b15/messages",
+            "durationMs": 306.40939999998955,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 67,
+          "at": "2026-11-02T08:18:15.763Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/dsh-54654b84-1f4c-4376-bcb6-0345f83a9b15/messages",
+            "durationMs": 297.47609999999986,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 68,
+          "at": "2026-11-02T08:18:15.764Z",
+          "runId": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+          "type": "memory.captured",
+          "data": {
+            "sessionId": "dsh-54654b84-1f4c-4376-bcb6-0345f83a9b15",
+            "committed": false
+          }
+        }
+      ],
+      "verification": {
+        "expected": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "actual": {
+          "port": 52577,
+          "envPrefix": "AURORA_E0E959_",
+          "configFile": "aurora-e0e959.json"
+        },
+        "pass": true
+      }
+    },
+    {
+      "label": "extract-correction-a",
+      "id": "db98352a-159d-476e-a5ef-f1fae1db7440",
+      "sessionId": "695c9c37-bbe6-468c-9dd8-b64c86807e5d",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:18:16.562Z",
+      "state": "completed",
+      "outcome": "unverified",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.0",
+        "memory": "openviking",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "memory_extraction"
+      },
+      "metrics": {
+        "requests": 1,
+        "inputTokens": 8399,
+        "outputTokens": 3122,
+        "cacheReadTokens": 6656,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "memory_extraction": {
+            "requests": 1,
+            "inputTokens": 8399,
+            "outputTokens": 3122,
+            "cacheReadTokens": 6656,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 0,
+        "interactionWaitMs": 0,
+        "phaseTotalsMs": {
+          "memory.embedding.end": 1847.709568000937,
+          "model.end": 17263.459578000038,
+          "memory.extraction.end": 32019.788799999995
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 32651,
+        "nonHumanWallMs": 32651
+      },
+      "endedAt": "2026-11-02T08:18:49.213Z",
+      "memoryEvents": [
+        {
+          "seq": 2,
+          "at": "2026-11-02T08:18:17.188Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/sessions/cncode-695c9c37-bbe6-468c-9dd8-b64c86807e5d/commit",
+            "durationMs": 622.1592999999993,
+            "status": 200,
+            "telemetry": {
+              "id": "tm_90f8edac450647b090820b4f34043345",
+              "summary": {
+                "operation": "session.commit",
+                "status": "ok",
+                "duration_ms": 617.929
+              }
+            }
+          }
+        },
+        {
+          "seq": 3,
+          "at": "2026-11-02T08:18:17.190Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.commit.submitted",
+          "data": {
+            "result": {
+              "session_id": "cncode-695c9c37-bbe6-468c-9dd8-b64c86807e5d",
+              "status": "accepted",
+              "task_id": "d040203c-420b-4865-94ff-0b743768aaf7",
+              "archive_uri": "viking://user/cncode/sessions/cncode-695c9c37-bbe6-468c-9dd8-b64c86807e5d/history/archive_001",
+              "archived": true,
+              "effective_enable_working_memory": false,
+              "trace_id": "",
+              "estimated_active_tokens": 0,
+              "budget_exceeded": false
+            },
+            "extractionComplete": false
+          }
+        },
+        {
+          "seq": 4,
+          "at": "2026-11-02T08:18:17.196Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 4.10910000000149,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 5,
+          "at": "2026-11-02T08:18:17.772Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 74.18219999999565,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:18:18.290Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.208700000002864,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 7,
+          "at": "2026-11-02T08:18:18.291Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:18:18.093065+00:00",
+            "taskId": "d040203c-420b-4865-94ff-0b743768aaf7",
+            "account": "cncode-63ec840de34f36f887ae443f",
+            "telemetryId": "tm_f4c83cd7e456495d853cd1c6e991d5e9",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": true,
+            "durationMs": 613.9322879989777,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 9,
+          "at": "2026-11-02T08:18:18.803Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.114900000000489,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 10,
+          "at": "2026-11-02T08:18:19.318Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.1422999999922467,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 11,
+          "at": "2026-11-02T08:18:19.832Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.155799999993178,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 12,
+          "at": "2026-11-02T08:18:20.348Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 2.9228000000002794,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 13,
+          "at": "2026-11-02T08:18:20.863Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.478000000002794,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 14,
+          "at": "2026-11-02T08:18:21.377Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.4496000000071945,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 15,
+          "at": "2026-11-02T08:18:21.887Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.0244999999995343,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 16,
+          "at": "2026-11-02T08:18:22.401Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.188800000003539,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 17,
+          "at": "2026-11-02T08:18:22.916Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 4.5275000000110595,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 18,
+          "at": "2026-11-02T08:18:23.429Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.065100000007078,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 19,
+          "at": "2026-11-02T08:18:23.943Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.868900000001304,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 20,
+          "at": "2026-11-02T08:18:24.457Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.6313999999983935,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 21,
+          "at": "2026-11-02T08:18:24.971Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.693700000003446,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 22,
+          "at": "2026-11-02T08:18:25.483Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 4.1133000000118045,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 23,
+          "at": "2026-11-02T08:18:25.996Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.3896999999997206,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 24,
+          "at": "2026-11-02T08:18:26.508Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.089299999992363,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 25,
+          "at": "2026-11-02T08:18:27.023Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.094700000001467,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 26,
+          "at": "2026-11-02T08:18:27.542Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 4.07499999999709,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 27,
+          "at": "2026-11-02T08:18:28.054Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.258400000006077,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 28,
+          "at": "2026-11-02T08:18:28.567Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 2.9961999999941327,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 29,
+          "at": "2026-11-02T08:18:29.083Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.344100000002072,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 30,
+          "at": "2026-11-02T08:18:29.595Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.479299999991781,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 31,
+          "at": "2026-11-02T08:18:30.110Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.263200000001234,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 32,
+          "at": "2026-11-02T08:18:30.623Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.2945999999938067,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 33,
+          "at": "2026-11-02T08:18:31.139Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.4998000000050524,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 34,
+          "at": "2026-11-02T08:18:31.655Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 4.0099000000045635,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 35,
+          "at": "2026-11-02T08:18:32.167Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.1394000000000233,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 36,
+          "at": "2026-11-02T08:18:32.684Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.6829999999899883,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 37,
+          "at": "2026-11-02T08:18:33.197Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.742499999993015,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 38,
+          "at": "2026-11-02T08:18:33.710Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.8202999999921303,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 39,
+          "at": "2026-11-02T08:18:34.227Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.3674000000028173,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 40,
+          "at": "2026-11-02T08:18:34.738Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.379899999999907,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 41,
+          "at": "2026-11-02T08:18:35.252Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.364499999996042,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 42,
+          "at": "2026-11-02T08:18:35.768Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.9082000000053085,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 43,
+          "at": "2026-11-02T08:18:35.769Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "usage",
+          "data": {
+            "requestId": "c3430868-75d4-4538-87d1-977024b8173d",
+            "purpose": "memory_extraction",
+            "usage": {
+              "input": 8399,
+              "output": 3122,
+              "cacheRead": 6656,
+              "cacheWrite": null,
+              "raw": {
+                "completion_tokens": 3122,
+                "prompt_tokens": 8399,
+                "total_tokens": 11521,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": null,
+                  "audio_tokens": null,
+                  "reasoning_tokens": 2673,
+                  "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cache_write_tokens": null,
+                  "cached_tokens": 6656
+                },
+                "prompt_cache_hit_tokens": 6656,
+                "prompt_cache_miss_tokens": 1743
+              }
+            },
+            "source": "openviking-provider-response",
+            "taskId": "d040203c-420b-4865-94ff-0b743768aaf7",
+            "executedAt": "2026-11-02T08:18:35.409576+00:00"
+          }
+        },
+        {
+          "seq": 45,
+          "at": "2026-11-02T08:18:36.278Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 4.385499999989406,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 46,
+          "at": "2026-11-02T08:18:36.791Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 4.658300000010058,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 47,
+          "at": "2026-11-02T08:18:36.793Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:18:36.494936+00:00",
+            "taskId": "d040203c-420b-4865-94ff-0b743768aaf7",
+            "account": "cncode-63ec840de34f36f887ae443f",
+            "telemetryId": "tm_f4c83cd7e456495d853cd1c6e991d5e9",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": false,
+            "durationMs": 293.56551700038835,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 48,
+          "at": "2026-11-02T08:18:37.369Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 68.60369999999239,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 49,
+          "at": "2026-11-02T08:18:37.371Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:18:37.071799+00:00",
+            "taskId": "d040203c-420b-4865-94ff-0b743768aaf7",
+            "account": "cncode-63ec840de34f36f887ae443f",
+            "telemetryId": "tm_f4c83cd7e456495d853cd1c6e991d5e9",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": false,
+            "durationMs": 543.6080590006895,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 50,
+          "at": "2026-11-02T08:18:37.880Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.060799999992014,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 51,
+          "at": "2026-11-02T08:18:37.881Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:18:37.486076+00:00",
+            "taskId": "d040203c-420b-4865-94ff-0b743768aaf7",
+            "account": "cncode-63ec840de34f36f887ae443f",
+            "telemetryId": "tm_f4c83cd7e456495d853cd1c6e991d5e9",
+            "operation": "session_commit_phase2",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": false,
+            "durationMs": 396.6037040008814,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 52,
+          "at": "2026-11-02T08:18:38.394Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.4571999999898253,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 53,
+          "at": "2026-11-02T08:18:38.908Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.4320000000006985,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 54,
+          "at": "2026-11-02T08:18:39.421Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.2739999999903375,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 55,
+          "at": "2026-11-02T08:18:39.938Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.6251000000047497,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 56,
+          "at": "2026-11-02T08:18:40.451Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.202000000004773,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 57,
+          "at": "2026-11-02T08:18:40.963Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.4438000000081956,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 58,
+          "at": "2026-11-02T08:18:41.477Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.1779000000096858,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 59,
+          "at": "2026-11-02T08:18:41.990Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.7603999999992084,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 60,
+          "at": "2026-11-02T08:18:42.505Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.1723000000056345,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 61,
+          "at": "2026-11-02T08:18:43.019Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.5921999999991385,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 62,
+          "at": "2026-11-02T08:18:43.532Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.121899999998277,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 63,
+          "at": "2026-11-02T08:18:44.045Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.1331999999965774,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 64,
+          "at": "2026-11-02T08:18:44.562Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.1079999999928987,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 65,
+          "at": "2026-11-02T08:18:45.076Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 4.043599999989965,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 66,
+          "at": "2026-11-02T08:18:45.590Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.371100000003935,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 67,
+          "at": "2026-11-02T08:18:46.103Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.3997999999992317,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 68,
+          "at": "2026-11-02T08:18:46.617Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.1744999999937136,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 69,
+          "at": "2026-11-02T08:18:47.127Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.731899999998859,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 70,
+          "at": "2026-11-02T08:18:47.672Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 36.86309999998775,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 71,
+          "at": "2026-11-02T08:18:48.182Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.57839999999851,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 72,
+          "at": "2026-11-02T08:18:48.695Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.763699999995879,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 73,
+          "at": "2026-11-02T08:18:49.209Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_extraction",
+            "path": "/api/v1/tasks/d040203c-420b-4865-94ff-0b743768aaf7",
+            "durationMs": 3.2173000000038883,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 74,
+          "at": "2026-11-02T08:18:49.210Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.extraction.completed",
+          "data": {
+            "task": {
+              "task_id": "d040203c-420b-4865-94ff-0b743768aaf7",
+              "task_type": "session_commit",
+              "status": "completed",
+              "created_at": 1793607497.1565607,
+              "updated_at": 1793607528.6876462,
+              "processing_seconds": 31.367353916168213,
+              "resource_id": "cncode-695c9c37-bbe6-468c-9dd8-b64c86807e5d",
+              "meta": {},
+              "stage": "completed",
+              "result": {
+                "session_id": "cncode-695c9c37-bbe6-468c-9dd8-b64c86807e5d",
+                "archive_uri": "viking://user/cncode/sessions/cncode-695c9c37-bbe6-468c-9dd8-b64c86807e5d/history/archive_001",
+                "memories_extracted": {
+                  "memory_write": 2,
+                  "memory_edit": 1
+                },
+                "session_skills_extracted": 0,
+                "session_skill_uris": [],
+                "memory_extraction": {
+                  "skipped": 0,
+                  "skipped_operations": []
+                },
+                "usage_events_extracted": 0,
+                "effective_memory_types": [
+                  "entities",
+                  "events",
+                  "identity",
+                  "preferences",
+                  "profile",
+                  "soul"
+                ],
+                "agent_evolution_enabled": false,
+                "agent_memory_skip_reason": "agent_evolution_disabled",
+                "token_usage": {
+                  "llm": {
+                    "prompt_tokens": 8399,
+                    "completion_tokens": 3122,
+                    "total_tokens": 11521,
+                    "cached_tokens": 6656,
+                    "reasoning_tokens": 2673
+                  },
+                  "embedding": {
+                    "total_tokens": 0
+                  },
+                  "total": {
+                    "total_tokens": 11521,
+                    "cached_tokens": 6656,
+                    "reasoning_tokens": 2673
+                  }
+                },
+                "memory_diff_uri": "viking://user/cncode/sessions/cncode-695c9c37-bbe6-468c-9dd8-b64c86807e5d/history/archive_001/memory_diff.json",
+                "queue_status": {
+                  "Semantic": {
+                    "processed": 0,
+                    "requeue_count": 0,
+                    "error_count": 0,
+                    "errors": []
+                  },
+                  "Embedding": {
+                    "processed": 3,
+                    "requeue_count": 0,
+                    "error_count": 0,
+                    "errors": []
+                  }
+                }
+              },
+              "error": null,
+              "created_at_iso": "2026-11-02T08:18:17.156561+00:00",
+              "updated_at_iso": "2026-11-02T08:18:48.687646+00:00"
+            },
+            "extractionComplete": true,
+            "usageSource": "provider observations; task token_usage is cumulative server metadata"
+          }
+        },
+        {
+          "seq": 75,
+          "at": "2026-11-02T08:18:49.211Z",
+          "runId": "db98352a-159d-476e-a5ef-f1fae1db7440",
+          "type": "memory.extraction.end",
+          "data": {
+            "durationMs": 32019.788799999995
+          }
+        }
+      ]
+    },
+    {
+      "label": "corrected-new-session",
+      "id": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+      "sessionId": "456f5163-1a23-45dd-9d72-c4ee7f80bce3",
+      "engine": "cncode",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-11-02T08:18:49.218Z",
+      "state": "completed",
+      "outcome": "unverified",
+      "versions": {
+        "code": "8bfeeb3d1f5e6beeb381cb7baa3620778791a3ac",
+        "codeDirty": true,
+        "engine": "0.2.0",
+        "memory": "openviking",
+        "skillScope": "project-only",
+        "prompt": "cncode-vnext-v1",
+        "purpose": "conversation"
+      },
+      "metrics": {
+        "requests": 6,
+        "inputTokens": 20928,
+        "outputTokens": 1998,
+        "cacheReadTokens": 17408,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 6,
+            "inputTokens": 20928,
+            "outputTokens": 1998,
+            "cacheReadTokens": 17408,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "automatedWaitMs": 20,
+        "interactionWaitMs": 20,
+        "phaseTotalsMs": {
+          "memory.embedding.end": 142.04632399923867,
+          "memory.recall.end": 161.83890000000247,
+          "preparation.end": 166.0055999999895,
+          "model.end": 14127.733299999978,
+          "tool.end": 35.261199999979
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 15380,
+        "nonHumanWallMs": 15380
+      },
+      "endedAt": "2026-11-02T08:19:04.598Z",
+      "memoryEvents": [
+        {
+          "seq": 3,
+          "at": "2026-11-02T08:18:49.393Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_recall",
+            "path": "/api/v1/search/search",
+            "durationMs": 159.17390000000887,
+            "status": 200,
+            "telemetry": {
+              "id": "tm_36699f9c2978492580ded2334b5a4f31",
+              "summary": {
+                "operation": "search.search",
+                "status": "ok",
+                "duration_ms": 155.099,
+                "vector": {
+                  "searches": 1,
+                  "scored": 3,
+                  "passed": 3,
+                  "returned": 3,
+                  "scanned": 3,
+                  "scan_reason": ""
+                },
+                "search": {
+                  "target_abstract": {
+                    "duration_ms": 8.006
+                  },
+                  "embed_query": {
+                    "duration_ms": 144.305
+                  },
+                  "vector_retrieval": {
+                    "duration_ms": 1.225
+                  },
+                  "typed_queries_count": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "seq": 4,
+          "at": "2026-11-02T08:18:49.394Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.embedding.end",
+          "data": {
+            "type": "embedding.end",
+            "at": "2026-11-02T08:18:49.389407+00:00",
+            "taskId": null,
+            "account": null,
+            "telemetryId": "tm_36699f9c2978492580ded2334b5a4f31",
+            "operation": "search.search",
+            "model": "bge-small-zh-v1.5-f16",
+            "isQuery": true,
+            "durationMs": 142.04632399923867,
+            "success": true,
+            "providerTokens": null,
+            "dimension": 512
+          }
+        },
+        {
+          "seq": 5,
+          "at": "2026-11-02T08:18:49.395Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.recall",
+          "data": {
+            "peer": "cncode-63ec840de34f36f887ae443f",
+            "query": "按本项目之前已经确定的长期配置约定，在当前目录生成 client-config.json，恰好包含 port（数字）、envPrefix（字符串）、configFile（字符串）三个字段。不要猜测约定值；不能确定时报告缺失。完成后检查文件。",
+            "result": "{\"memories\":[{\"context_type\":\"memory\",\"uri\":\"viking://user/cncode/peers/cncode-63ec840de34f36f887ae443f/memories/events/2026/11/02/客户端配置文件生成请求因约定缺失未执行.md\",\"level\":2,\"score\":0.9431529641151428,\"abstract\":\"# Summary\\n2026-11-02，用户要求按本项目此前已确定的长期配置约定在当前目录生成恰好包含 port（数字）、envPrefix（字符串）、configFile（字符串）三个字段的 client-config.json，并明确不得猜测约定值、无法确定时报告缺失；助手在 project-a 工作区探查 AGENTS.md、README.md、CONVENTIONS.md、package.json、.cncode/config.json 等可能承载约定的位置均返回不存在，可用的记忆检索也只返回抽象摘要，三项约定值全部缺失，因此未写入任何文件，并请用户补充 port、envPrefix、configFile 的具体取值及约定来源。\\n# 2026-11-02 (Monday) ChatLog:\\n**user [peer=cncode-63ec840de34f36f887ae443f]**: 按本项目之前已经确定的长期配置约定，在当前目录生成 client-config.json，恰好包含 port（数字）、envPrefix（字符串）、configFile（字符串）三个字段。不要猜测约定值；不能确定时报告缺失。完成后检查文件。\\n**assistant [peer=cncode-63ec840de34f36f887ae443f]**: ## 无法生成 client-config.json：约定值缺失\\n\\n**结论：未写入任何文件。** 因为找不到本项目\\\"之前已确定的长期配置约定\\\"，我也不会用猜测值来填充。\\n\\n### 我做了什么（只读探查，未创建任何文件）\\n\\n工作区 `D:\\\\Codex-Workspaces\\\\...\\\\memory-check\\\\e0e959c5-...\\\\project-a` 下，逐一尝试读取以下可能承载约定的位置，全部返回 `ENOENT`（文件或目录不存在）：\\n\\n| 路径 | 结果 |\\n|---|---|\\n| `AGENTS.md` / `.cncode/AGENTS.md` | 不存在 |\\n| `README.md` / `NOTES.md` | 不存在 |\\n| `CONVENTIONS.md` / `docs/conventions.md` | 不存在 |\\n| `package.json` | 不存在 |\\n| `client-config.json`（是否已存在已有配置可参照） | 不存在 |\\n| `.cncode/config.json` / `.cncode/memory.md` | 不存在 |\\n| `config/conventions.json` | 不存在 |\\n\\n### 参考记忆的情况\\n\\n可用的记忆检索只返回了一条**抽象摘要**（`viking://user/cncode/memories/.abstract.md`，得分 0.81），内容仅说明\\\"这是用户长期记忆存储，按偏好/实体/事件等类型分层管理\\\"，属于**记忆的结构描述**，其中不含任何本项目的具体配置值。因此：\\n\\n- `port`（数字）——**缺失**\\n- `envPrefix`（字符串）——**缺失**\\n- `configFile`（字符串）——**缺失**\\n\\n这三项没有一项能从现有信息中确定。任何具体数字或前缀（例如 3000、`APP_`、`config.json`）都只是我的臆测，会把错误约定固化进仓库，所以我不生成文件。\\n\\n### 需要你补充的信息\\n\\n请提供三项约定值，我随后立即按\\\"恰好三个字段\\\"生成并回读校验：\\n\\n1. `port`：期望端口号（数字）\\n2. `envPrefix`：环境变量前缀（如 `MYAPP_`，注意是否含下划线、大小写）\\n3. `configFile`：配置文件名的确切写法（是 `config.json` 还是带路径如 `config/app.json`）\\n\\n另外可选告知：约定来源在哪里（某个文档路径 / 另一分支 / 某次会话），若是文件我可以去读取核对，避免你手工重复填写。\",\"tags\":[\"memory_type=events\"]},{\"context_type\":\"memory\",\"uri\":\"viking://user/cncode/peers/cncode-63ec840de34f36f887ae443f/memories/entities/开发项目/aurora.md\",\"level\":2,\"score\":0.8195154666900635,\"abstract\":\"# Aurora 项目\\nAurora 是用户长期开发的软件项目，采用一套固定的跨会话技术约定。\\n\\n## 配置约定\\n- HTTP 服务端口自 2026-11-02 起固定为 52578，后续编码必须沿用。\\n- 旧端口 52577 已废弃，任何新生成的配置只能使用 52578。\\n- 环境变量前缀固定为 AURORA_E0E959_。\\n- 配置文件名固定为 aurora-e0e959.json。\\n\\n## 约定性质\\n- 用户明确说明这些不是临时示例，而是跨会话长期有效的项目规范。\\n- 后续涉及该项目的编码工作需保持一致，不得擅自更换端口、前缀或配置文件名。\\n- 环境变量前缀与配置文件名于 2026-11-02 再次确认，端口同日由用户纠正迁移。\",\"tags\":[\"memory_type=entities\"]},{\"context_type\":\"memory\",\"uri\":\"viking://user/cncode/peers/cncode-63ec840de34f36f887ae443f/memories/events/2026/11/02/Aurora 服务端口迁移确认.md\",\"level\":2,\"score\":0.7933071851730347,\"abstract\":\"# Summary\\n用户在 2026-11-02 纠正 Aurora 的旧配置：HTTP 服务端口已从 52577 迁移到 52578，今后新生成的配置只能使用 52578，旧端口 52577 已废弃；环境变量前缀 AURORA_E0E959_ 与配置名 aurora-e0e959.json 均保持不变。\\n# 2026-11-02 (Monday) ChatLog:\\n**user [peer=cncode-63ec840de34f36f887ae443f]**: 纠正 Aurora 的旧配置：HTTP 服务端口已经从52577迁移到52578。今后新生成的配置只能使用52578，旧端口52577已废弃。环境变量前缀 AURORA_E0E959_ 和配置名 aurora-e0e959.json 都保持不变。\\n**assistant [peer=cncode-63ec840de34f36f887ae443f]**: 已确认这些项目约定。\",\"tags\":[\"memory_type=events\"]}],\"resources\":[],\"skills\":[],\"total\":3}",
+            "budgetCharacters": 6000,
+            "usage": null
+          }
+        },
+        {
+          "seq": 6,
+          "at": "2026-11-02T08:18:49.396Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.recall.end",
+          "data": {
+            "durationMs": 161.83890000000247
+          }
+        },
+        {
+          "seq": 10,
+          "at": "2026-11-02T08:18:51.582Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "usage",
+          "data": {
+            "requestId": "38973542-816d-41ac-9eea-06f0173289ff",
+            "purpose": "conversation",
+            "usage": {
+              "input": 2139,
+              "output": 296,
+              "cacheRead": 0,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 2139,
+                "completion_tokens": 296,
+                "total_tokens": 2435,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 166
+                },
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 2139
+              }
+            }
+          }
+        },
+        {
+          "seq": 21,
+          "at": "2026-11-02T08:18:52.804Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "usage",
+          "data": {
+            "requestId": "115a2533-1ddc-44a9-8a37-10e6d1b182d6",
+            "purpose": "conversation",
+            "usage": {
+              "input": 2748,
+              "output": 120,
+              "cacheRead": 2432,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 2748,
+                "completion_tokens": 120,
+                "total_tokens": 2868,
+                "prompt_tokens_details": {
+                  "cached_tokens": 2432
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 18
+                },
+                "prompt_cache_hit_tokens": 2432,
+                "prompt_cache_miss_tokens": 316
+              }
+            }
+          }
+        },
+        {
+          "seq": 30,
+          "at": "2026-11-02T08:18:56.496Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "usage",
+          "data": {
+            "requestId": "be114f9b-c334-4d6a-a20e-6b314bfb1da2",
+            "purpose": "conversation",
+            "usage": {
+              "input": 3106,
+              "output": 591,
+              "cacheRead": 2816,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 3106,
+                "completion_tokens": 591,
+                "total_tokens": 3697,
+                "prompt_tokens_details": {
+                  "cached_tokens": 2816
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 453
+                },
+                "prompt_cache_hit_tokens": 2816,
+                "prompt_cache_miss_tokens": 290
+              }
+            }
+          }
+        },
+        {
+          "seq": 41,
+          "at": "2026-11-02T08:18:59.099Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "usage",
+          "data": {
+            "requestId": "acef741f-66d0-461d-b143-94d1bf179aba",
+            "purpose": "conversation",
+            "usage": {
+              "input": 4018,
+              "output": 377,
+              "cacheRead": 3584,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 4018,
+                "completion_tokens": 377,
+                "total_tokens": 4395,
+                "prompt_tokens_details": {
+                  "cached_tokens": 3584
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 283
+                },
+                "prompt_cache_hit_tokens": 3584,
+                "prompt_cache_miss_tokens": 434
+              }
+            }
+          }
+        },
+        {
+          "seq": 48,
+          "at": "2026-11-02T08:19:00.028Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "usage",
+          "data": {
+            "requestId": "85bcc79a-779d-4077-b7d4-45b18a1cdeaf",
+            "purpose": "conversation",
+            "usage": {
+              "input": 4409,
+              "output": 40,
+              "cacheRead": 4224,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 4409,
+                "completion_tokens": 40,
+                "total_tokens": 4449,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 4224,
+                "prompt_cache_miss_tokens": 185
+              }
+            }
+          }
+        },
+        {
+          "seq": 612,
+          "at": "2026-11-02T08:19:03.584Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "usage",
+          "data": {
+            "requestId": "e058d09c-b672-4f02-b0b8-063d13446c6b",
+            "purpose": "conversation",
+            "usage": {
+              "input": 4508,
+              "output": 574,
+              "cacheRead": 4352,
+              "cacheWrite": null,
+              "raw": {
+                "prompt_tokens": 4508,
+                "completion_tokens": 574,
+                "total_tokens": 5082,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4352
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 14
+                },
+                "prompt_cache_hit_tokens": 4352,
+                "prompt_cache_miss_tokens": 156
+              }
+            }
+          }
+        },
+        {
+          "seq": 615,
+          "at": "2026-11-02T08:19:03.599Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-456f5163-1a23-45dd-9d72-c4ee7f80bce3",
+            "durationMs": 8.789099999994505,
+            "status": 404,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 616,
+          "at": "2026-11-02T08:19:03.953Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions",
+            "durationMs": 351.99199999999837,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 617,
+          "at": "2026-11-02T08:19:04.270Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-456f5163-1a23-45dd-9d72-c4ee7f80bce3/messages",
+            "durationMs": 315.50999999999476,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 618,
+          "at": "2026-11-02T08:19:04.588Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.operation",
+          "data": {
+            "purpose": "memory_capture",
+            "path": "/api/v1/sessions/cncode-456f5163-1a23-45dd-9d72-c4ee7f80bce3/messages",
+            "durationMs": 316.83000000000175,
+            "status": 200,
+            "telemetry": null
+          }
+        },
+        {
+          "seq": 619,
+          "at": "2026-11-02T08:19:04.589Z",
+          "runId": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+          "type": "memory.captured",
+          "data": {
+            "sessionId": "cncode-456f5163-1a23-45dd-9d72-c4ee7f80bce3",
+            "committed": false
+          }
+        }
+      ]
+    }
+  ],
+  "isolation": {
+    "broadSearchDoesNotLeakA": true,
+    "foreignUriDoesNotExposeAContent": true,
+    "foreignTaskDenied": true,
+    "spoofedAccountStatus": 200,
+    "spoofedAccountHeaderCannotExposeA": true
+  },
+  "corrections": {
+    "expectedPort": 52578,
+    "actual": {
+      "port": 52578,
+      "envPrefix": "AURORA_E0E959_",
+      "configFile": "aurora-e0e959.json"
+    },
+    "pass": true
+  },
+  "limits": [
+    "One sample per condition, not a stable success rate or performance superiority claim",
+    "Synthetic configuration recall tasks, separate from the existing two coding benchmarks",
+    "Local embedding token estimates are not provider actual tokens"
+  ],
+  "previousAttemptError": "AssertionError [ERR_ASSERTION]: withheld-conventions-cncode-memory artifact acceptance failed",
+  "expected": {
+    "port": 52577,
+    "envPrefix": "AURORA_E0E959_",
+    "configFile": "aurora-e0e959.json"
+  },
+  "toolPolicy": "memory-json-only-v1: no shell, glob, grep, skills, web or subagents; DSH file access limited to client-config.json",
+  "embeddingSha256": "ab9b81d9cd329c712eee379cf0068eabe6a5e2a01d0def61535eba9384085e2c",
+  "completedAt": "2026-11-02T08:19:04.666Z",
+  "status": "pass",
+  "provenanceNote": "Runs used predecessor 8bfeeb3 plus the then-current worktree (codeDirty=true). Successful comparisons used memory-json-only-v1; later changes improve empty commit handling and DSH artifact snapshots without changing the measured task conditions. Final source hashes are recorded separately."
+}
