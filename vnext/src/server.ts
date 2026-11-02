@@ -11,7 +11,7 @@ export function server(service:Service,webDir=resolve('web-dist')){
   const url=new URL(req.url??'/','http://localhost'),parts=url.pathname.split('/').filter(Boolean);res.setHeader('x-content-type-options','nosniff');res.setHeader('content-security-policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'");
   if(url.pathname==='/health'){json(res,{ok:true});return;}
   if(parts[0]==='api'){
-   const token=String(req.headers.authorization??'').replace(/^Bearer /,'');const expected=service.config.token;if(!expected||token.length!==expected.length||!timingSafeEqual(Buffer.from(token),Buffer.from(expected))){json(res,{error:'需要访问令牌'},401);return;}
+   const token=String(req.headers.authorization??'').replace(/^Bearer /,'');const expected=service.config.token;if(!expected||Buffer.byteLength(token)!==Buffer.byteLength(expected)||!timingSafeEqual(Buffer.from(token),Buffer.from(expected))){json(res,{error:'需要访问令牌'},401);return;}
    const origin=req.headers.origin;if(origin&&origin!==`http://${req.headers.host}`&&origin!==`https://${req.headers.host}`)throw new Error('拒绝跨来源请求');
    if(parts[1]!=='v1')throw new Error('未知 API 版本');const resource=parts[2],id=parts[3],action=parts[4];
    if(resource==='config'){json(res,{model:service.config.model,workspace:process.env.CNCODE_WORKSPACE??process.cwd(),memoryConfigured:!!service.config.memoryUrl,engines:['cncode','dsh']});return;}
@@ -21,7 +21,7 @@ export function server(service:Service,webDir=resolve('web-dist')){
     if(!id)throw new Error('缺少会话 ID');const session=service.get(id);
     if(action==='inputs'&&req.method==='POST'){const b=await body(req);json(res,{runId:service.submit(id,b.inputId,b.text)},202);return;}
     if(action==='stop'&&req.method==='POST'){await service.stop(id);json(res,{stopped:true});return;}
-    if(action==='memory'){
+    if(action==='memory'){if(!session.memory)throw new Error('该会话未启用记忆');
      const b=req.method==='GET'?{}:await body(req);const m=service.memory;
      if(req.method==='GET')json(res,url.searchParams.has('task')?await m.task(session,url.searchParams.get('task')!):url.searchParams.has('uri')?await m.read(session,url.searchParams.get('uri')!):await m.list(session));
      else if(req.method==='DELETE')json(res,await m.remove(session,b.uri));
@@ -32,7 +32,7 @@ export function server(service:Service,webDir=resolve('web-dist')){
    if(resource==='runs'){
     if(!id){json(res,service.records.runs().reverse());return;}
     if(action==='events'){
-     service.records.get(id);const after=Number(req.headers['last-event-id']??url.searchParams.get('after')??0);res.writeHead(200,{'content-type':'text/event-stream','cache-control':'no-cache','connection':'keep-alive'});
+     service.records.get(id);const after=Number(req.headers['last-event-id']??url.searchParams.get('after')??0);if(!Number.isSafeInteger(after)||after<0)throw new Error('无效事件序号');res.writeHead(200,{'content-type':'text/event-stream','cache-control':'no-cache','connection':'keep-alive'});
      const send=(e:RunEvent)=>res.write(`id: ${e.seq}\ndata: ${JSON.stringify(e)}\n\n`);
      const listen=(e:RunEvent)=>send(e);service.records.events.on(id,listen);for(const e of service.records.read(id,after))send(e);
      const keep=setInterval(()=>res.write(': heartbeat\n\n'),15000);res.on('close',()=>{clearInterval(keep);service.records.events.off(id,listen);});return;

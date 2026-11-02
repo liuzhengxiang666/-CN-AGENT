@@ -11,7 +11,7 @@ export class CnCode implements EngineAdapter {
  async close(){}
  async run(input:string,ctx:EngineContext){
   requireModel(this.config);const start=performance.now();const rules=await instructions(ctx.session.cwd),catalog=await skills(ctx.session.cwd),tools=builtins();
-  tools.set('load_skill',{readonly:true,schema:{type:'function',function:{name:'load_skill',description:'按需读取项目 Skill',parameters:{type:'object',properties:{name:{type:'string'}},required:['name']}}},run:async(a)=>{const s=catalog.find(s=>s.name===a.name);if(!s)throw new Error('Skill 不存在');return s.body;}});
+  tools.set('load_skill',{readonly:true,schema:{type:'function',function:{name:'load_skill',description:'按需读取项目 Skill',parameters:{type:'object',properties:{name:{type:'string'}},required:['name']}}},run:async(a)=>{const s=catalog.find(s=>s.name===a.name);if(!s)throw new Error('Skill 不存在');ctx.session.allowedTools=s.allowedTools;ctx.save();return s.body;}});
   const disconnect=await connectMcp(this.config.mcp,tools);
   try{
    let memory='';if(ctx.session.memory&&this.memory)try{memory=await this.memory.recall(input,ctx);}catch(e:any){ctx.emit('memory.error',{message:e.message});}
@@ -26,7 +26,7 @@ export class CnCode implements EngineAdapter {
     const calls=reply.tool_calls;const results:string[]=[];
     // Read-only calls may overlap. Mutations retain model order.
     if(calls.every(c=>tools.get(c.function.name)?.readonly))results.push(...await Promise.all(calls.map(c=>executeTool(c,tools,ctx))));else for(const call of calls)results.push(await executeTool(call,tools,ctx));
-    calls.forEach((call,i)=>ctx.session.messages.push({role:'tool',tool_call_id:call.id,content:results[i]!}));ctx.save();
+    calls.forEach((call,i)=>ctx.session.messages.push({role:'tool',tool_call_id:call.id,content:results[i]!}));ctx.save();ctx.signal.throwIfAborted();
    }
    throw new Error('达到 60 轮工具调用上限');
   }finally{await disconnect();}

@@ -1,0 +1,167 @@
+{
+  "date": "2026-11-02",
+  "kind": "real-provider-linux-containers",
+  "note": "Four attempts all rejected by provider authentication. No task quality or memory benefit can be inferred.",
+  "runs": [
+    {
+      "id": "kv-store-grpc-cncode-d4029ab9-5430-4d30-b7c6-9bdc8ef16c4b",
+      "task": "kv-store-grpc",
+      "engine": "cncode",
+      "fixtureCommit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "failed",
+      "outcome": "infra_error",
+      "startedAt": "2026-11-02T06:14:17.912Z",
+      "runId": "4da4f164-4b35-4cd4-8678-d06b08ed715e",
+      "metrics": {
+        "requests": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "cacheReadTokens": null,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 1,
+            "inputTokens": null,
+            "outputTokens": null,
+            "cacheReadTokens": null,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "preparation.end": 14.724301999999966,
+          "model.end": 231.47452699999997
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 313,
+        "nonHumanWallMs": 313
+      },
+      "error": "模型 HTTP 401: {\"error\":{\"message\":\"Authentication Fails, Your api key: ****82c9 is invalid (request_id: 6710f787-4231-45ab-9da1-b596ad157d76)\",\"type\":\"authentication_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+      "wallMs": 2728.2826999999997,
+      "endedAt": "2026-11-02T06:14:20.641Z"
+    },
+    {
+      "id": "kv-store-grpc-dsh-bf0b99d0-14cb-4fdf-92ff-430e182c2c17",
+      "task": "kv-store-grpc",
+      "engine": "dsh",
+      "fixtureCommit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "failed",
+      "outcome": "infra_error",
+      "startedAt": "2026-11-02T06:14:20.644Z",
+      "runId": "a74533ec-e4f0-4f80-bdc2-78100f65a7d4",
+      "metrics": {
+        "requests": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "cacheReadTokens": null,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 1,
+            "inputTokens": null,
+            "outputTokens": null,
+            "cacheReadTokens": null,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 2447.77318,
+          "model.end": 710.4932599999997
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 3401,
+        "nonHumanWallMs": 3401
+      },
+      "error": "401: {\"message\":\"Authentication Fails, Your api key: ****82c9 is invalid (request_id: c3438a20-bd9e-4220-9651-dd6cc503bdf8)\",\"type\":\"authentication_error\",\"param\":null,\"code\":\"invalid_request_error\"}",
+      "wallMs": 5561.7568999999985,
+      "endedAt": "2026-11-02T06:14:26.206Z"
+    },
+    {
+      "id": "phone-number-cncode-70eea302-5b07-4f9b-a810-657c3f60af93",
+      "task": "phone-number",
+      "engine": "cncode",
+      "fixtureCommit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "failed",
+      "outcome": "infra_error",
+      "startedAt": "2026-11-02T06:14:09.847Z",
+      "runId": "22891c41-f091-470f-a8f7-04f77b59d58d",
+      "metrics": {
+        "requests": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "cacheReadTokens": null,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 1,
+            "inputTokens": null,
+            "outputTokens": null,
+            "cacheReadTokens": null,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "preparation.end": 10.081557000000032,
+          "model.end": 228.35713500000003
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 286,
+        "nonHumanWallMs": 286
+      },
+      "error": "模型 HTTP 401: {\"error\":{\"message\":\"Authentication Fails, Your api key: ****82c9 is invalid (request_id: baff132c-fede-4e59-967f-24aa6d04fefc)\",\"type\":\"authentication_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+      "wallMs": 2693.8688,
+      "endedAt": "2026-11-02T06:14:12.541Z"
+    },
+    {
+      "id": "phone-number-dsh-974a7502-a6f1-46cc-a61e-1a3a959be177",
+      "task": "phone-number",
+      "engine": "dsh",
+      "fixtureCommit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+      "model": "deepseek-v4-flash",
+      "memory": false,
+      "learning": false,
+      "state": "failed",
+      "outcome": "infra_error",
+      "startedAt": "2026-11-02T06:14:12.545Z",
+      "runId": "5dc59ee9-61b0-4079-b133-b78607379fb6",
+      "metrics": {
+        "requests": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "cacheReadTokens": null,
+        "cacheWriteTokens": null,
+        "byPurpose": {
+          "conversation": {
+            "requests": 1,
+            "inputTokens": null,
+            "outputTokens": null,
+            "cacheReadTokens": null,
+            "cacheWriteTokens": null
+          }
+        },
+        "humanWaitMs": 0,
+        "phaseTotalsMs": {
+          "startup.end": 2549.0762799999998,
+          "model.end": 337.0380710000004
+        },
+        "toolTimeIsWallTime": false,
+        "wallMs": 3166,
+        "nonHumanWallMs": 3166
+      },
+      "error": "401: {\"message\":\"Authentication Fails, Your api key: ****82c9 is invalid (request_id: 3009c2e1-c635-494c-9f69-d9c8e6d0ff6a)\",\"type\":\"authentication_error\",\"param\":null,\"code\":\"invalid_request_error\"}",
+      "wallMs": 5363.555499999999,
+      "endedAt": "2026-11-02T06:14:17.909Z"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ export interface Message { role: 'system'|'user'|'assistant'|'tool'; content: st
 export interface ToolCall { id:string; type:'function'; function:{name:string; arguments:string} }
 export interface Usage { input:number|null; output:number|null; cacheRead:number|null; cacheWrite:number|null; raw:Json }
 export interface RunEvent { seq:number; at:string; runId:string; type:string; data:Json }
-export interface Session { id:string; engine:EngineId; cwd:string; createdAt:string; messages:Message[]; inputs:Record<string,string>; memory:boolean; dshSessionId?:string; activeRun?:string }
+export interface Session { id:string; engine:EngineId; cwd:string; createdAt:string; messages:Message[]; inputs:Record<string,string>; memory:boolean; dshSessionId?:string; activeRun?:string; allowedTools?:string[] }
 export interface Run { id:string; sessionId:string; engine:EngineId; model:string; startedAt:string; endedAt?:string; state:'running'|'completed'|'failed'|'cancelled'|'interrupted'; outcome:'unverified'|'pass'|'fail'|'infra_error'; versions:Json; metrics:Json; error?:string }
 export interface Interaction { id:string; kind:'approval'|'question'; payload:Json; runId:string }
 export interface EngineContext { session:Session; signal:AbortSignal; emit:(type:string,data?:Json)=>void; interact:(kind:Interaction['kind'],payload:Json,signal?:AbortSignal)=>Promise<Json>; save:()=>void }

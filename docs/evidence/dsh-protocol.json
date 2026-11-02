@@ -1,0 +1,263 @@
+{
+  "kind": "real-pinned-runtime-with-local-model-fixture",
+  "not_real_model": true,
+  "events": [
+    {
+      "seq": 2,
+      "at": "2026-11-02T06:11:45.573Z",
+      "runId": "5afdd31d-1f82-4ab5-a872-fba87850e2d0",
+      "type": "observer.ready",
+      "data": {
+        "version": "0.2.2-alpha.2",
+        "executedAt": "2026-11-02T06:11:45.547Z"
+      }
+    },
+    {
+      "seq": 11,
+      "at": "2026-11-02T06:11:46.227Z",
+      "runId": "5afdd31d-1f82-4ab5-a872-fba87850e2d0",
+      "type": "model.start",
+      "data": {
+        "requestId": "bef86637-942b-407a-86a2-49c4579e4380",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:11:46.132Z"
+      }
+    },
+    {
+      "seq": 17,
+      "at": "2026-11-02T06:11:46.357Z",
+      "runId": "5afdd31d-1f82-4ab5-a872-fba87850e2d0",
+      "type": "usage",
+      "data": {
+        "requestId": "bef86637-942b-407a-86a2-49c4579e4380",
+        "purpose": "conversation",
+        "usage": {
+          "input": 100,
+          "output": 10,
+          "cacheRead": 20,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 80,
+            "outputTokens": 10,
+            "totalTokens": 110,
+            "cacheReadTokens": 20,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 80
+          }
+        }
+      }
+    },
+    {
+      "seq": 18,
+      "at": "2026-11-02T06:11:46.358Z",
+      "runId": "5afdd31d-1f82-4ab5-a872-fba87850e2d0",
+      "type": "model.end",
+      "data": {
+        "requestId": "bef86637-942b-407a-86a2-49c4579e4380",
+        "purpose": "conversation",
+        "durationMs": 217.17309999999998,
+        "executedAt": "2026-11-02T06:11:46.349Z"
+      }
+    },
+    {
+      "seq": 19,
+      "at": "2026-11-02T06:11:46.479Z",
+      "runId": "5afdd31d-1f82-4ab5-a872-fba87850e2d0",
+      "type": "run.end",
+      "data": {
+        "state": "completed",
+        "outcome": "unverified",
+        "metrics": {
+          "requests": 1,
+          "inputTokens": 100,
+          "outputTokens": 10,
+          "cacheReadTokens": 20,
+          "cacheWriteTokens": null,
+          "byPurpose": {
+            "conversation": {
+              "requests": 1,
+              "inputTokens": 100,
+              "outputTokens": 10,
+              "cacheReadTokens": 20,
+              "cacheWriteTokens": null
+            }
+          },
+          "humanWaitMs": 0,
+          "phaseTotalsMs": {
+            "startup.end": 3702.9798999999994,
+            "model.end": 217.17309999999998
+          },
+          "toolTimeIsWallTime": false,
+          "wallMs": 4380,
+          "nonHumanWallMs": 4380
+        }
+      }
+    },
+    {
+      "seq": 2,
+      "at": "2026-11-02T06:11:41.048Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "observer.ready",
+      "data": {
+        "version": "0.2.2-alpha.2",
+        "executedAt": "2026-11-02T06:11:41.029Z"
+      }
+    },
+    {
+      "seq": 18,
+      "at": "2026-11-02T06:11:41.702Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "model.start",
+      "data": {
+        "requestId": "db5c45c0-d66f-4d2f-8c62-ee8f70315018",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:11:41.679Z"
+      }
+    },
+    {
+      "seq": 31,
+      "at": "2026-11-02T06:11:41.997Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "usage",
+      "data": {
+        "requestId": "db5c45c0-d66f-4d2f-8c62-ee8f70315018",
+        "purpose": "conversation",
+        "usage": {
+          "input": 100,
+          "output": 10,
+          "cacheRead": 20,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 80,
+            "outputTokens": 10,
+            "totalTokens": 110,
+            "cacheReadTokens": 20,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 80
+          }
+        }
+      }
+    },
+    {
+      "seq": 32,
+      "at": "2026-11-02T06:11:41.997Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "model.end",
+      "data": {
+        "requestId": "db5c45c0-d66f-4d2f-8c62-ee8f70315018",
+        "purpose": "conversation",
+        "durationMs": 241.53030000000035,
+        "executedAt": "2026-11-02T06:11:41.920Z"
+      }
+    },
+    {
+      "seq": 33,
+      "at": "2026-11-02T06:11:41.997Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "tool.start",
+      "data": {
+        "callId": "native-write",
+        "name": "write",
+        "source": "dsh-tools/execute",
+        "executedAt": "2026-11-02T06:11:41.925Z"
+      }
+    },
+    {
+      "seq": 34,
+      "at": "2026-11-02T06:11:41.998Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "tool.end",
+      "data": {
+        "callId": "native-write",
+        "name": "write",
+        "source": "dsh-tools/execute",
+        "executed": true,
+        "success": true,
+        "durationMs": 20.659699999999248,
+        "executedAt": "2026-11-02T06:11:41.946Z"
+      }
+    },
+    {
+      "seq": 35,
+      "at": "2026-11-02T06:11:41.998Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "model.start",
+      "data": {
+        "requestId": "8849f1d6-52eb-4fe4-b101-6615a54ad7d4",
+        "purpose": "conversation",
+        "executedAt": "2026-11-02T06:11:41.976Z"
+      }
+    },
+    {
+      "seq": 36,
+      "at": "2026-11-02T06:11:41.999Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "usage",
+      "data": {
+        "requestId": "8849f1d6-52eb-4fe4-b101-6615a54ad7d4",
+        "purpose": "conversation",
+        "usage": {
+          "input": 100,
+          "output": 10,
+          "cacheRead": 20,
+          "cacheWrite": null,
+          "raw": {
+            "inputTokens": 80,
+            "outputTokens": 10,
+            "totalTokens": 110,
+            "cacheReadTokens": 20,
+            "inputSemantics": "dsh-disjoint",
+            "uncachedInput": 80
+          }
+        }
+      }
+    },
+    {
+      "seq": 37,
+      "at": "2026-11-02T06:11:41.999Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "model.end",
+      "data": {
+        "requestId": "8849f1d6-52eb-4fe4-b101-6615a54ad7d4",
+        "purpose": "conversation",
+        "durationMs": 14.634600000000319,
+        "executedAt": "2026-11-02T06:11:41.991Z"
+      }
+    },
+    {
+      "seq": 38,
+      "at": "2026-11-02T06:11:42.094Z",
+      "runId": "c83a6dd3-9e80-4a61-a54b-ac504b2c5689",
+      "type": "run.end",
+      "data": {
+        "state": "completed",
+        "outcome": "unverified",
+        "metrics": {
+          "requests": 2,
+          "inputTokens": 200,
+          "outputTokens": 20,
+          "cacheReadTokens": 40,
+          "cacheWriteTokens": null,
+          "byPurpose": {
+            "conversation": {
+              "requests": 2,
+              "inputTokens": 200,
+              "outputTokens": 20,
+              "cacheReadTokens": 40,
+              "cacheWriteTokens": null
+            }
+          },
+          "humanWaitMs": 0,
+          "phaseTotalsMs": {
+            "startup.end": 4398.4475999999995,
+            "model.end": 256.16490000000067,
+            "tool.end": 20.659699999999248
+          },
+          "toolTimeIsWallTime": false,
+          "wallMs": 5245,
+          "nonHumanWallMs": 5245
+        }
+      }
+    }
+  ]
+}
