@@ -13,3 +13,8 @@
 - `output/playwright/electron-dark.png` 与 `electron-light.png`：实际 Electron 恢复真实提供方 401 的历史记录，不代表编码任务通过。
 
 Web/终端与 Electron 的协议自动检查结果分别在同目录的 `ui-result.json`、`desktop-result.json` 和 `electron-protocol-result.json`。后续 UI 修改先更新 Figma，再跑客户端检查，刷新截图并更新 PR 图片链接。
+# 记忆状态增量（2026-11-02）
+
+沿用同一 Figma 文件与已有黑白 token、按钮和布局，新视图：`14:80`（Memory completed）、`14:134`（Memory processing）。先通过 MCP 更新并检查设计，再修改既有 React 记忆区域。提交后切到独立运行，实时状态与收益验收分开；恢复会话按 startedAt 选择最新运行，避免UUID目录顺序影响。
+
+实际运行截图：`output/playwright/memory-web-processing.png`、`memory-web-dark.png`、`memory-web-light.png`、`memory-electron-dark.png`、`memory-electron-light.png`。这些使用真实本地 OpenViking 和 DeepSeek 提取记录，运行状态仍保留“尚未验收”，不把完成提取等同收益通过。界面实际检查另有 `memory-ui-result.json`；PR嵌入当前提交图片。

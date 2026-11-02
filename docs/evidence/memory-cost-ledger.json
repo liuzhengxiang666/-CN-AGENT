@@ -1,0 +1,334 @@
+{
+  "scope": "This memory implementation/verification phase only, including exploratory/pilot/failed/selected/negative/UI attempts; existing two coding benchmarks are separate.",
+  "limits": [
+    "Before observer deployment, early smoke provider responses were not captured per request; those session task aggregates remain in private probe.json.",
+    "Logical calls cancelled before a response may still incur provider charges; usage and monetary total remain unknown.",
+    "Server task token_usage is cumulative and is not added again to raw response totals."
+  ],
+  "memoryProvider": {
+    "observedResponseCount": 14,
+    "knownInputTokens": 105788,
+    "knownOutputTokens": 13063,
+    "unknownResponseCount": 3,
+    "unknownRequestIds": [
+      "42211725-f520-4dc6-977c-9100f159be0d",
+      "1a65cf49-f5f7-41fb-baff-7130c10acc85",
+      "77f2ddf3-d18c-4dbf-976e-ba2ef157c3dd"
+    ],
+    "actualTotalTokens": null
+  },
+  "mainConversations": {
+    "runCount": 23,
+    "knownInputTokens": 833587,
+    "knownOutputTokens": 35278,
+    "runs": [
+      {
+        "id": "0c0d46eb-7fec-47e2-b951-5554604b4c25",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 3,
+          "inputTokens": 3218,
+          "outputTokens": 804,
+          "cacheReadTokens": 2048,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 6943
+      },
+      {
+        "id": "11d0e053-1a99-4077-b74a-624b64fc50be",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 6,
+          "inputTokens": 7746,
+          "outputTokens": 784,
+          "cacheReadTokens": 6144,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 8564
+      },
+      {
+        "id": "19ee5249-9554-4cf8-8b08-0c50b6018ea5",
+        "engine": "dsh",
+        "state": "completed",
+        "usage": {
+          "requests": 4,
+          "inputTokens": 89296,
+          "outputTokens": 955,
+          "cacheReadTokens": 82816,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 13134
+      },
+      {
+        "id": "54f4a913-f866-4bce-88a0-ecee509e650c",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 4,
+          "inputTokens": 5441,
+          "outputTokens": 366,
+          "cacheReadTokens": 3712,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 5104
+      },
+      {
+        "id": "61bda8a7-7151-43a0-b516-56ec7a04df91",
+        "engine": "dsh",
+        "state": "completed",
+        "usage": {
+          "requests": 4,
+          "inputTokens": 52304,
+          "outputTokens": 349,
+          "cacheReadTokens": 46720,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 8650
+      },
+      {
+        "id": "743689ec-58d4-441c-80e3-7be9f28b6ee4",
+        "engine": "dsh",
+        "state": "completed",
+        "usage": {
+          "requests": 11,
+          "inputTokens": 326940,
+          "outputTokens": 11386,
+          "cacheReadTokens": 266112,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 80397
+      },
+      {
+        "id": "9155ffa8-96f4-4ddf-971a-05fce65ac5a0",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 5,
+          "inputTokens": 10430,
+          "outputTokens": 1958,
+          "cacheReadTokens": 8448,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 16398
+      },
+      {
+        "id": "93595f5c-855f-4bf0-bba1-d44c40ac5218",
+        "engine": "dsh",
+        "state": "completed",
+        "usage": {
+          "requests": 9,
+          "inputTokens": 207713,
+          "outputTokens": 1896,
+          "cacheReadTokens": 184576,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 21083
+      },
+      {
+        "id": "98d45bff-fcc4-43d3-b4e7-fbed6da47bc2",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 5,
+          "inputTokens": 11644,
+          "outputTokens": 2296,
+          "cacheReadTokens": 9600,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 18032
+      },
+      {
+        "id": "534f653d-03af-49ec-b96f-265973886899",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 2,
+          "inputTokens": 2569,
+          "outputTokens": 224,
+          "cacheReadTokens": 2176,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 4472
+      },
+      {
+        "id": "e063a4a7-8282-4c95-91f8-096049fa8f95",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 2,
+          "inputTokens": 2652,
+          "outputTokens": 277,
+          "cacheReadTokens": 1280,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 5075
+      },
+      {
+        "id": "00f62a41-0614-48da-8da2-6150db3ffd40",
+        "engine": "dsh",
+        "state": "completed",
+        "usage": {
+          "requests": 3,
+          "inputTokens": 13318,
+          "outputTokens": 3197,
+          "cacheReadTokens": 9728,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 23017
+      },
+      {
+        "id": "05f85d19-cd54-41cc-9e4f-0710fd2fe963",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 3,
+          "inputTokens": 2251,
+          "outputTokens": 311,
+          "cacheReadTokens": 1536,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 2869
+      },
+      {
+        "id": "11d4830f-1128-43d4-b0ee-217604e73b1c",
+        "engine": "dsh",
+        "state": "completed",
+        "usage": {
+          "requests": 3,
+          "inputTokens": 10738,
+          "outputTokens": 335,
+          "cacheReadTokens": 8832,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 6352
+      },
+      {
+        "id": "125de559-05bd-4cee-b63a-dc3db6da3395",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 4,
+          "inputTokens": 6471,
+          "outputTokens": 1534,
+          "cacheReadTokens": 4608,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 12513
+      },
+      {
+        "id": "64bf9ae3-7c3b-4f6f-8ca9-d3649295a889",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 5,
+          "inputTokens": 9081,
+          "outputTokens": 1352,
+          "cacheReadTokens": 7168,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 11043
+      },
+      {
+        "id": "724916b0-c41d-4bc8-a2db-84db955a4280",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 3,
+          "inputTokens": 3079,
+          "outputTokens": 373,
+          "cacheReadTokens": 1792,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 4609
+      },
+      {
+        "id": "89a5d4ce-f1a6-4336-9e53-9169048c1258",
+        "engine": "dsh",
+        "state": "completed",
+        "usage": {
+          "requests": 4,
+          "inputTokens": 18731,
+          "outputTokens": 1446,
+          "cacheReadTokens": 14720,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 13401
+      },
+      {
+        "id": "979b45ae-5a7e-4b37-bda4-930bdb0aae34",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 6,
+          "inputTokens": 20928,
+          "outputTokens": 1998,
+          "cacheReadTokens": 17408,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 15380
+      },
+      {
+        "id": "9c03f878-5479-4e82-a11e-dcce01a23d7a",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 4,
+          "inputTokens": 5282,
+          "outputTokens": 1167,
+          "cacheReadTokens": 3584,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 8141
+      },
+      {
+        "id": "d2720535-a250-40be-8903-93b83dad1cec",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 4,
+          "inputTokens": 6817,
+          "outputTokens": 1516,
+          "cacheReadTokens": 5376,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 10188
+      },
+      {
+        "id": "e912b666-5f46-46a4-99e0-c1fe900e5a65",
+        "engine": "dsh",
+        "state": "completed",
+        "usage": {
+          "requests": 3,
+          "inputTokens": 12155,
+          "outputTokens": 539,
+          "cacheReadTokens": 9856,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 8794
+      },
+      {
+        "id": "9e71681e-777c-4905-acf3-44f8c72983df",
+        "engine": "cncode",
+        "state": "completed",
+        "usage": {
+          "requests": 2,
+          "inputTokens": 4783,
+          "outputTokens": 215,
+          "cacheReadTokens": 2304,
+          "cacheWriteTokens": null
+        },
+        "wallMs": 4120
+      }
+    ]
+  },
+  "embedding": {
+    "provider": "local",
+    "model": "bge-small-zh-v1.5-f16",
+    "calls": 251,
+    "providerTokens": null,
+    "note": "Local runtime token estimates are not provider-measured token usage. Durations in individual evidence; sums are not wall time."
+  },
+  "actualBillingAmount": null
+}

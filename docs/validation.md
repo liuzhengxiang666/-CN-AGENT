@@ -6,12 +6,12 @@
 |---|---|---|
 | 独立 D: worktree | 通过 | codex/cn-code-vnext |
 | 类型检查、构建 | 通过 | pnpm typecheck/build |
-| 单元与协议测试 | 15/15通过，零跳过 | pnpm test；含自动/人工等待分类 |
+| 单元与协议测试 | 20/20通过，零跳过 | pnpm test；含自动/人工等待分类 |
 | Java smokeTest | 38入口通过 | 本轮历史回归 |
 | 自研与DSH真实模型 | 文件写入/读取成功 | 原路由 deepseek-v4-flash；凭据仅保存在本机配置 |
 | 两任务×两内核 Linux 无记忆基线 | 四个任务-内核组合通过可信验收，各一个样本 | evidence/baseline-results.json 与 baseline-artifacts/ |
 | 可信验收正反例 | 通过 | evidence/verifier-controls.json |
-| OpenViking真实服务与记忆收益 | 未验证 | 尚缺可用embedding/服务配置，不强制注册云账号 |
+| OpenViking真实服务与定向记忆实验 | 通过；限单样本配置任务 | memory-results.json、memory-negative.json；不推导通用编码收益 |
 | Web、Electron、终端 | 实际客户端协议验证通过 | output/playwright/*.json 与截图 |
 | 草稿PR与图片 | 已交付，后续增量继续更新 | PR #1；未合并main |
 
@@ -83,3 +83,37 @@
 OpenViking费用与账户说明：自部署不要求开通火山云OpenViking账号；模型API调用仍按提供方计费，也可选择本地embedding。云托管需要火山账号，费用/额度以控制台为准。本机当前可用内存约2GiB，尚未直接启用额外本地模型；仍需确定embedding与服务配置，再进行记忆真实隔离和收益验证。
 
 官方依据：[快速入门](https://github.com/volcengine/OpenViking/blob/main/docs/en/getting-started/02-quickstart.md)、[模型配置](https://github.com/volcengine/OpenViking/blob/main/docs/en/guides/01-configuration.md)。仅核对自部署路径，没有开通云付费服务。
+
+
+## 2026-11-02 本地记忆实际验收（当前状态）
+
+复用既有 Memory/Service、官方 TS SDK、固定 DSH 插件。OpenViking 0.5.3 存储在 D:，DeepSeek 原路由负责文本提取，本地 bge-small-zh-v1.5-f16 负责检索。专用容器的 /state bind mount 指向项目 .cncode/vnext/openviking，Python 3.12.16、llama-cpp-python 0.3.36；模型 SHA-256 为 ab9b81d9cd329c712eee379cf0068eabe6a5e2a01d0def61535eba9384085e2c。启动与私有文件说明见 [memory.md](memory.md)。没有开通云托管。
+
+隔离采用每个真实项目目录独立的本地账户/密钥，peer 只是项目内标签。实测发现服务器既可能写用户级记忆，也可能写 peer 级记忆，不能只查其中一个目录；召回限定项目账户、memory 类型和实际内容层级，管理列表也只展示记忆。两个项目的广域搜索、同 URI 读取、外部任务读取与伪造账户头均未暴露另一项目的约定值。API-key 模式忽略伪造账户头时可能返回调用者自己账户的内容（HTTP 200），不能把 200 一概误判成越权；检查的是返回内容和所有权。
+
+以下为最终纳入的随机项目约定实验，完整 run ID、原始 usage、实际工具/embedding 耗时、自动等待和外部文件校验见 [memory-results.json](evidence/memory-results.json)。每个条件一个样本，串行模型调用；主机仍有其他应用，这不是专用性能测试机。
+
+| 任务 | 内核 | 记忆 | wall time | 实际输入/输出 token | 文件验收 |
+|---|---|---|---:|---:|---|
+| 不给出已存约定 | cncode | 关 | 10.188 s | 6817 / 1516 | 缺少约定，未交付 |
+| 不给出已存约定 | cncode | 开 | 11.043 s | 9081 / 1352 | 通过 |
+| 显式给定值控制 | cncode | 关 | 2.869 s | 2251 / 311 | 通过 |
+| 显式给定值控制 | cncode | 开 | 4.609 s | 3079 / 373 | 通过 |
+| 不给出已存约定 | dsh | 关 | 23.017 s | 13318 / 3197 | 缺少约定，未交付 |
+| 不给出已存约定 | dsh | 开 | 13.401 s | 18731 / 1446 | 通过 |
+| 显式给定值控制 | dsh | 关 | 6.352 s | 10738 / 335 | 通过 |
+| 显式给定值控制 | dsh | 开 | 8.794 s | 12155 / 539 | 通过 |
+
+收益只在定向约定复用上得到证据：自研会话捕获后，新建自研和 DSH 会话都能生成相同正确配置。纠正端口 52577 → 52578 后，新会话生成新值。不能把完成任务与未完成任务的时长直接当作速度优势。
+
+额外开销没有隐藏：首次 A 提取 19.391 s、7272/863 token；项目 B 隔离样本提取 23.486 s、7313/1004；纠正提取 32.651 s、8399/3122。显式给定值、均通过的控制任务中，自研 2.869 → 4.609 s、2251/311 → 3079/373 token；DSH 6.352 → 8.794 s、10738/335 → 12155/539。单样本只说明本次存在额外开销，不能估计稳定均值或投资回报。检索注入增加的主请求 token 通过该对照观察，不虚构精确注入 token 数。探索、失败、UI 和取消的开销另有 [阶段账本](evidence/memory-cost-ledger.json)，未把仅纳入的样本当作全部测试成本；缺失 usage 与实际账单金额仍未知。
+
+提交被接收后运行保持处理中，后台 task 和索引完成才发 extraction.completed；失败不会发完成事件，空会话跳过不创建任务。实际取消得到服务端 cancelled；停机时召回明确失败，重启后仍能查到纠正值；开启记忆后拒绝写入审批，文件没有生成。见 [负例证据](evidence/memory-negative.json) 与 [空提交](evidence/memory-empty-commit.json)。本地 embedding 只记录执行耗时，内部估计 token 不冒充提供方实际消耗；取消未返回的 usage 不写成零，也不表示不计费。
+
+重要历史修正：首轮 DSH 无记忆样本读到了工作区外的 report.json / artifacts，不能用于收益或时长结论，已完整保留并标记 [污染样本](evidence/memory-pilot-contaminated.json)。之后禁止实验 shell、glob、grep、Skill、子 Agent，DSH 文件工具只允许 client-config.json，并增加执行前拦截负例；以新随机约定完成重跑。错误的 peer-only 召回假设、SDK getTask 返回 null、同 URI 与同账户头测试假设，以及外部 MCP 启动失败，都保留在 [尝试索引](evidence/memory-attempts.json)，未删除失败后只发布成功。
+
+运行发生在 8bfeeb3 加本轮工作区代码上，元数据 codeDirty=true；固定服务镜像和最终源码哈希另外记录，不能冒充全部运行来自某个尚未存在的提交。后续只补充空提交处理、交付物字符串参数快照与界面恢复，不反写早期轨迹。
+
+最终机器检查：20 个单元/协议测试、类型检查、构建、Web/终端协议交互、固定 DSH 运行时回调及交付物快照通过。Figma 新增记忆处理中/完成视图；实际 Web 和 Electron 展示真实 DeepSeek 提取记录，截图位于 output/playwright/memory-*，PR 必须嵌入当前提交可访问图片。
+
+边界：没有证明两项原始编码基线在记忆下更快，没有稳定成功率、长期复杂编码收益或自动整理结论。Jev、Dreaming 和 RSI 未实现。

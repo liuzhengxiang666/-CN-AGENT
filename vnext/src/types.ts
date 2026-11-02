@@ -85,5 +85,8 @@ export interface AppConfig {
   configPath: string;
   memoryUrl?: string;
   memoryKey?: string;
+  memoryAdminKey?: string;
+  memoryProjectsFile?: string;
+  memoryObservationsFile?: string;
   mcp: Json[];
 }

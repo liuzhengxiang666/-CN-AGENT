@@ -131,3 +131,5 @@
 - T12 端到端验证：单测、Java 回归、客户端协议与可信验收控制实验有记录，真实模型和记忆端到端仍未通过；不得把阶段草稿 PR 当作全部计划已完成。
 
 T7最新进展：新凭据后的四个组合均通过真实Linux可信验收，见evidence/baseline-results.json；定向重跑复用cli.ts的task/engine过滤。T8仍需embedding和服务配置，不要求购买云托管。
+
+T8 本地记忆增量：`src/memory.ts:prepare/client/recordObservations/waitForTask`、`src/service.ts:commitMemory`、`runtime/openviking-observer.py`、`runtime/openviking.Dockerfile`、`scripts/memory-local.ts`。项目独占本地账户；SDK 捕获/手动提交统一，DSH 插件仅做召回。`scripts/memory-check.ts` 为定向约定复用及显式值成本对照，`memory-negative.ts` 为取消、故障、持久化、拒绝审批；`memory-ui-check.ts` 实际启动 Web/Electron。首轮 DSH 读到外部报告的污染样本保留，新增 JSON 工具范围及文件访问负例后重新验证。

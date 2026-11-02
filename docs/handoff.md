@@ -90,3 +90,15 @@
 新增评测器task/engine过滤，复用现有runner定向重跑。发现自动审批等待被记作人工等待，原始报告保留并提供normalizedWaitMetrics；后续事件记录actor，单元/协议测试现在15项。当前基线每组合仅一个样本，没有稳定成功率或速度优势结论。
 
 下一阶段仍是OpenViking服务与embedding配置、严格项目隔离、纠正旧值、跨内核与额外开销验证。自部署不需购买云托管；云模型调用可能收费。当前本机可用内存约2GiB，没有自行启动额外本地模型或开通云付费服务。
+
+## 本地记忆完成后的接续状态（优先读本节）
+
+用户已批准本地 OpenViking、DeepSeek 提取与本地 BGE。本轮部署固定 OpenViking 0.5.3 + llama-cpp-python 0.3.36 到 D: bind mount，专用容器 cncode-openviking 仅发布 127.0.0.1:1933。配置/密钥/缓存/数据/临时目录均在 .cncode/vnext/openviking，不提交私有原件。启动 pnpm memory build/up/status/down；细节见 docs/memory.md。DSH SDK/runtime 仍是0.2.2-alpha.2，插件固定0.5.32，仅召回；捕获与手动提取统一走 SDK，避免自动退出提交重复计量。
+
+每个 canonical cwd 使用独立本地账户与项目密钥。服务器既可能写用户级，也可能写peer级记忆；已修正仅查其中一种目录导致的遗漏。最终选用实验 e0e959c5-e496-4ced-8fc4-2f98355b312c：新自研/DSH会话复用随机约定通过，52577→52578纠正通过，跨项目搜索/读取/任务及伪造账户头无A信息。显式值控制均通过，但两种内核的记忆版本都增加了本次耗时和token；不能讲普遍提速。结果/负例/账本和边界见 docs/evidence/memory-*.json 与 validation.md。
+
+首轮 DSH 通过工具读到 sibling report/artifacts，属于污染，不纳入收益或速度比较。完整保留 pilot 与失败索引；最终实验使用 JSON 工具范围，禁止 shell/搜索/Skill/子Agent，DSH 只允许 client-config.json，增加实际执行前拦截测试。它不是通用OS沙箱。服务端隔离仍由账户密钥验证。
+
+提取作为独立运行进入既有 Service 生命周期，submitted/processing/completed/failed/skipped/cancelled 分开；真实取消、停机、重启持久化、拒绝审批通过。观察器记录提供方原始usage，BGE token估计不冒充实际token。任务结果累计usage仅保留原始证据，不重复求和。20项单元/协议检查；固定DSH协议额外核对字符串arguments产生的交付物快照。修复UI恢复选错运行的问题，Figma/实际Web与Electron均新增记忆状态与黑白截图。
+
+仍未验证：长真实会话压缩的实际开销、同一编码基准上多次重复的记忆收益、复杂项目长期使用。Jev/Dreaming/RSI保持未来路线。不要把定向配置实验、图片或阶段PR当作完整生产验收；不合并main。

@@ -117,7 +117,16 @@ export function server(service: Service, webDir = resolve("web-dist")) {
               );
             else if (req.method === "DELETE")
               json(res, await m.remove(session, b.uri));
-            else json(res, await m.commit(session));
+            else
+              json(
+                res,
+                {
+                  state: "submitted",
+                  runId: service.commitMemory(session.id),
+                  extractionComplete: false,
+                },
+                202,
+              );
             return;
           }
           if (!action) {
@@ -127,7 +136,16 @@ export function server(service: Service, webDir = resolve("web-dist")) {
         }
         if (resource === "runs") {
           if (!id) {
-            json(res, service.records.runs().reverse());
+            json(
+              res,
+              service.records
+                .runs()
+                .sort(
+                  (a, b) =>
+                    b.startedAt.localeCompare(a.startedAt) ||
+                    b.id.localeCompare(a.id),
+                ),
+            );
             return;
           }
           if (action === "events") {

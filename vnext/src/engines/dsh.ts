@@ -4,6 +4,7 @@ import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { stringify } from "yaml";
+import type { Memory } from "../memory.js";
 import type { Usage } from "../types.js";
 import { requireModel } from "../config.js";
 import type {
@@ -20,13 +21,16 @@ export class Dsh implements EngineAdapter {
     stop: true,
     tools: true,
     usage: true,
-    memory: false,
+    memory: true,
     toolTiming: "dsh-tools/execute",
   };
   private harness?: DeepSeekHarness;
   private current?: EngineContext;
   private closing?: Promise<void>;
-  constructor(private config: AppConfig) {}
+  constructor(
+    private config: AppConfig,
+    private memory?: Memory,
+  ) {}
   async close() {
     if (this.closing) return this.closing;
     const h = this.harness;
@@ -36,13 +40,46 @@ export class Dsh implements EngineAdapter {
   }
   async run(input: string, ctx: EngineContext) {
     requireModel(this.config);
-    if (ctx.session.memory)
-      throw new Error("DSH OpenViking 插件尚未验收，不能宣称已启用记忆");
+    if (ctx.session.memory && !this.memory)
+      throw new Error("DSH 项目记忆未配置");
     ctx.signal.throwIfAborted();
     this.current = ctx;
     const started = performance.now();
     const home = join(this.config.dataDir, "dsh", ctx.session.id);
     mkdirSync(home, { recursive: true });
+    const memoryIdentity = ctx.session.memory
+      ? this.memory!.identity(ctx.session)
+      : undefined;
+    const memoryPeer = ctx.session.memory
+      ? this.memory!.peer(ctx.session)
+      : undefined;
+    const memoryConfig = join(home, "ovcli.conf");
+    const memoryHome = join(home, "openviking");
+    mkdirSync(memoryHome, { recursive: true });
+    writeFileSync(
+      memoryConfig,
+      JSON.stringify({
+        url: this.config.memoryUrl,
+        api_key: memoryIdentity?.apiKey,
+        account: (memoryIdentity as any)?.account,
+        user: "cncode",
+        actor_peer_id: memoryPeer,
+        plugin: {
+          autoRecall: true,
+          autoCapture: false,
+          mcpEnabled: false,
+          skillCatalog: false,
+          skillExperience: false,
+          recallPeerScope: "actor",
+          recallQueryExpansion: "off",
+          recallRewrite: "off",
+          recallLimit: 5,
+          recallMaxTokens: 1500,
+          profileTokenBudget: 1500,
+          timeoutMs: 120000,
+        },
+      }),
+    );
     const observations = join(home, "observations.jsonl");
     writeFileSync(observations, "");
     let consumed = 0;
@@ -56,6 +93,12 @@ export class Dsh implements EngineAdapter {
       while (consumed < lines.length) {
         const event = JSON.parse(lines[consumed]!);
         consumed++;
+        if (event.type === "memory.operation" && event.data.telemetry?.id)
+          this.memory?.recordObservations(
+            ctx,
+            (e) => e.telemetryId === event.data.telemetry.id,
+            "memory_recall",
+          );
         ctx.emit(
           event.type === "dsh.usage" ? "usage" : event.type,
           event.type === "dsh.usage"
@@ -114,6 +157,16 @@ export class Dsh implements EngineAdapter {
             },
             {
               insert: [
+                ...(ctx.session.memory
+                  ? [
+                      {
+                        id: "openviking-memory",
+                        name: fileURLToPath(
+                          import.meta.resolve("@openviking/dsh-memory-plugin"),
+                        ),
+                      },
+                    ]
+                  : []),
                 {
                   id: "cncode-observer",
                   name: fileURLToPath(
@@ -143,6 +196,15 @@ export class Dsh implements EngineAdapter {
             CNCODE_DSH_KEY: this.config.apiKey,
             DSH_TELEMETRY_MODE: "OFF",
             OPENVIKING_RECALL_PEER_SCOPE: "actor",
+            OPENVIKING_CLI_CONFIG_FILE: memoryConfig,
+            OPENVIKING_CONFIG_FILE: join(memoryHome, "unused-server.conf"),
+            OPENVIKING_CREDENTIAL_SOURCE: "ovcli",
+            OPENVIKING_STATE_DIR: join(memoryHome, "state"),
+            OPENVIKING_PENDING_DIR: join(memoryHome, "pending"),
+            OPENVIKING_HOME: memoryHome,
+            CNCODE_MEMORY_URL: ctx.session.memory
+              ? this.config.memoryUrl
+              : undefined,
           },
           onUserQuestion: async (request, { signal }) => {
             const answer = await this.current!.interact(
@@ -198,6 +260,8 @@ export class Dsh implements EngineAdapter {
         ctx.emit("assistant.message", { text: result.finalResponse });
         if (!result.finalResponse)
           throw new Error("DSH 已空闲，但没有交付回答；检查原始事件");
+        if (ctx.session.memory)
+          await this.memory!.capture(input, result.finalResponse, ctx);
       } finally {
         ctx.signal.removeEventListener("abort", stop);
       }
@@ -221,7 +285,10 @@ export class Dsh implements EngineAdapter {
       });
     if (e.type === "tool/result")
       c.emit("tool.result", {
-        callId: d.callId ?? d.message?.source?.callId ?? d.message?.content?.[0]?.toolCallId,
+        callId:
+          d.callId ??
+          d.message?.source?.callId ??
+          d.message?.content?.[0]?.toolCallId,
         result: d.message,
         meta: d.meta,
       });

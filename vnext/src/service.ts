@@ -30,13 +30,16 @@ export class Service {
     { engine: EngineAdapter; controller: AbortController; done: Promise<void> }
   >();
   private revision: string;
+  private codeDirty = true;
   constructor(
     readonly config: AppConfig,
     private engineFactory?: (id: EngineId) => EngineAdapter,
   ) {
+    this.memory = new Memory(config);
     this.records = new Records(config.dataDir, [
       config.apiKey,
       config.memoryKey ?? "",
+      ...this.memory.secrets(),
       config.token,
       ...config.mcp
         .flatMap((c) => [
@@ -45,7 +48,6 @@ export class Service {
         ])
         .filter((v): v is string => typeof v === "string" && v.length > 3),
     ]);
-    this.memory = new Memory(config);
     for (const s of this.records.sessions()) {
       delete s.activeRun;
       this.sessions.set(s.id, s);
@@ -58,6 +60,10 @@ export class Service {
         encoding: "utf8",
         cwd: new URL("../", import.meta.url),
       }).trim();
+      this.codeDirty = !!execFileSync("git", ["status", "--porcelain"], {
+        encoding: "utf8",
+        cwd: new URL("../", import.meta.url),
+      }).trim();
     } catch {
       this.revision = "unknown";
     }
@@ -67,7 +73,6 @@ export class Service {
     if (typeof cwd !== "string" || !cwd.trim())
       throw new Error("需要工作区目录");
     if (memory && !this.config.memoryUrl) throw new Error("OpenViking 未配置");
-    if (memory && engine === "dsh") throw new Error("DSH 记忆插件尚未接入验收");
     cwd = resolve(cwd);
     if (!(await stat(cwd)).isDirectory()) throw new Error("工作区不是目录");
     const s: Session = {
@@ -79,6 +84,10 @@ export class Service {
       messages: [],
       inputs: {},
     };
+    if (memory) {
+      await this.memory.prepare(s);
+      this.records.secrets.push(...this.memory.secrets());
+    }
     this.sessions.set(s.id, s);
     this.records.session(s);
     return s;
@@ -89,6 +98,30 @@ export class Service {
     return s;
   }
   submit(id: string, inputId: string, input: string) {
+    return this.start(id, inputId, input);
+  }
+  commitMemory(id: string) {
+    const s = this.get(id);
+    if (!s.memory) throw new Error("该会话未启用记忆");
+    return this.start(id, randomUUID(), "提交项目记忆并等待提取与索引完成", {
+      capabilities: { memory: true },
+      close: async () => {},
+      run: async (_input, c) => {
+        const commit = await this.memory.commit(s, c);
+        if (commit.result.task_id)
+          await this.memory.waitForTask(s, String(commit.result.task_id), c);
+        else if (commit.result.status === "skipped")
+          c.emit("memory.commit.skipped", { reason: commit.result.reason });
+        else throw new Error("记忆提交缺少任务 ID");
+      },
+    });
+  }
+  private start(
+    id: string,
+    inputId: string,
+    input: string,
+    operation?: EngineAdapter,
+  ) {
     const s = this.get(id);
     if (
       typeof inputId !== "string" ||
@@ -101,10 +134,12 @@ export class Service {
     if (s.activeRun) throw new Error("当前会话有运行中的任务");
     const run = this.records.begin(s, this.config.model, {
       code: this.revision,
+      codeDirty: this.codeDirty,
       engine: s.engine === "dsh" ? "0.2.2-alpha.2" : "0.2.0",
       memory: s.memory ? "openviking" : "off",
       skillScope: "project-only",
       prompt: "cncode-vnext-v1",
+      purpose: operation ? "memory_extraction" : "conversation",
     });
     Object.defineProperty(s.inputs, inputId, {
       value: run.id,
@@ -115,10 +150,11 @@ export class Service {
     s.activeRun = run.id;
     this.records.session(s);
     const engine: EngineAdapter =
+      operation ??
       this.engineFactory?.(s.engine) ??
       (s.engine === "cncode"
         ? new CnCode(this.config, this.memory)
-        : new Dsh(this.config));
+        : new Dsh(this.config, this.memory));
     const controller = new AbortController();
     const ctx: EngineContext = {
       session: s,
@@ -172,10 +208,18 @@ export class Service {
         paths.add(event.data.args.path);
       if (
         event.type === "tool.request" &&
-        ["write", "edit"].includes(event.data.name) &&
-        event.data.arguments?.file_path
-      )
-        paths.add(event.data.arguments.file_path);
+        ["write", "edit"].includes(event.data.name)
+      ) {
+        let args = event.data.arguments;
+        if (typeof args === "string") {
+          try {
+            args = JSON.parse(args);
+          } catch {
+            args = undefined;
+          }
+        }
+        if (typeof args?.file_path === "string") paths.add(args.file_path);
+      }
     }
     for (const path of paths) {
       const source = await confined(s.cwd, path),

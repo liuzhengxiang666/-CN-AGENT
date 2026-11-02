@@ -1,6 +1,6 @@
 import { readFileSync, existsSync } from "node:fs";
 import { homedir } from "node:os";
-import { resolve } from "node:path";
+import { resolve, join } from "node:path";
 import { parse } from "yaml";
 import type { AppConfig } from "./types.js";
 export function loadConfig(): AppConfig {
@@ -9,18 +9,33 @@ export function loadConfig(): AppConfig {
   const v = existsSync(configPath)
     ? (parse(readFileSync(configPath, "utf8")) ?? {})
     : {};
+  const dataDir = resolve(process.env.CNCODE_DATA_DIR ?? "../.cncode/vnext");
+  const localPath = join(dataDir, "openviking", "connection.json");
+  const local =
+    !process.env.OPENVIKING_URL && existsSync(localPath)
+      ? JSON.parse(readFileSync(localPath, "utf8"))
+      : {};
   return {
     model: process.env.CNCODE_MODEL ?? v.model ?? "",
     baseUrl: process.env.CNCODE_BASE_URL ?? v.base_url ?? "",
     apiKey: process.env.CNCODE_API_KEY ?? v.api_key ?? "",
     protocol: process.env.CNCODE_PROTOCOL ?? v.protocol ?? "openai",
-    dataDir: resolve(process.env.CNCODE_DATA_DIR ?? "../.cncode/vnext"),
+    dataDir,
     token: process.env.CNCODE_TOKEN ?? "",
     host: process.env.CNCODE_HOST ?? "127.0.0.1",
     port: Number(process.env.CNCODE_PORT ?? 3040),
     configPath,
-    memoryUrl: process.env.OPENVIKING_URL,
+    memoryUrl: process.env.OPENVIKING_URL ?? local.url,
     memoryKey: process.env.OPENVIKING_API_KEY,
+    memoryAdminKey: process.env.OPENVIKING_ADMIN_KEY ?? local.rootKey,
+    memoryProjectsFile:
+      process.env.OPENVIKING_PROJECTS_FILE ??
+      (local.url ? join(dataDir, "openviking", "projects.json") : undefined),
+    memoryObservationsFile:
+      process.env.OPENVIKING_OBSERVATIONS_FILE ??
+      (local.url
+        ? join(dataDir, "openviking", "observations.jsonl")
+        : undefined),
     mcp: migrateMcp(v),
   };
 }

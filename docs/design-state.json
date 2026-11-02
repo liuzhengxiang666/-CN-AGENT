@@ -56,5 +56,12 @@
       "6:264",
       "I6:264;4185:3781"
     ]
+  },
+  "memoryStates": {
+    "completed": "14:80",
+    "processing": "14:134",
+    "fileKey": "UUg6JVRobzrbugKYd0gqMx",
+    "sessionId": "3433419c-292f-40f0-8866-70568124c9ce",
+    "note": "Existing themes/tokens/layout/components reused; actual real-service screenshots live in output/playwright/memory-*"
   }
 }

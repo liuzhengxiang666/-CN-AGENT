@@ -1,0 +1,26 @@
+{
+  "format": "SHA-256 of staged Git blobs (LF normalized); final reviewed source, not a claim that all prior exploratory runs used identical source.",
+  "predecessor": "8bfeeb3",
+  "hashes": {
+    "package.json": "8e806fffb5b8d5c206c6a93d30a9de699f1e5638be9cb0803f97894987ee3229",
+    "pnpm-lock.yaml": "3052301f0f0f6bab087083e63c746b8da133fdaa6dc1c9e6d1633d2f059bf513",
+    "vnext/package.json": "ccff6936358300197bf4d8db221e811f5cdcaf4660eb9d5b2427d437b520b430",
+    "vnext/runtime/dsh-observer.mjs": "30412aba420bbca8c65a093941c6f87e86b88cf0deef7cba4ffeee39d7c90804",
+    "vnext/runtime/openviking-observer.py": "ef7fae2d1c196e086cfe2dc4da6ad5c7b326e32a11bd196428bffd1e831ed289",
+    "vnext/runtime/openviking.Dockerfile": "7028e35e733ca413f7a88d26573c2c6ad667c09627c0f1b975825eec10107293",
+    "vnext/scripts/dsh-protocol.ts": "f82c89f0e70e60f2dda909938de766d6335da58687d6e839063492d5cc2ff59c",
+    "vnext/scripts/memory-check.ts": "1a542576ba6eb30c0e1f650e92e2d33d8355e91234022d937a9217de91211137",
+    "vnext/scripts/memory-local.ts": "9c5aa18af6b2d11bf6c48981250b33a96e995ee190796e041acab11c9fcd8517",
+    "vnext/scripts/memory-negative.ts": "b396bf4adf926ae4c7870fa7b885c169ca21002188165fd5f37ee150df353569",
+    "vnext/scripts/memory-ui-check.ts": "0972cd4f19acaab99e8c5f65e1f6940e4f1a05b3ca35f8ae07ba370e06cb1683",
+    "vnext/src/config.ts": "31a5d9281b7ab29f166fd535cf31771a28aa7a0c18d2b8a66c6f38e2d1242134",
+    "vnext/src/engines/cncode.ts": "555b34838a945215f2a0e4e1b8c1375da14581c8a4d37c4200bf61b902c86924",
+    "vnext/src/engines/dsh.ts": "7ad63ad02fcdf98c828b4e925337d05e2de3354b9d57e016e4d583029501f7da",
+    "vnext/src/memory.ts": "be9625fac54c55fc97e68d2e0751e13bbc008f06ce9199ad705353282637502d",
+    "vnext/src/server.ts": "163a3f53c500d51c3243169a42a23260ee56f325917ee12b9bde017f5446068a",
+    "vnext/src/service.ts": "21efd4ab3556fee1246454c17285df86c447b65b5e88202f2a8fd9db7a05154a",
+    "vnext/src/tests/harness.test.ts": "5843caa5fa88e01c824edff8bf5cb526dc3f6bc73193b6defc549cb745e8b3a7",
+    "vnext/src/types.ts": "310130742ff414f1935ccc85ed14d511014f0183ff7cf587cc3a0ad7ac9a55ba",
+    "vnext/src/ui/main.tsx": "5e25a9c7211aa5c70b612bbc45f48c20eb19ebd6dbabd7c95a16b0e9669f6ade"
+  }
+}

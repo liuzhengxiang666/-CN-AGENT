@@ -105,7 +105,7 @@ const config: AppConfig = {
   protocol: "openai",
   host: "127.0.0.1",
   port: 0,
-  token: "fixture",
+  token: "protocol-local-access-token",
   configPath: "",
   mcp: [],
 };
@@ -123,6 +123,7 @@ const timer = setInterval(() => {
               selected: ["Continue"],
             })),
           },
+      "automation",
     );
 }, 50);
 try {
@@ -152,6 +153,9 @@ try {
         exists = true;
       } catch {}
       if (exists) throw new Error("Rejected write executed");
+      await access(
+        join(service.records.runDir(id), "artifacts", "fixture.txt"),
+      );
     }
     console.log(
       JSON.stringify({

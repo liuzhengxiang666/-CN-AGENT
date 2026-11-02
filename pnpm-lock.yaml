@@ -19,6 +19,9 @@ importers:
       '@modelcontextprotocol/sdk':
         specifier: 1.26.0
         version: 1.26.0(zod@4.6.7)
+      '@openviking/dsh-memory-plugin':
+        specifier: 0.5.32
+        version: 0.5.32(c99e9c79e4c264eddcb625ddfef1e81d)
       '@openviking/sdk':
         specifier: 0.1.0
         version: 0.1.0
@@ -3368,6 +3371,14 @@ packages:
   '@opentelemetry/semantic-conventions@1.44.0':
     resolution: {integrity: sha512-E3JkOlMBi3N8OGGkbl7tFyqk2MAS6/lySRZBK3Mu7AzjF1fT8oIChH9ChE48SUWzDn9Kdwta+G/p5LJ4xW4CLQ==}
     engines: {node: '>=14'}
+
+  '@openviking/dsh-memory-plugin@0.5.32':
+    resolution: {integrity: sha512-R5URlNPeUwC9S6ivF0uNmdrapZ/gJLBnN9QEA9CyjAbQsL/a0ABDL2LE/4UT6Qlm0XszJDiQJzZC2jXTvknvhQ==}
+    engines: {node: ^22.19.0 || >=24}
+    peerDependencies:
+      '@deepseek-ai/dsh-llm': '>=0.1.0-rc.6 <1.0.0-0'
+      '@deepseek-ai/dsh-mcp-client': '>=0.1.0-rc.6 <1.0.0-0'
+      '@deepseek-ai/dsh-skill-filesystem': '>=0.1.0-rc.6 <1.0.0-0'
 
   '@openviking/sdk@0.1.0':
     resolution: {integrity: sha512-5RI0GTOKAW5+NUky5NW3AwLYXDF10UQBi9TSo6Y6yp0/aq7kNMNnQdtRlkMC4Aa3Cf1kHZs9NGbtF+1cxEHrFA==}
@@ -9362,6 +9373,12 @@ snapshots:
       '@opentelemetry/semantic-conventions': 1.44.0
 
   '@opentelemetry/semantic-conventions@1.44.0': {}
+
+  '@openviking/dsh-memory-plugin@0.5.32(c99e9c79e4c264eddcb625ddfef1e81d)':
+    dependencies:
+      '@deepseek-ai/dsh-llm': 0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1)
+      '@deepseek-ai/dsh-mcp-client': 0.2.2-alpha.2(ae3c7983d072d76e13b58b7b6d93451a)
+      '@deepseek-ai/dsh-skill-filesystem': 0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1)(@deepseek-ai/dsh-fs@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1)(@deepseek-ai/dsh-brand@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1))(@deepseek-ai/dsh-llm@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1))(@deepseek-ai/dsh-sandbox@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1)(@deepseek-ai/dsh-llm@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1))(@deepseek-ai/dsh-session@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1)(@deepseek-ai/dsh-scope@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1)))))(@deepseek-ai/dsh-home-paths@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1))(@deepseek-ai/dsh-skill@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1)(@deepseek-ai/dsh-llm@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1))(@deepseek-ai/dsh-scope@0.2.2-alpha.2(@deepseek-ai/cordis@4.0.6-alpha.1)))
 
   '@openviking/sdk@0.1.0': {}
 

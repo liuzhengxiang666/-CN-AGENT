@@ -55,6 +55,19 @@ export class CnCode implements EngineAdapter {
       },
     });
     const disconnect = await connectMcp(this.config.mcp, tools);
+    if (process.env.CNCODE_MEMORY_EVAL === "1") {
+      const allow = new Set([
+        "read_file",
+        "write_file",
+        "edit_file",
+        "ask_user_question",
+      ]);
+      for (const name of tools.keys()) if (!allow.has(name)) tools.delete(name);
+      ctx.emit("tool.policy", {
+        scope: "memory-json-only-v1",
+        allow: [...tools.keys()],
+      });
+    }
     try {
       let memory = "";
       if (ctx.session.memory && this.memory)

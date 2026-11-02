@@ -118,7 +118,7 @@ function App() {
     setMemoryResult("");
     pendingInput.current = undefined;
     const data = await refresh();
-    const latest = data.rr.filter((r) => r.sessionId === s.id).at(-1);
+    const latest = data.rr.find((r) => r.sessionId === s.id);
     setRun(latest);
     setEvents([]);
   }
@@ -236,13 +236,43 @@ function App() {
         `sessions/${session.id}/memory`,
         action === "commit" ? {} : undefined,
       );
-      setMemoryResult(JSON.stringify(value, null, 2));
+      if (action === "commit") {
+        setMemoryResult("提取请求已提交，后台完成前不表示记忆可用。");
+        const data = await refresh();
+        setRun(data.rr.find((r) => r.id === value.runId));
+        setEvents([]);
+      } else {
+        const files = Array.isArray(value) ? value.filter((v) => !v.isDir) : [];
+        setMemoryResult(
+          files.length
+            ? files.map((v) => v.rel_path ?? v.name).join("\n")
+            : "当前项目尚无记忆文件。",
+        );
+      }
     } catch (e: any) {
       setError(e.message);
     }
   }
   const currentInteractions = interactions.filter((i) => i.runId === run?.id);
   const running = run?.state === "running";
+  const extracting = run?.versions.purpose === "memory_extraction";
+  const extracted = events.some(
+    (e) => e.type === "memory.extraction.completed",
+  );
+  const extractionSkipped = events.some(
+    (e) => e.type === "memory.commit.skipped",
+  );
+  const extractionStatus = extracted
+    ? "已完成"
+    : extractionSkipped
+      ? "无需提取"
+      : run?.state === "failed"
+        ? "失败"
+        : run?.state === "cancelled"
+          ? "已停止"
+          : running
+            ? "处理中"
+            : "未提取";
   const metric = run?.metrics ?? {};
   const input = events.find((e) => e.type === "run.start")?.data.input;
   const final = events.filter((e) => e.type === "assistant.message").at(-1)
@@ -265,6 +295,11 @@ function App() {
       "startup.end",
       "memory.recall",
       "memory.error",
+      "memory.commit.submitted",
+      "memory.extraction.completed",
+      "memory.extraction.failed",
+      "memory.cancel.settled",
+      "memory.cancel.pending",
       "artifact.saved",
       "cleanup.error",
     ].includes(e.type),
@@ -451,6 +486,22 @@ function App() {
                   <pre className="error-text">{run.error}</pre>
                 </article>
               )}
+              {extracting && (
+                <article className="assistant-message" role="status">
+                  <span className="section-label">
+                    记忆提取 · {extractionStatus}
+                  </span>
+                  <p>
+                    {extracted
+                      ? "后台提取与索引已完成。记忆收益仍需独立对照验收。"
+                      : extractionSkipped
+                        ? "本会话没有待提取内容，本次未创建后台任务。"
+                        : running
+                          ? "请求已接收，正在提取和建立索引。"
+                          : "本次提取未确认完成，请查看运行轨迹。"}
+                  </p>
+                </article>
+              )}
               {trace.length > 0 && (
                 <details className="trace" open>
                   <summary>
@@ -574,7 +625,7 @@ function App() {
             <h3>项目记忆</h3>
             <p className="muted">
               {session?.memory
-                ? "OpenViking 已配置；提取状态以服务返回为准。"
+                ? "本地存储 · DeepSeek 提取 · 本地 BGE 检索。项目使用独立本地账户与密钥。"
                 : "当前会话关闭记忆。"}
             </p>
             {session?.memory && (
@@ -582,10 +633,16 @@ function App() {
                 <Button onPress={() => void memoryAction("list")}>
                   查看记忆
                 </Button>
-                <Button onPress={() => void memoryAction("commit")}>
+                <Button
+                  disabled={running}
+                  onPress={() => void memoryAction("commit")}
+                >
                   提交提取
                 </Button>
-                <pre>{memoryResult}</pre>
+                {memoryResult &&
+                  !(extracted && memoryResult.startsWith("提取请求已提交")) && (
+                    <pre>{memoryResult}</pre>
+                  )}
               </>
             )}
             {run && (
@@ -647,17 +704,15 @@ function App() {
               <input
                 type="checkbox"
                 checked={memory}
-                disabled={!config.memoryConfigured || engine === "dsh"}
+                disabled={!config.memoryConfigured}
                 onChange={(e) => setMemory(e.target.checked)}
               />
               启用 OpenViking 项目记忆
             </label>
             <p className="muted">
-              {engine === "dsh"
-                ? "DSH 记忆插件尚未接入验收。"
-                : config.memoryConfigured
-                  ? "服务已配置，真实提取与隔离须单独验证。"
-                  : "OpenViking 服务未配置；默认关闭记忆。"}
+              {config.memoryConfigured
+                ? "按项目目录隔离；提交与提取完成分别记录。额外模型调用计入提取开销。"
+                : "OpenViking 服务未配置；默认关闭记忆。"}
             </p>
             {error && <p role="alert">{error}</p>}
             <div className="modal-actions">

@@ -2,7 +2,7 @@
 
 个人自用的编码 Agent 与 Harness 研究项目。保留 Java 21 历史实现，TypeScript 主线提供自研内核和固定版 DSH 内核，共用运行记录、HTTP 服务、React Web、Electron 桌面与交互终端。切换内核会创建新会话。
 
-当前为研究用未完成版本。两项任务×两内核的真实Linux无记忆基线均已通过外部可信验收（每组合一个样本）；OpenViking 真实隔离与记忆收益未验收。完整状态见 [验证记录](docs/validation.md)、[验收清单](checklist.md) 和 [演化路线](docs/evolution.md)。单次样本不支持稳定成功率或内核速度优势结论，尚无记忆性能收益数据。
+当前为个人研究版本。两项任务×两内核的真实 Linux 无记忆基线均通过外部可信验收（每组合一个样本）。本地 OpenViking、DeepSeek 提取和 BGE 检索已接通；项目隔离、纠正、定向记忆收益与额外开销分别实测，当前结果和实验污染修正见 [验证记录](docs/validation.md)。单次样本不支持稳定成功率、内核速度优势或复杂编码任务的普遍记忆收益结论。
 
 ## 启动
 
@@ -77,4 +77,4 @@ Docker Linux 评测串行运行两个任务×两个内核。固定提交、限�
 
 每次运行保存 `run.json`、`events.jsonl` 与支持的文本交付物快照。token 缺失为 null；会话执行状态与交付 verdict 分开，按请求用途分账，人工与自动回答等待分别记录，取并发区间并集；早期基线字段分类更正见验证记录。工具计时来自实际调用层（DSH 为 tools/execute），包含工具内部发生的等待，不是 CPU 时间；人工等待另有记录。并行工具总和不能当作 wall time。
 
-OpenViking SDK 尚处于协议验证阶段。现成 DSH 插件已做契约复核，但严格项目隔离、跨内核召回、纠正与提取完成状态仍待真实服务测试。先取得有效无记忆基线，再开放完整记忆并比较收益与额外成本。Jev、Dreaming 式整理和 RSI 只在路线中保留。
+本地记忆的启动、D: 文件位置、项目边界和实验命令见 [记忆说明](docs/memory.md)。`pnpm memory build` 构建固定服务；`pnpm memory up` 启动或重启专用容器。模型保持现有 DeepSeek 路由，不购买云托管；API 提取仍产生 token 开销。Jev、Dreaming 式整理和 RSI 只在路线中保留。

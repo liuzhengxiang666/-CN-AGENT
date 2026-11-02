@@ -427,6 +427,7 @@ test("OpenViking SDK contract scopes query and captured messages; commit is only
     ctx = context(dir);
   ctx.session.memory = true;
   const other = { ...ctx.session, cwd: join(dir, "other") };
+  await mkdir(other.cwd);
   assert.notEqual(memory.peer(ctx.session), memory.peer(other));
   await memory.recall("port", ctx);
   await memory.capture("port=5328", "saved", ctx);
@@ -509,4 +510,245 @@ test("service propagates automated answer origin into final metrics", async (t) 
           e.type === "interaction.answered" && e.data.actor === "automation",
       ),
   );
+});
+
+test("project memory credentials select the tenant key and never send the root key to data APIs", async (t) => {
+  const dir = await fixture(t),
+    other = join(dir, "other");
+  await mkdir(other);
+  const c = config(dir);
+  c.memoryUrl = "http://127.0.0.1";
+  c.memoryAdminKey = "fixture-root-secret";
+  c.memoryProjectsFile = join(dir, "projects.json");
+  const m = new Memory(c),
+    a = context(dir).session,
+    b = { ...a, cwd: other };
+  await writeFile(
+    c.memoryProjectsFile,
+    JSON.stringify({
+      [m.peer(a)]: {
+        account: "project-a",
+        user: "cncode",
+        apiKey: "tenant-a-key",
+      },
+      [m.peer(b)]: {
+        account: "project-b",
+        user: "cncode",
+        apiKey: "tenant-b-key",
+      },
+    }),
+  );
+  const seen: any[] = [];
+  const http = createServer((req, res) => {
+    seen.push({
+      key: req.headers["x-api-key"],
+      account: req.headers["x-openviking-account"],
+    });
+    res.setHeader("content-type", "application/json");
+    res.end(JSON.stringify({ status: "ok", result: "fixture" }));
+  });
+  http.listen(0, "127.0.0.1");
+  await once(http, "listening");
+  t.after(() => http.close());
+  c.memoryUrl = `http://127.0.0.1:${(http.address() as any).port}`;
+  await m.client(a).read("viking://~/memories/example.md");
+  await m.client(b).read("viking://~/memories/example.md");
+  assert.deepEqual(seen, [
+    { key: "tenant-a-key", account: "project-a" },
+    { key: "tenant-b-key", account: "project-b" },
+  ]);
+  assert.equal(m.scope(a), "viking://~");
+});
+
+test("memory provider observations deduplicate requests, preserve unknown usage and separate local embeddings", async (t) => {
+  const dir = await fixture(t),
+    c = config(dir),
+    ctx = context(dir),
+    seen: any[] = [];
+  ctx.emit = (type, data) => seen.push({ type, data });
+  c.memoryObservationsFile = join(dir, "observations.jsonl");
+  await writeFile(
+    c.memoryObservationsFile,
+    [
+      {
+        type: "model.response",
+        taskId: "job",
+        telemetryId: "tm1",
+        requestId: "request",
+        raw: { prompt_tokens: 42 },
+        durationMs: 11,
+      },
+      {
+        type: "embedding.end",
+        taskId: null,
+        telemetryId: "tm1",
+        providerTokens: null,
+        durationMs: 7,
+      },
+      {
+        type: "model.response",
+        taskId: "other",
+        telemetryId: "tm2",
+        requestId: "foreign",
+        raw: { prompt_tokens: 999 },
+      },
+    ]
+      .map((e) => JSON.stringify(e))
+      .join("\n") + "\n",
+  );
+  const memory = new Memory(c);
+  memory.recordObservations(
+    ctx,
+    (e) => e.taskId === "job",
+    "memory_extraction",
+  );
+  memory.recordObservations(
+    ctx,
+    (e) => e.taskId === "job",
+    "memory_extraction",
+  );
+  const usage = seen.filter((e) => e.type === "usage");
+  assert.equal(usage.length, 1);
+  assert.equal(usage[0].data.usage.input, 42);
+  assert.equal(usage[0].data.usage.output, null);
+  assert.equal(usage[0].data.usage.cacheRead, null);
+  assert.equal(seen.filter((e) => e.type === "memory.embedding.end").length, 1);
+});
+
+test("memory commit stays running after acceptance and a failed extraction never completes the run", async (t) => {
+  const dir = await fixture(t),
+    c = config(dir);
+  let status = "running";
+  const http = createServer(async (req, res) => {
+    for await (const _ of req) {
+    }
+    const result = req.url?.endsWith("/commit")
+      ? { task_id: "task-fixture", status: "accepted" }
+      : {
+          task_id: "task-fixture",
+          status,
+          error: "fixture extraction rejected",
+        };
+    res.setHeader("content-type", "application/json");
+    res.end(JSON.stringify({ status: "ok", result }));
+  });
+  http.listen(0, "127.0.0.1");
+  await once(http, "listening");
+  t.after(() => http.close());
+  c.memoryUrl = `http://127.0.0.1:${(http.address() as any).port}`;
+  const s = new Service(c),
+    session = await s.create("cncode", dir, true);
+  const id = s.commitMemory(session.id);
+  const deadline = Date.now() + 3000;
+  while (
+    !s.records.read(id).some((e) => e.type === "memory.commit.submitted")
+  ) {
+    assert(Date.now() < deadline);
+    await new Promise((r) => setTimeout(r, 5));
+  }
+  assert.equal(s.records.get(id).state, "running");
+  assert(
+    !s.records.read(id).some((e) => e.type === "memory.extraction.completed"),
+  );
+  status = "failed";
+  await s.wait(session.id);
+  assert.equal(s.records.get(id).state, "failed");
+  assert.equal(s.records.get(id).metrics.inputTokens, null);
+  assert(
+    !s.records.read(id).some((e) => e.type === "memory.extraction.completed"),
+  );
+});
+
+test("run listing is newest first by start time, independent of UUID directory order", async (t) => {
+  const dir = await fixture(t),
+    service = new Service(config(dir));
+  const session = await service.create("cncode", dir);
+  const runs = [
+    service.records.begin(session, "fixture", {}),
+    service.records.begin(session, "fixture", {}),
+  ].sort((a, b) => a.id.localeCompare(b.id));
+  runs[0]!.startedAt = "2026-11-02T01:00:02Z";
+  runs[1]!.startedAt = "2026-11-02T01:00:01Z";
+  for (const run of runs) service.records.save(run);
+  const http = server(service);
+  http.listen(0, "127.0.0.1");
+  await once(http, "listening");
+  t.after(() => http.close());
+  const response = await fetch(
+    `http://127.0.0.1:${(http.address() as any).port}/api/v1/runs`,
+    { headers: { authorization: "Bearer test-token" } },
+  );
+  const listed = (await response.json()) as any[];
+  assert.deepEqual(
+    listed.map((r) => r.id),
+    runs.map((r) => r.id),
+  );
+});
+
+test("memory experiment blocks DSH report reads before dispatch and hides shell/search tools", async (t) => {
+  const dir = await fixture(t);
+  const before = {
+    observations: process.env.CNCODE_DSH_OBSERVATIONS,
+    memory: process.env.CNCODE_MEMORY_EVAL,
+  };
+  process.env.CNCODE_DSH_OBSERVATIONS = join(dir, "dsh-observations.jsonl");
+  process.env.CNCODE_MEMORY_EVAL = "1";
+  t.after(() => {
+    for (const [key, value] of Object.entries({
+      CNCODE_DSH_OBSERVATIONS: before.observations,
+      CNCODE_MEMORY_EVAL: before.memory,
+    })) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  });
+  const { apply } = await import(
+    new URL("../../runtime/dsh-observer.mjs", import.meta.url).href
+  );
+  const hooks = new Map<string, any>();
+  apply({
+    on(name: string, cb: any) {
+      hooks.set(name, cb);
+    },
+    tools: {
+      definitions: () =>
+        ["read", "write", "pwsh", "grep"].map((name) => ({ name })),
+    },
+  });
+  let allowed: string[] = [];
+  hooks.get("agent/created")({
+    agent: {
+      ctx: {
+        effect(fn: any) {
+          fn();
+        },
+        tools: {
+          restrict(policy: any) {
+            allowed = policy.allow;
+          },
+        },
+      },
+    },
+  });
+  assert.deepEqual(allowed, ["read", "write"]);
+  let dispatched = false;
+  await assert.rejects(
+    hooks.get("tools/execute")(
+      {
+        callId: "foreign-report",
+        name: "read",
+        arguments: { file_path: join(dir, "report.json") },
+      },
+      async () => {
+        dispatched = true;
+        return { isError: false };
+      },
+    ),
+  );
+  assert.equal(dispatched, false);
+  const logs = (await readFile(process.env.CNCODE_DSH_OBSERVATIONS!, "utf8"))
+    .trim()
+    .split("\n")
+    .map((line) => JSON.parse(line));
+  assert.equal(logs.at(-1).data.executed, false);
 });

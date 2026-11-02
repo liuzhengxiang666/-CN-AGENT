@@ -1,11 +1,40 @@
 {
-  "name":"@cncode/vnext", "version":"0.2.0", "private":true, "type":"module",
-  "engines":{"node":">=24.9"},
-  "scripts":{
-    "dev":"tsx src/server-main.ts", "terminal":"tsx src/terminal.ts", "eval":"tsx src/eval/cli.ts",
-    "build":"tsc && vite build", "typecheck":"tsc --noEmit", "test":"tsx --test src/tests/*.test.ts",
-    "desktop":"electron desktop/main.cjs", "test:ui":"tsx scripts/ui-check.ts"
+  "name": "@cncode/vnext",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.9"
   },
-  "dependencies":{"@deepseek-ai/dsh-sdk-client":"0.2.2-alpha.2","@deepseek-ai/dsh":"0.2.2-alpha.2","@openviking/sdk":"0.1.0","@modelcontextprotocol/sdk":"1.26.0","react":"19.2.0","react-dom":"19.2.0","yaml":"2.8.1"},
-  "devDependencies":{"typescript":"5.9.3","tsx":"4.20.6","vite":"7.2.2","@types/node":"24.10.0","@types/react":"19.2.2","@types/react-dom":"19.2.2","electron":"39.0.0","@playwright/test":"1.56.1"}
+  "scripts": {
+    "dev": "tsx src/server-main.ts",
+    "terminal": "tsx src/terminal.ts",
+    "eval": "tsx src/eval/cli.ts",
+    "memory": "tsx scripts/memory-local.ts",
+    "build": "tsc && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/tests/*.test.ts",
+    "desktop": "electron desktop/main.cjs",
+    "test:ui": "tsx scripts/ui-check.ts"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.2.2-alpha.2",
+    "@deepseek-ai/dsh-sdk-client": "0.2.2-alpha.2",
+    "@modelcontextprotocol/sdk": "1.26.0",
+    "@openviking/dsh-memory-plugin": "0.5.32",
+    "@openviking/sdk": "0.1.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "yaml": "2.8.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "electron": "39.0.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "7.2.2"
+  }
 }
